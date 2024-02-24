@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import Slider from "./Slider";
+import Slider from "./Header";
 
 function HomePage() {
   return (
