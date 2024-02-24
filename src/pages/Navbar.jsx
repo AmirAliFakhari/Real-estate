@@ -15,7 +15,7 @@ function Navbar() {
                 key={data}
                 to={`/${data}`}
                 className={({ isActive }) =>
-                  !isActive ? " text-textColor-10" : "text-green-500"
+                  !isActive ? "text-Gray-10-505050" : "text-green-500"
                 }
               >
                 {menuItems.persion[menuItems.english.indexOf(data)]}
@@ -24,7 +24,7 @@ function Navbar() {
           </div>
           <img className="w-auto" src="/src/assets/icons/logo.svg" />
         </div>
-        <div className="flex items-center justify-center gap-5  text-textColor-10">
+        <div className="flex items-center justify-center gap-5  text-Gray-10-505050">
           <button className="border-2 border-red-400 rounded-md p-1 ">
             ثبت آگهی
           </button>

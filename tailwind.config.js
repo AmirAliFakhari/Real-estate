@@ -11,9 +11,8 @@ export default {
         shabnamLight: ["Shabnam-Light"]
       },
       colors: {
-        textColor: {
-          10: "#505050"
-        }
+        'Gray-3-EDEDED': '#EDEDED',
+        "Gray-10-505050": "#505050"
       }
     },
   },
