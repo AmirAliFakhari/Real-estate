@@ -9,6 +9,11 @@ export default {
         shabnamMeduim: ["Shabnam-Medium"],
         shabnamThin: ["Shabnam-Thin"],
         shabnamLight: ["Shabnam-Light"]
+      },
+      colors: {
+        textColor: {
+          10: "#505050"
+        }
       }
     },
   },
