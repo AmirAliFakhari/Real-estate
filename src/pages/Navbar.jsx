@@ -1,27 +1,24 @@
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
-  const menuItems = [
-    "اجاره",
-    "خرید",
-    "املاک و مستغلات",
-    "مشاورین املاک",
-    "اخبار روز",
-  ];
+  const menuItems = {
+    persion: ["اجاره", "خرید", "املاک و مستغلات", "مشاورین املاک", "اخبار روز"],
+    english: ["rent", "buy", "lands", "real-estate", "news"],
+  };
   return (
     <div className="flex justify-center font-shabnamBold">
       <div className="bg-[#F9F9F9] h-1/6  absolute z-50 w-[75%] border mt-6 rounded-md m-auto  flex flex-row-reverse justify-between p-4 items-center">
         <div className="flex items-center gap-5 list-none  ">
           <div className="flex flex-row-reverse gap-6">
-            {menuItems.map((item) => (
+            {menuItems.english.map((data) => (
               <NavLink
-                key={item}
-                to={`/${item}`}
+                key={data}
+                to={`/${data}`}
                 className={({ isActive }) =>
                   !isActive ? "" : "text-green-500"
                 }
               >
-                {item}
+                {menuItems.persion[menuItems.english.indexOf(data)]}
               </NavLink>
             ))}
           </div>
