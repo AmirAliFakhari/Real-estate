@@ -9,13 +9,13 @@ function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg }) {
             2 ساعت پیش
           </span>
         </div>
-        <div className="flex  justify-between px-2">
-          <span className="text-gray-600">{title}</span>
+        <div className=" px-2 text-justify">
+          <span className="text-gray-600 ">{title}</span>
         </div>
-        <div className="flex flex-col font-bold px-2">
+        <div className=" font-bold px-2 text-justify">
           <span className="font-normal">{subTitle}</span>
-          <span>{mortgage}</span>
-          <span>{monthPrice}</span>
+          <span className="flex">{mortgage}</span>
+          <span className="flex">{monthPrice}</span>
         </div>
         <button className="flex justify-center w-auto text-white bg-red-500 rounded-lg">
           مشاهده
