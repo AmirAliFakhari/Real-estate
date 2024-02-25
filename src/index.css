@@ -3,26 +3,30 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Shabnam";
-  src: url("/src/assets/fonts/Shabnam.ttf") format("ttf");
+  font-family: "Vazir";
+  src: url("/src/assets/fonts/Vazir.ttf") format("ttf");
 }
 
 @font-face {
-  font-family: "Shabnam-Bold";
-  src: url("/src/assets/fonts/Shabnam-Bold.ttf") format("ttf");
+  font-family: "Vazir-Bold";
+  src: url("/src/assets/fonts/Vazir-Bold.ttf") format("ttf");
 }
 
 @font-face {
-  font-family: "Shabnam-Meduim";
-  src: url("/src/assets/fonts/Shabnam-Medium.ttf") format("ttf");
+  font-family: "Vazir-Meduim";
+  src: url("/src/assets/fonts/Vazir-Medium.ttf") format("ttf");
 }
 
 @font-face {
-  font-family: "Shabnam-Thin";
-  src: url("/src/assets/fonts/Shabnam-Thin.ttf") format("ttf");
+  font-family: "Vazir-Thin";
+  src: url("/src/assets/fonts/Vazir-Thin.ttf") format("ttf");
 }
 
 @font-face {
-  font-family: "Shabnam-Light";
-  src: url("/src/assets/fonts/Shabnam-Light.ttf") format("ttf");
+  font-family: "Vazir-Light";
+  src: url("/src/assets/fonts/Vazir-Light.ttf") format("ttf");
+}
+
+body {
+  font-family: "Vazir";
 }

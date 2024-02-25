@@ -1,38 +1,34 @@
-import { NavLink } from "react-router-dom";
+"use client";
 
-function Navbar() {
-  const menuItems = {
-    persion: ["اجاره", "خرید", "املاک و مستغلات", "مشاورین املاک", "اخبار روز"],
-    english: ["rent", "buy", "lands", "real-estate", "news"],
-  };
+import { Button, Navbar } from "flowbite-react";
+
+export default function TopNavbar() {
   return (
-    <div className="flex justify-center font-shabnamBold">
-      <div className="bg-[#F9F9F9] h-1/7  absolute z-50 w-[80%] border mt-6 rounded-xl m-auto  flex  justify-between p-4 items-center">
-        <div className="flex items-center gap-5 list-none  ">
-          <img className="w-auto" src="/src/assets/icons/logo.svg" />
-          <div className="flex  gap-6">
-            {menuItems.english.map((data) => (
-              <NavLink
-                key={data}
-                to={`/${data}`}
-                className={({ isActive }) =>
-                  !isActive ? "text-Gray-10-505050" : "text-green-500"
-                }
-              >
-                {menuItems.persion[menuItems.english.indexOf(data)]}
-              </NavLink>
-            ))}
-          </div>
-        </div>
-        <div className="flex items-center justify-center gap-5  text-Gray-10-505050">
-          <button className="border-2 border-red-400 rounded-md p-1 ">
-            ثبت آگهی
-          </button>
-          <button>ورود</button>
-        </div>
+    <Navbar fluid rounded className="fixed z-10 w-full  border-b-2">
+      <Navbar.Brand href="#">
+        <img
+          src="src/assets/icons/logo.svg"
+          className="mr-3 h-6 sm:h-9"
+          alt="Flowbite React Logo"
+        />
+        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+          مشاور املاک
+        </span>
+      </Navbar.Brand>
+      <Navbar.Collapse>
+        <Navbar.Link href="#" active>
+          اجاره
+        </Navbar.Link>
+        <Navbar.Link href="#">اخبار روز</Navbar.Link>
+        <Navbar.Link href="#">مشاورین املاک</Navbar.Link>
+        <Navbar.Link href="#">املاک و مستغلات</Navbar.Link>
+        <Navbar.Link href="#">خرید</Navbar.Link>
+      </Navbar.Collapse>
+
+      <div className="flex md:order-2">
+        <Button color="red">ثبت آگهی</Button>
+        <Navbar.Toggle />
       </div>
-    </div>
+    </Navbar>
   );
 }
-
-export default Navbar;

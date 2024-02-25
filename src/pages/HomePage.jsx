@@ -1,11 +1,11 @@
-import Navbar from "./Navbar";
 import Slider from "./Header";
 import RealStates from "./Layout";
+import TopNavbar from "./Navbar";
 
 function HomePage() {
   return (
     <>
-      <Navbar />
+      <TopNavbar />
       <Slider src="slidephoto.svg" />
       <RealStates />
     </>
