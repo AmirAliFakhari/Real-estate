@@ -1,8 +1,8 @@
 function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg }) {
   return (
     <>
-      <div className="bg-Gray-3-EDEDED w-[288px] h-[250px] rounded-md">
-        <img src={`/src/assets/imgs/${homeImg}`} />
+      <div className="bg-red-600 w-56 h-60 rounded-md flex flex-col">
+        <img src={`${homeImg}`} />
         <span>{title}</span>
         <span>
           {subTitle}({mortgage | monthPrice})
