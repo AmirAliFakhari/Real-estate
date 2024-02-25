@@ -21,7 +21,7 @@ function Slider({ src }) {
               type="text"
               placeholder="کدوم شهر میخوای مستقر بشی!"
             />
-            <img className="w-auto" src="\src\assets\icons\search-normal.svg" />
+            <img className="w-fit" src="\src\assets\icons\search-normal.svg" />
           </div>
         </div>
 

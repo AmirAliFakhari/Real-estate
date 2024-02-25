@@ -12,7 +12,8 @@ export default {
       },
       colors: {
         'Gray-3-EDEDED': '#EDEDED',
-        "Gray-10-505050": "#505050"
+        "Gray-10-505050": "#505050",
+        "Gray-4-E1E1E1": "#E1E1E1"
       }
     },
   },
