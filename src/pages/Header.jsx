@@ -15,7 +15,7 @@ function Slider({ src }) {
             </button>
             <button className="text-Gray-10-505050 px-40  my-2">خرید</button>
           </div>
-          <div className="flex w-full justify-end text-black  ">
+          <div className="flex w-full justify-end px-2 text-black  ">
             <input
               className="w-full"
               type="text"
