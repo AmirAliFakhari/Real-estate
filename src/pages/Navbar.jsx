@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import LinkComp from "../components/Link";
+import LinkComp from "../components/LinkComp";
 
 function Navbar() {
   return (
@@ -41,13 +41,7 @@ function Navbar() {
               fill="none"
               viewBox="0 0 17 14"
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
+              <path stroke="currentColor" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
         </div>
@@ -64,16 +58,16 @@ function Navbar() {
               />
             </li>
             <li>
-              <LinkComp title="خرید" src="search-normal" />
+              <LinkComp title="خرید" src="key" />
             </li>
             <li>
-              <LinkComp title="املاک و مستغلات" src="search-normal" />
+              <LinkComp title="املاک و مستغلات" src="house-2" />
             </li>
             <li>
-              <LinkComp title="مشاورین و املاک" src="search-normal" />
+              <LinkComp title="مشاورین و املاک" src="people" />
             </li>
             <li>
-              <LinkComp title="اخبار روز" src="search-normal" />
+              <LinkComp title="اخبار روز" src="receipt-2" />
             </li>
           </ul>
         </div>
