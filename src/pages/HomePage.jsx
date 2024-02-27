@@ -1,13 +1,13 @@
-import Slider from "./Header";
-import RealStates from "./Layout";
+import HeaderSlide from "./HeaderSlide";
+import Layout from "./Layout";
 import TopNavbar from "./Navbar";
 
 function HomePage() {
   return (
     <>
       <TopNavbar />
-      <Slider src="slidephoto.svg" />
-      <RealStates />
+      <HeaderSlide src="slidephoto.svg" />
+      <Layout />
     </>
   );
 }
