@@ -1,15 +1,14 @@
 function Slider() {
   return (
-    <div className="relative">
+    <div className="relative ">
       <img
         src="src\assets\imgs\slidephoto.svg"
         alt="Background"
         className="w-full h-auto"
       />
-
-      <div className="absolute hidden sm:flex inset-0 flex flex-col  text-white justify-center items-center">
-        <p>سقفینو؛ سقفی برای همه</p>
-        <span>
+      <div className="absolute hidden  inset-0 sm:flex  flex-col  text-white justify-center mb-6 sm:items-center">
+        <p className="text-lg font-semibold">سقفینو؛ سقفی برای همه</p>
+        <span className="font-light">
           آسانی و سرعت در پیدا کردن یک سقف تازه را در سقفینو تجربه کنید
         </span>
       </div>
@@ -29,7 +28,7 @@ function Slider() {
             <input
               type="search"
               id="default-search"
-              className="block w-72 sm:w-80 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block w-72 sm:w-80 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
               placeholder="کجا میخوای زندگی کنی؟"
               required
             />
