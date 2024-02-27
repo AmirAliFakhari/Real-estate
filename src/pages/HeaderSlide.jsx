@@ -6,7 +6,7 @@ function HeaderSlide() {
         alt="Background"
         className="w-full h-auto"
       />
-      <div className="absolute hidden gap-4 inset-0 sm:flex  flex-col  text-white justify-center mb-6 sm:items-center">
+      <div className="absolute hidden gap-4 inset-0 sm:flex  flex-col  text-white justify-start my-28 sm:items-center">
         <p className="text-4xl md:font-bold md:text-6xl font-semibold mb-4">
           سقفینو؛ سقفی برای همه
         </p>
@@ -30,7 +30,7 @@ function HeaderSlide() {
             <input
               type="search"
               id="default-search"
-              className="block w-80 md:w-100 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+              className="block w-80 mb-10 md:w-[448px] p-4  ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
               placeholder="کجا میخوای زندگی کنی؟"
               required
             />
