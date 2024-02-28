@@ -1,6 +1,6 @@
-import supabase from "./Supabase";
+import supabase from "../services/supabase"
 
-export default async function CartInfo() {
+export default async function cartInfo() {
     let { data } = await supabase
         .from('infoCart')
         .select('*')
