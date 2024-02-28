@@ -14,7 +14,7 @@ function HeaderSlide() {
           آسانی و سرعت در پیدا کردن یک سقف تازه را در سقفینو تجربه کنید
         </span>
       </div>
-      <div className="absolute inset-0 flex   justify-center items-center sm:items-end mb-4 md:mb-28">
+      <div className="absolute inset-0 flex   justify-center items-center sm:items-end mb-4 md:mb-24">
         <form className="max-w-md mx-auto ">
           <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
             کجا؟

@@ -9,7 +9,7 @@ export default function useBooking() {
         error,
     } = useQuery({
         queryKey: ["infoCart"],
-        queryFn: cartInfo,
+        queryFn: () => cartInfo(),
     });
 
     return { isLoading, error, data };

@@ -1,7 +1,7 @@
 import { HashLoader } from "react-spinners";
 
-function spinners() {
+function Spinner() {
   return <HashLoader color="#36d7b7" />;
 }
 
-export default spinners;
+export default Spinner;
