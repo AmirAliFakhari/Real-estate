@@ -1,3 +1,4 @@
+import About from "./about/About";
 import FooterPage from "./Footer";
 import SwiperSliders from "./homes/SwiperSliders";
 import AboutLayout from "./Introduction/Introduction";
@@ -8,6 +9,7 @@ export default function Layout() {
     <>
       <AboutLayout />
       <SwiperSliders />
+      <About />
       <LastNews />
       <FooterPage />
     </>
