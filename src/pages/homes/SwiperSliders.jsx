@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import HomeCart from "../components/HomeCart";
+import HomeCart from "./HomeCart";
 import "swiper/css/navigation";
 import "swiper/css";
 
