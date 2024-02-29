@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg }) {
   return (
     <>
-      <div className="max-w-sm flex flex-col justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="max-w-sm flex flex-col justify-center items-center bg-white border border-gray-200 rounded-lg shadow ">
         <img className="rounded-t-lg w-full" src={`${homeImg}`} alt="" />
         <div className="p-5">
           <a href="#">

@@ -27,7 +27,13 @@ const fakeData = [
 function LastNews() {
   return (
     <>
-      <div className="">dasjdasdlj</div>
+      <div className="flex flex-col w-full   items-center mt-16  ">
+        <div className="flex justify-between w-[85%] mb-4">
+          <p className="font-semibold ">
+            آخرین اخبار املاک را از سقفینو دنبال کنید
+          </p>
+        </div>
+      </div>
       <Swiper
         navigation={true}
         className="flex w-[85%]  text-center md:text-justify"
@@ -47,7 +53,7 @@ function LastNews() {
           },
         }}
       >
-        <div className="flex  flex-wrap justify-center items-center gap-5">
+        <div className="flex  flex-wrap justify-center items-center    gap-5">
           {fakeData.map((data) => (
             <SwiperSlide key={data.title}>
               <New
