@@ -22,7 +22,7 @@ function Navbar() {
           <Link
             to=""
             type="button"
-            className="focus:ring-red-30 rounded-lg border    border-red-500 px-4 py-2 text-center text-sm font-medium text-red-500 "
+            className="focus:ring-red-30 hidden rounded-lg border border-red-500   px-4 py-2 text-center text-sm font-medium text-red-500 sm:flex "
           >
             ثبت آگهی
           </Link>
@@ -56,6 +56,9 @@ function Navbar() {
                 title="اجاره"
                 src="search-normal"
               />
+            </li>
+            <li>
+              <LinkComp title="اجاره" src="key" />
             </li>
             <li>
               <LinkComp title="خرید" src="key" />
