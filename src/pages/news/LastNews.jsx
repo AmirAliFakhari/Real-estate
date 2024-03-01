@@ -22,13 +22,18 @@ const fakeData = [
     text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
     img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
   },
+  {
+    title: "رکورد بازار مسکن",
+    text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
+    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
+  },
 ];
 
 function LastNews() {
   return (
     <>
-      <div className="flex flex-col w-full   items-center mt-16  ">
-        <div className="flex justify-between w-[85%] mb-4">
+      <div className="mt-16 flex w-full   flex-col items-center  ">
+        <div className="mb-4 flex w-[85%] justify-between">
           <p className="font-semibold ">
             آخرین اخبار املاک را از سقفینو دنبال کنید
           </p>
@@ -53,7 +58,7 @@ function LastNews() {
           },
         }}
       >
-        <div className="flex  flex-wrap justify-center items-center    gap-5">
+        <div className="flex  flex-wrap items-center justify-center gap-5    break-words">
           {fakeData.map((data) => (
             <SwiperSlide key={data.title}>
               <New
@@ -66,6 +71,7 @@ function LastNews() {
           ))}
         </div>
       </Swiper>
+      <div className="translate-y-12">d</div>
     </>
   );
 }

@@ -15,11 +15,11 @@ export default function FooterPage() {
     };
   }, []);
 
-  console.log(showFooter);
+  // console.log(showFooter);
 
   return (
     <footer
-      className={`fixed bottom-0 left-0 z-20 flex w-full flex-col justify-center border-t   border-gray-200 bg-white  p-4 shadow duration-500  ease-in-out  md:flex   md:flex-row md:items-center md:justify-between md:p-6 ${showFooter ? " opacity-100" : " hidden opacity-0"}`}
+      className={`fixed bottom-0 left-0 z-20  flex w-full flex-col justify-center border-t  border-gray-200 bg-white  p-4 shadow duration-500  ease-in-out  md:flex   md:flex-row md:items-center md:justify-between md:p-6 ${showFooter ? " opacity-100" : " hidden opacity-0"}`}
     >
       <ul
         className={`mt-3 hidden flex-wrap items-center justify-center   text-sm font-medium text-gray-500  sm:mt-0 md:flex    ${showFooter ? "" : "hidden"}`}
