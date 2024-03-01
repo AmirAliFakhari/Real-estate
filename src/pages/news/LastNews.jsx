@@ -58,7 +58,7 @@ function LastNews() {
           },
         }}
       >
-        <div className="flex  flex-wrap items-center justify-center gap-5    break-words">
+        <div className="flex  flex-wrap items-center justify-center gap-5 ">
           {fakeData.map((data) => (
             <SwiperSlide key={data.title}>
               <New
@@ -71,7 +71,7 @@ function LastNews() {
           ))}
         </div>
       </Swiper>
-      <div className="translate-y-12">d</div>
+      <div className="translate-y-14 ">Nothing</div>
     </>
   );
 }
