@@ -9,8 +9,8 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route element={<Layout />} path="/" />
-          <Route element={<SignIn />} path="signin" />
         </Route>
+        <Route element={<SignIn />} path="signin" />
       </Routes>
     </BrowserRouter>
   );
