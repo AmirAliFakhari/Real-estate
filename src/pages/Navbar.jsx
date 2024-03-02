@@ -5,10 +5,7 @@ function Navbar() {
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-900">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        <a
-          // href="https://flowbite.com/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
+        <a className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src="src\assets\icons\logo.svg"
             className="h-8"
@@ -19,6 +16,13 @@ function Navbar() {
           </span>
         </a>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+          <Link
+            to="/signIn"
+            type="button"
+            className="focus:ring-red-30 hidden rounded-lg   px-4 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
+          >
+            ورود
+          </Link>
           <Link
             to=""
             type="button"
