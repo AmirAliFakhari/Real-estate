@@ -30,3 +30,12 @@
 body {
   font-family: "Vazir";
 }
+
+.salam {
+  /* width: 200px; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blue;
+}

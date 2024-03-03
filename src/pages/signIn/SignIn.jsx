@@ -3,7 +3,18 @@ import Stepper from "awesome-react-stepper";
 
 function SignIn() {
   return (
-    <Stepper>
+    <Stepper
+      strokeColor="none"
+      fillStroke="#1a6ca7"
+      stroke={2}
+      barWidth="150px"
+      contentBoxClassName="salam"
+      btnPos="center"
+      activeColor="#ff0d00"
+      backBtn={<ButtonDir title="back" />}
+      continueBtn={<ButtonDir title="next" />}
+      submitBtn={<ButtonDir title="submit" />}
+    >
       <div>
         <h1>Welcome to Awesome React Stepper</h1>
       </div>
