@@ -31,11 +31,24 @@ body {
   font-family: "Vazir";
 }
 
-.salam {
-  /* width: 200px; */
+.stepperDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  border-radius: 60px;
+}
+
+.stepper__content {
+  width: 200px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: blue;
+  /* background-color: blue; */
+}
+
+.stepper__bar {
+  margin-top: 50px;
 }
