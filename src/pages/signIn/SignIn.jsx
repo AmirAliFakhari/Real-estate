@@ -1,16 +1,35 @@
-import MultiStep from "react-multistep";
-import ButtonDir from "./ButtonDir";
+import React from "react";
+import Stepper from "../../components/Stepper";
 
-function SignIn() {
+export default function SignIn() {
+  const [currentStep, setCurrentStep] = React.useState(0);
+  const NUMBER_OF_STEPS = 5;
+
+  const goToNextStep = () =>
+    setCurrentStep((prev) => (prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1));
+  const goToPreviousStep = () =>
+    setCurrentStep((prev) => (prev <= 0 ? prev : prev - 1));
+
   return (
-    <MultiStep activeStep={0} prevButton={{ style: { color: "red" } }}>
-      <div className="">dsad</div>
-      <div className="">dsad</div>
-      <div className="">dsad</div>
-      <div className="">dfdfsdfsad</div>
-      <div className="">dsad</div>
-    </MultiStep>
+    <div>
+      <h1 className="text-2xl">Here is the stepper in action!</h1>
+      <br />
+      <Stepper currentStep={currentStep} numberOfSteps={NUMBER_OF_STEPS} />
+      <br />
+      <section className="flex gap-10">
+        <button
+          onClick={goToPreviousStep}
+          className="rounded-md bg-blue-600 p-2 text-white"
+        >
+          Previous step
+        </button>
+        <button
+          onClick={goToNextStep}
+          className="rounded-md bg-blue-600 p-2 text-white"
+        >
+          Next step
+        </button>
+      </section>
+    </div>
   );
 }
-
-export default SignIn;
