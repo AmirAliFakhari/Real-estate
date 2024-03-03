@@ -1,35 +1,20 @@
-import React from "react";
-import Stepper from "../../components/Stepper";
+import ButtonDir from "./ButtonDir";
+import Stepper from "awesome-react-stepper";
 
-export default function SignIn() {
-  const [currentStep, setCurrentStep] = React.useState(0);
-  const NUMBER_OF_STEPS = 5;
-
-  const goToNextStep = () =>
-    setCurrentStep((prev) => (prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1));
-  const goToPreviousStep = () =>
-    setCurrentStep((prev) => (prev <= 0 ? prev : prev - 1));
-
+function SignIn() {
   return (
-    <div>
-      <h1 className="text-2xl">Here is the stepper in action!</h1>
-      <br />
-      <Stepper currentStep={currentStep} numberOfSteps={NUMBER_OF_STEPS} />
-      <br />
-      <section className="flex gap-10">
-        <button
-          onClick={goToPreviousStep}
-          className="rounded-md bg-blue-600 p-2 text-white"
-        >
-          Previous step
-        </button>
-        <button
-          onClick={goToNextStep}
-          className="rounded-md bg-blue-600 p-2 text-white"
-        >
-          Next step
-        </button>
-      </section>
-    </div>
+    <Stepper>
+      <div>
+        <h1>Welcome to Awesome React Stepper</h1>
+      </div>
+      <div>
+        <h1>Add your content here!!!</h1>
+      </div>
+      <div>
+        <h1>Thank you for using Awesome React Stepper</h1>
+      </div>
+    </Stepper>
   );
 }
+
+export default SignIn;
