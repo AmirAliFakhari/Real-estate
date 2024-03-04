@@ -1,9 +1,6 @@
-import { Input } from "postcss";
 import ButtonDir from "../../components/ButtonDir";
 import Stepper from "awesome-react-stepper";
 import InputForm from "../../components/Input";
-
-/// make a componetn for inputs and use react hook form
 
 function RegiterHome() {
   return (
@@ -20,6 +17,7 @@ function RegiterHome() {
           strokeColor="red"
           fillStroke="#51515153"
           activeColor="#ff0d00"
+          onContinue={() => console.log("salam")}
           stroke={2}
           barWidth="150px"
           contentBoxClassName="stepper__contect"
