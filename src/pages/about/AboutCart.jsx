@@ -1,5 +1,5 @@
 function AboutCart({ text, img }) {
-  console.log(img);
+  // console.log(img);
   return (
     <>
       <div className="flex  h-64 flex-col items-center justify-center gap-7 rounded-xl bg-slate-50 shadow-2xl shadow-red-300 drop-shadow-2xl ">
