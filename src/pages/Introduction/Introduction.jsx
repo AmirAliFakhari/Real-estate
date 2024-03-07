@@ -6,15 +6,19 @@ function Introduction() {
   const { data, isLoading } = useIntroduction();
 
   if (isLoading || !data) {
-    return <Spinner />;
+    return (
+      <div className="flex justify-center">
+        <Spinner />;
+      </div>
+    );
   }
 
   return (
-    <div className="flex flex-col gap-7 mt-12 ">
-      <p className="font-bold text-slate-700 text-center sm:text-xl ms-5 underline underline-offset-8 decoration-red-600">
+    <div className="mt-12 flex flex-col gap-7 ">
+      <p className="ms-5 text-center font-bold text-slate-700 underline decoration-red-600 underline-offset-8 sm:text-xl">
         سقفینو چطور به خانه‌دار شدن شما کمک می‌کند
       </p>
-      <div className="flex flex-wrap flex-col md:flex-row gap-5  justify-center items-center sm:justify-evenly">
+      <div className="flex flex-col flex-wrap items-center justify-center  gap-5 sm:justify-evenly md:flex-row">
         {data.map((res) => (
           <IntroCart
             buttonText={res.buttonText}

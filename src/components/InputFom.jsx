@@ -11,7 +11,7 @@ function InputForm({ title, type, textholder, register, name }) {
         placeholder={textholder}
         required
         {...register}
-      />
+      /> 
     </div>
   );
 }

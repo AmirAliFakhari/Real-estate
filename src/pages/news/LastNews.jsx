@@ -3,27 +3,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const fakeData = [
   {
-    title: "رکورد بازار مسکن",
+    title: "رکور312د بازار مسکن",
     text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
     img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
   },
   {
-    title: "رکورد بازار مسکن",
+    title: "رکورد 3بازار مسکن",
     text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
     img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
   },
   {
-    title: "رکورد بازار مسکن",
+    title: "رکورد 1بازار مسکن",
     text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
     img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
   },
   {
-    title: "رکورد بازار مسکن",
-    text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
+    title: "رکورد 5بازار مسکن",
+    text: "رکورد یسدتنشیتشستینشسیادسشتسی32نیانشسیفروش مسکن",
     img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
   },
   {
-    title: "رکورد بازار مسکن",
+    title: "رکورد باز7ار مسکن",
     text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
     img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
   },

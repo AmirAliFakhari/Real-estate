@@ -1,7 +1,17 @@
-import { HashLoader } from "react-spinners";
+import { Triangle } from "react-loader-spinner";
 
 function Spinner() {
-  return <HashLoader color="#36d7b7" />;
+  return (
+    <Triangle
+      visible={true}
+      height="80"
+      width="80"
+      color="#a94d4d"
+      ariaLabel="triangle-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+    />
+  );
 }
 
 export default Spinner;
