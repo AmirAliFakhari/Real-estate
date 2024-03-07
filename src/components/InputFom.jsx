@@ -1,7 +1,6 @@
 function InputForm({ title, type, textholder, register, name }) {
-  // console.log(...register);
   return (
-    <div className="mb-5">
+    <div className="">
       <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
         {title}
       </label>
