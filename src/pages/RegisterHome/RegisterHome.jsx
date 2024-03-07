@@ -3,10 +3,14 @@ import Stepper from "awesome-react-stepper";
 import InputForm from "../../components/InputFom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { handleNext } from "./registerSlice";
 
 function RegiterHome() {
   const { register, handleSubmit } = useForm();
   const [step, setStep] = useState(0);
+  const dispatch = useDispatch();
+  console.log(dispatch(handleNext));
 
   const onSubmit = (data) => {
     switch (step) {
@@ -19,14 +23,6 @@ function RegiterHome() {
       default:
         break;
     }
-  };
-
-  const handleNext = () => {
-    setStep((prevStep) => prevStep + 1);
-  };
-
-  const handleBack = () => {
-    setStep((prevStep) => prevStep - 1);
   };
 
   return (
@@ -43,8 +39,8 @@ function RegiterHome() {
           fillStroke="#51515153"
           activeColor="#ff0d00"
           onContinue={handleSubmit(onSubmit)}
-          backBtn={<ButtonDir title="back" onClick={handleBack} />}
-          continueBtn={<ButtonDir title="next" onClick={handleNext} />}
+          backBtn={<ButtonDir title="back" />}
+          continueBtn={<ButtonDir title="next" />}
           submitBtn={
             <ButtonDir title="submit" onClick={handleSubmit(onSubmit)} />
           }

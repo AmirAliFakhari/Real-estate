@@ -7,6 +7,7 @@ const registerSlice = createSlice({
     },
     reducers: {
         handleNext: state => {
+            console.log("salam")
             state.step += 1
         },
 
