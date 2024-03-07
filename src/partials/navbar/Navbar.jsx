@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import LinkComp from "../components/LinkComp";
+import LinkComp from "../../components/LinkComp";
 
 function Navbar() {
   return (

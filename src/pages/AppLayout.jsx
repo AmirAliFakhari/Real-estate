@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import TopNavbar from "./Navbar";
-import FooterPage from "./Footer";
+import FooterPage from "../partials/footer/Footer";
+import Navbar from "../partials/navbar/Navbar";
 
 function AppLayout() {
   return (
     <>
-      <TopNavbar />
+      <Navbar />
       <Outlet />
       <FooterPage />
     </>

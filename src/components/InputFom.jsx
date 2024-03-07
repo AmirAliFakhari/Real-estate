@@ -1,7 +1,7 @@
 function InputForm({ title, type, textholder, register, name }) {
   return (
-    <div className="">
-      <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+    <div className="mb-2 flex flex-col gap-1">
+      <label className="mb-1 block text-sm font-medium text-gray-900 dark:text-white">
         {title}
       </label>
       <input
@@ -11,7 +11,7 @@ function InputForm({ title, type, textholder, register, name }) {
         placeholder={textholder}
         required
         {...register}
-      /> 
+      />
     </div>
   );
 }

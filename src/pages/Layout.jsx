@@ -1,15 +1,15 @@
-import About from "./about/About";
-import FooterPage from "./Footer";
-import HeaderSlide from "./HeaderSlide";
-import SwiperSliders from "./houses/SwiperSliders";
-import AboutLayout from "./Introduction/Introduction";
-import LastNews from "./news/LastNews";
+import Introduction from "../partials/Introduction/Introduction";
+import About from "../partials/about/About";
+import SwiperSliders from "../partials/houses/SwiperSliders";
+import LastNews from "../partials/news/LastNews";
+import FooterPage from "../partials/footer/Footer";
+import HeaderSlide from "../partials/headerSlide/HeaderSlide";
 
 export default function Layout() {
   return (
     <>
       <HeaderSlide src="slidephoto.svg" />
-      <AboutLayout />
+      <Introduction />
       <SwiperSliders />
       <About />
       <LastNews />
