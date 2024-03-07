@@ -12,25 +12,23 @@ function RegiterHome() {
   } = useForm();
   const watchAllFields = watch();
 
-  function validateStep(step) {
-    // Check validation based on step and return true/false
-    switch (step) {
-      case 1:
-        return !!watchAllFields.step1Field; // Adjust this based on your form fields
-      case 2:
-        return !!watchAllFields.step2Field; // Adjust this based on your form fields
-      // Add more cases for each step if necessary
-      default:
-        return true; // Default to true if step not handled
-    }
-  }
+  // function validateStep(step) {
+  //   switch (step) {
+  //     case 1:
+  //       return !!watchAllFields.step1Field;
+  //     case 2:
+  //       return !!watchAllFields.step2Field;
+  //     default:
+  //       return true;
+  //   }
+  // }
 
   const onSubmit = (data) => {
     console.log(data);
   };
 
   return (
-    <div className="flex h-screen  ">
+    <div className="flex h-screen bg-gray-100 ">
       <div className="hidden h-screen    sm:flex">
         <img
           src="src\assets\imgs\register.svg"
@@ -43,15 +41,7 @@ function RegiterHome() {
           strokeColor="red"
           fillStroke="#51515153"
           activeColor="#ff0d00"
-          onContinue={(currentStep) => {
-            const nextStep = currentStep + 1;
-            if (validateStep(nextStep)) {
-              handleSubmit(onSubmit)(); // Submit the form if validation passes
-            } else {
-              // Optionally, you can show an error message or handle it in some way
-              console.log("Validation failed for Step ", nextStep);
-            }
-          }}
+          onContinue={handleSubmit(onSubmit)}
           stroke={2}
           barWidth="150px"
           contentBoxClassName="stepper__contect"
@@ -70,12 +60,30 @@ function RegiterHome() {
                 title="شهر"
                 type="text"
                 textholder="زواره"
-                register={{ ...register("text") }}
                 name="city"
+                register={{ ...register("َcity") }}
               />
-              <InputForm title="منطقه" type="text" textholder="بنجیره" />
-              <InputForm title="خیبان اصلی" type="text" textholder="طالقانی" />
-              <InputForm title="خیابان فرعی" type="text" textholder="حشمت" />
+              <InputForm
+                title="منطقه"
+                type="text"
+                textholder="بنجیره"
+                name="state"
+                register={{ ...register("state") }}
+              />
+              <InputForm
+                title="خیبان اصلی"
+                type="text"
+                textholder="طالقانی"
+                name="main-street"
+                register={{ ...register("main-street") }}
+              />
+              <InputForm
+                title="خیابان فرعی"
+                type="text"
+                textholder="حشمت"
+                name="auxiliary-road"
+                register={{ ...register("auxiliary-road") }}
+              />
             </div>
           </form>
           <div>
