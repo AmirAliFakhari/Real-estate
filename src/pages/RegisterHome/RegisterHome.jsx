@@ -3,31 +3,33 @@ import Stepper from "awesome-react-stepper";
 import InputForm from "../../components/InputFom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { handleNext } from "./registerSlice";
 
 function RegiterHome() {
   const { register, handleSubmit } = useForm();
   const [step, setStep] = useState(0);
-  const dispatch = useDispatch();
-  console.log(dispatch(handleNext));
+
+  const handleNextStep = () => {
+    setStep((prevStep) => prevStep + 1);
+  };
 
   const onSubmit = (data) => {
     switch (step) {
       case 0:
-        console.log("Step1", data);
+        console.log("Handling data for step 0:", data);
         break;
       case 1:
-        console.log("step2", data);
+        console.log("Handling data for step 1:", data);
         break;
       default:
         break;
     }
+
+    handleNextStep();
   };
 
   return (
     <div className="flex h-screen rounded-xl bg-gray-100 sm:rounded-l-3xl ">
-      <div className="hidden h-screen     sm:flex">
+      <div className="hidden h-screen  sm:flex">
         <img
           src="src\assets\imgs\register.svg"
           className=" max-h-svh w-60 rounded-l-3xl sm:flex sm:object-cover  "
@@ -39,11 +41,9 @@ function RegiterHome() {
           fillStroke="#51515153"
           activeColor="#ff0d00"
           onContinue={handleSubmit(onSubmit)}
-          backBtn={<ButtonDir title="back" />}
           continueBtn={<ButtonDir title="next" />}
-          submitBtn={
-            <ButtonDir title="submit" onClick={handleSubmit(onSubmit)} />
-          }
+          backBtn={<ButtonDir title="back" />}
+          submitBtn={<ButtonDir title="submit" />}
           stroke={2}
           barWidth="150px"
           contentBoxClassName="stepper__contect"
@@ -92,11 +92,11 @@ function RegiterHome() {
             <div className=" flex w-72 flex-col gap-6 sm:w-96 ">
               <div className=" flex w-72 flex-col gap-6 sm:w-96 ">
                 <InputForm
-                  title="شهر"
+                  title="شهر23"
                   type="text"
-                  textholder="زواره"
-                  name="city"
-                  register={{ ...register("َcity") }}
+                  textholder="ز32واره"
+                  name="city1"
+                  register={{ ...register("َcity1") }}
                 />
                 <InputForm
                   title="منطقه"
