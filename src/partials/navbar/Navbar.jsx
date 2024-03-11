@@ -3,8 +3,8 @@ import LinkComp from "../../components/LinkComp";
 
 function Navbar() {
   return (
-    <nav className=" fixed z-30 w-screen border-gray-200 bg-white md:flex">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 text-sm">
+    <nav className=" fixed z-30 w-screen border  border-b-stone-300 bg-white md:flex">
+      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-5 p-4 text-sm">
         <a className="flex items-center space-x-3 rtl:space-x-reverse">
           <Link to="/">
             <img
@@ -13,7 +13,7 @@ function Navbar() {
               alt="Flowbite Logo"
             />
           </Link>
-          <span className="self-center whitespace-nowrap text-xl font-semibold  dark:text-white">
+          <span className="hidden self-center whitespace-nowrap text-xl font-semibold dark:text-white  lg:flex">
             مشاور املاک
           </span>
         </a>
@@ -28,7 +28,8 @@ function Navbar() {
           <Link
             to="/register"
             type="button"
-            className="focus:ring-red-30 hidden rounded-lg border border-red-500   px-4 py-2 text-center text-sm font-medium text-red-500 sm:flex "
+            className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border  border-red-500 px-3 py-2 text-center
+             text-sm font-medium text-red-500 sm:flex "
           >
             ثبت آگهی
           </Link>

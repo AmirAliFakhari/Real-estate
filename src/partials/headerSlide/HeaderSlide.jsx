@@ -1,47 +1,36 @@
 function HeaderSlide() {
   return (
-    <div className="relative ">
+    <div className="relative">
       <img
         src="https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MTAxNTY1MTcsImV4cCI6MTc0MTY5MjUxN30.2J32ZKLQV6Z5gDUsQAbb0xTYvEnFkui3XPmh4-KLLy8&t=2024-03-11T11%3A28%3A34.962Z"
         alt="Background"
-        className="h-auto w-full"
+        className="h-auto w-full "
       />
-      <div className="absolute inset-0 my-28 hidden flex-col  justify-start  gap-4 text-white sm:flex sm:items-center">
-        <p className="md:text-4xlxl mb-4 text-5xl font-semibold md:font-bold">
-          سقفینو؛ سقفی برای همه
-        </p>
-        <span className="flex text-xl font-light md:hidden md:text-2xl lg:flex">
-          آسانی و سرعت در پیدا کردن یک سقف تازه را در سقفینو تجربه کنید
-        </span>
-      </div>
-      <div className="absolute inset-0 mb-4   flex items-center justify-center sm:items-end md:mb-24">
-        <form className="mx-auto max-w-md ">
-          <label className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            کجا؟
-          </label>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+      <div className="absolute left-1/2 top-[17%]  ">
+        <div className="-translate-y-1/12 flex w-screen -translate-x-1/2 flex-col items-center justify-start gap-2 ">
+          <span className="text-3xl font-bold text-white">
+            سقفینو؛ سقفی برای همه
+          </span>
+          <span className="hidden text-center text-xl text-white sm:flex">
+            آسانی و سرعت در پیدا کردن یک سقف تازه را در سقفینو تجربه کنید
+          </span>
+        </div>
+        <div className="absolute  top-[180%]">
+          <div className="-translate-y-1/12  flex w-screen -translate-x-1/2 flex-col items-center justify-start gap-2 ">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="کجا می خوای بری!"
+                className="w-80 rounded-lg border border-stone-700 bg-slate-50 pl-10  sm:w-96"
+              />
               <img
-                className=""
+                className="absolute inset-y-0 left-0 ml-1 mr-0 mt-2"
                 src="src\assets\icons\search-normal.svg"
-                alt="ds"
+                alt=""
               />
             </div>
-            <input
-              type="search"
-              id="default-search"
-              className="mb-7 block w-[19rem] rounded-lg border border-gray-300  bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 sm:w-[22rem] md:w-[448px] "
-              placeholder="کجا میخوای زندگی کنی؟"
-              required
-            />
-            <button
-              type="submit"
-              className="absolute bottom-2.5 end-2.5 rounded-lg bg-red-700 px-4 py-2 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 "
-            >
-              جست و جو
-            </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );
