@@ -4,13 +4,17 @@ function LinkComp({ src, title, to }) {
   return (
     <Link
       to={to}
-      className="flex gap-3 py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 "
+      className="flex gap-3 rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-red-700 "
     >
-      <img
-        className="w-fit md:hidden"
-        src={`src/assets/icons/${src}.svg`}
-        alt={title}
-      />
+      {src ? (
+        <img
+          className="w-fit md:hidden"
+          src={`src/assets/icons/${src}.svg`}
+          alt={title}
+        />
+      ) : (
+        ""
+      )}
       {title}
     </Link>
   );

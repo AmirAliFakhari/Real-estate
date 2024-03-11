@@ -71,7 +71,6 @@ function LastNews() {
           ))}
         </div>
       </Swiper>
-      <div className="translate-y-14 ">Nothing</div>
     </>
   );
 }

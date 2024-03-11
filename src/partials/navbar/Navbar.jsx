@@ -4,7 +4,7 @@ import LinkComp from "../../components/LinkComp";
 function Navbar() {
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-900">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 text-sm">
         <a className="flex items-center space-x-3 rtl:space-x-reverse">
           <Link to="/">
             <img
@@ -13,7 +13,7 @@ function Navbar() {
               alt="Flowbite Logo"
             />
           </Link>
-          <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap text-xl font-semibold  dark:text-white">
             مشاور املاک
           </span>
         </a>
@@ -21,7 +21,7 @@ function Navbar() {
           <Link
             to=""
             type="button"
-            className="focus:ring-red-30 hidden rounded-lg   px-4 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
+            className="focus:ring-red-30 hidden rounded-lg   px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
           >
             ورود
           </Link>

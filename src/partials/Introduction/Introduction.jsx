@@ -18,7 +18,7 @@ function Introduction() {
       <p className="ms-5 text-center font-bold text-slate-700 underline decoration-red-600 underline-offset-8 sm:text-xl">
         سقفینو چطور به خانه‌دار شدن شما کمک می‌کند
       </p>
-      <div className="flex flex-col flex-wrap items-center justify-center  gap-5 sm:justify-evenly md:flex-row">
+      <div className="flex flex-col flex-wrap items-center justify-center  gap-5 sm:flex-row sm:justify-evenly">
         {data.map((res) => (
           <IntroCart
             buttonText={res.buttonText}

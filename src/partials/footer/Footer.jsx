@@ -19,10 +19,10 @@ export default function FooterPage() {
 
   return (
     <footer
-      className={`fixed bottom-0 left-0 z-20  flex w-full flex-col justify-center border-t  border-gray-200 bg-white  p-4 shadow duration-500  ease-in-out  md:flex   md:flex-row md:items-center md:justify-between md:p-6 ${showFooter ? " opacity-100" : " hidden opacity-0"}`}
+      className={`fixed bottom-0 left-0 z-20 hidden w-full flex-col justify-center border-t  border-gray-200 bg-white  p-4 shadow duration-500  ease-in-out  md:flex   md:flex-row md:items-center md:justify-between md:p-6 ${showFooter ? " opacity-100" : "hidden opacity-0"}`}
     >
       <ul
-        className={`mt-3 hidden flex-wrap items-center justify-center gap-5   text-sm font-medium text-gray-500  sm:mt-0 md:flex    ${showFooter ? "" : "hidden"}`}
+        className={`mt-3  flex flex-wrap items-center justify-center    font-medium text-gray-500  sm:mt-0 md:gap-5    ${showFooter ? "" : "hidden"}`}
       >
         <LinkComp to="/" title="اجاره" />
         <LinkComp to="/" title="خرید" />
@@ -30,7 +30,9 @@ export default function FooterPage() {
         <LinkComp to="/" title="مشاورین املاک" />
         <LinkComp to="/" title="اخبار روز" />
       </ul>
-      <div className="hidden gap-2 md:flex ">
+      <div
+        className={`hidden gap-2 md:flex  ${showFooter ? "opacity-100" : "hidden opacity-0"} `}
+      >
         <Link
           to=""
           type="button"
@@ -46,9 +48,6 @@ export default function FooterPage() {
           ثبت آگهی
         </Link>
       </div>
-      <span className="flex justify-center md:hidden">
-        هیچ خبری نیست ، فقط سلامتی
-      </span>
     </footer>
   );
 }
