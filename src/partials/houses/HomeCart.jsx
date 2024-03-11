@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 
-function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg }) {
+function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg, time }) {
   return (
     <>
-      <div className="max-w-sm flex flex-col justify-center items-center bg-white border border-gray-200 rounded-lg shadow ">
-        <img className="rounded-t-lg w-full" src={`${homeImg}`} alt="" />
+      <div className="flex max-w-sm flex-col items-center justify-center rounded-lg border border-gray-200 bg-white shadow ">
+        <img className="w-full rounded-t-lg" src={`${homeImg}`} alt="" />
+        <span className="absolute left-2 top-2 rounded-sm bg-gray-400 px-2 text-white ">
+          {time}
+        </span>
         <div className="p-5">
           <a href="#">
             <h5 className="mb-2 font-vazir text-base font-bold tracking-tight text-gray-900 dark:text-white">
@@ -17,7 +20,7 @@ function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg }) {
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {mortgage} | {monthPrice}
           </p>
-          <Link className="inline-flex text-red-700 items-center px-3 py-2 text-sm font-medium text-center border border-red-700 rounded-lg hover:bg-blue-red focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+          <Link className="hover:bg-blue-red inline-flex items-center rounded-lg border border-red-700 px-3 py-2 text-center text-sm font-medium text-red-700 focus:outline-none focus:ring-4 focus:ring-blue-300 ">
             مشاهده
           </Link>
         </div>
