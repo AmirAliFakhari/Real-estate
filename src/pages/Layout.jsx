@@ -7,13 +7,13 @@ import HeaderSlide from "../partials/headerSlide/HeaderSlide";
 
 export default function Layout() {
   return (
-    <>
+    <div className="relative top-16 md:top-0">
       <HeaderSlide src="slidephoto.svg" />
       <Introduction />
       <SwiperSliders />
       <About />
       <LastNews />
       <FooterPage />
-    </>
+    </div>
   );
 }

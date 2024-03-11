@@ -3,12 +3,12 @@ import LinkComp from "../../components/LinkComp";
 
 function Navbar() {
   return (
-    <nav className="border-gray-200 bg-white dark:bg-gray-900">
+    <nav className=" fixed z-30 w-screen border-gray-200 bg-white md:flex">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 text-sm">
         <a className="flex items-center space-x-3 rtl:space-x-reverse">
           <Link to="/">
             <img
-              src="src\assets\icons\logo.svg"
+              src="https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/icons/logo.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9sb2dvLnN2ZyIsImlhdCI6MTcxMDE1NTg4NywiZXhwIjoxNzQxNjkxODg3fQ.Ovugk1dFwUY-m9Mh2-pZJDHOONGzmAPngfN1Di46YNQ&t=2024-03-11T11%3A18%3A04.574Z"
               className="h-8"
               alt="Flowbite Logo"
             />
@@ -35,7 +35,7 @@ function Navbar() {
           <button
             data-collapse-toggle="navbar-cta"
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  md:hidden"
             aria-controls="navbar-cta"
             aria-expanded="false"
           >
