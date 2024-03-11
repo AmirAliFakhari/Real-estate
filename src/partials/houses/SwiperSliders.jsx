@@ -67,41 +67,20 @@ function SwiperSliders() {
           </Link>
         </div>
       </div>
-      <Swiper
-        navigation={true}
-        className="flex w-[85%]  text-center md:text-justify"
-        spaceBetween={50}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          520: {
-            slidesPerView: 2,
-          },
-          800: {
-            slidesPerView: 3,
-          },
-          1200: {
-            slidesPerView: 4,
-          },
-        }}
-      >
-        <div className="flex  flex-wrap items-center justify-center gap-5">
-          {fakeData.map((data) => (
-            <SwiperSlide key={data.title}>
-              <HomeCart
-                time={data.time}
-                key={data.title}
-                homeImg={data.img}
-                monthPrice={data.monthPrice}
-                mortgage={data.mortage}
-                subTitle={data.subtitle}
-                title={data.title}
-              />
-            </SwiperSlide>
-          ))}
-        </div>
-      </Swiper>
+
+      <div className="flex flex-wrap items-center justify-center gap-5">
+        {fakeData.map((data) => (
+          <HomeCart
+            time={data.time}
+            key={data.title}
+            homeImg={data.img}
+            monthPrice={data.monthPrice}
+            mortgage={data.mortage}
+            subTitle={data.subtitle}
+            title={data.title}
+          />
+        ))}
+      </div>
     </>
   );
 }
