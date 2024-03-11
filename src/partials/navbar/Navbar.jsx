@@ -3,7 +3,7 @@ import LinkComp from "../../components/LinkComp";
 
 function Navbar() {
   return (
-    <nav className=" fixed z-30 w-screen border  border-b-stone-300 bg-white md:flex">
+    <nav className=" fixed z-30 w-screen border border-b-stone-300  bg-white md:absolute md:flex">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-5 p-4 text-sm">
         <a className="flex items-center space-x-3 rtl:space-x-reverse">
           <Link to="/">
