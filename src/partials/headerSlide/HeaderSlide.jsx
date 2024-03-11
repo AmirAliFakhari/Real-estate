@@ -2,7 +2,7 @@ function HeaderSlide() {
   return (
     <div className="relative ">
       <img
-        src="..\src\assets\imgs\slide.svg"
+        src="https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MTAxNTY1MTcsImV4cCI6MTc0MTY5MjUxN30.2J32ZKLQV6Z5gDUsQAbb0xTYvEnFkui3XPmh4-KLLy8&t=2024-03-11T11%3A28%3A34.962Z"
         alt="Background"
         className="h-auto w-full"
       />
