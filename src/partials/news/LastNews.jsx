@@ -1,35 +1,14 @@
 import New from "./New";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-const fakeData = [
-  {
-    title: "رکور312د بازار مسکن",
-    text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
-  },
-  {
-    title: "رکورد 3بازار مسکن",
-    text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
-  },
-  {
-    title: "رکورد 1بازار مسکن",
-    text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
-  },
-  {
-    title: "رکورد 5بازار مسکن",
-    text: "رکورد یسدتنشیتشستینشسیادسشتسی32نیانشسیفروش مسکن",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
-  },
-  {
-    title: "رکورد باز7ار مسکن",
-    text: "رکورد یسدتنشیتشستینشسیادسشتنیانشسیفروش مسکن",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/news/news1.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJuZXdzL25ld3MxLnN2ZyIsImlhdCI6MTcwOTIxMzE0NywiZXhwIjoxNzQwNzQ5MTQ3fQ.aAkT936smhSvs6NO7kSRdkGjNaXgBcTnGoR3MiRtaX4&t=2024-02-29T13%3A25%3A45.641Z",
-  },
-];
+import useNews from "./useNews";
+import Spinner from "../../features/Spinner";
 
 function LastNews() {
+  const { data, isLoading } = useNews();
+  if (isLoading || !data) {
+    return <Spinner />;
+  }
+  console.log(data);
   return (
     <>
       <div className="mt-16 flex w-full   flex-col items-center  ">
@@ -59,14 +38,9 @@ function LastNews() {
         }}
       >
         <div className="flex  flex-wrap items-center justify-center gap-5  ">
-          {fakeData.map((data) => (
+          {data.map((data) => (
             <SwiperSlide key={data.title}>
-              <New
-                key={data.title}
-                title={data.title}
-                img={data.img}
-                text={data.text}
-              />
+              <New key={data.id} title={data.title} img={data.img} />
             </SwiperSlide>
           ))}
         </div>

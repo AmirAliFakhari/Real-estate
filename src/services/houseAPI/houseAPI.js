@@ -1,7 +1,10 @@
 import supabase from "../supabase";
 
-export default async function houseAPI() {
-    const { data, error } = await supabase.from("houses").select("*");
+export default async function lastHouseAPI() {
+    const { data, error } = await supabase.from("houses").select("*").limit(4).order('id', { ascending: false })
+
+
+        ;
 
     if (error) {
         console.error(error);

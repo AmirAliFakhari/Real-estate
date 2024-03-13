@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
-import HomeCart from "./HomeCart";
+import HomeCart from "./HouseCart";
 import "swiper/css/navigation";
 import "swiper/css";
 import useHouse from "./useHouse";
 import Spinner from "../../features/Spinner";
 
-function SwiperSliders() {
+function Carts() {
   const { data, isLoading } = useHouse();
   if (isLoading || !data) {
     return <Spinner />;
   }
-  // const { created_at, rent_price, time, mortgage_price } = data;
   return (
     <>
       <div className="mt-16 flex w-full   flex-col items-center  ">
@@ -27,7 +26,7 @@ function SwiperSliders() {
         {data.map((data) => (
           <HomeCart
             time={data.created_at}
-            key={data.title}
+            key={data.id}
             homeImg={data.img}
             monthPrice={data.rent_price}
             mortgage={data.mortgage_price}
@@ -40,4 +39,4 @@ function SwiperSliders() {
   );
 }
 
-export default SwiperSliders;
+export default Carts;
