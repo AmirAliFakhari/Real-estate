@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import AppLayout from "./pages/AppLayout";
-import RegisterHome from "./partials/RegisterHome/RegisterHome";
+import RegisterHome from "./partials/RegisterHouse/RegisterHouse";
+import SignIn from "./partials/Auth/SignIn";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route element={<Layout />} path="/" />
         </Route>
         <Route element={<RegisterHome />} path="register" />
+        <Route element={<SignIn />} path="signIn" />
       </Routes>
     </BrowserRouter>
   );

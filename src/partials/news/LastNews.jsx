@@ -8,7 +8,6 @@ function LastNews() {
   if (isLoading || !data) {
     return <Spinner />;
   }
-  console.log(data);
   return (
     <>
       <div className="mt-16 flex w-full   flex-col items-center  ">

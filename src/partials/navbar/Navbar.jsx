@@ -19,7 +19,7 @@ function Navbar() {
         </a>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <Link
-            to=""
+            to="/signIn"
             type="button"
             className="focus:ring-red-30 hidden rounded-lg   px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
           >

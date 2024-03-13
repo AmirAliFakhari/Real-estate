@@ -1,6 +1,6 @@
 import StepperStructure from "./StepperStructure";
 
-function RegisterHome() {
+function RegisterHouse() {
   return (
     <div className="flex h-screen rounded-xl bg-gray-100 sm:rounded-l-3xl ">
       <div className="hidden h-screen sm:flex">
@@ -16,4 +16,4 @@ function RegisterHome() {
   );
 }
 
-export default RegisterHome;
+export default RegisterHouse;
