@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
 function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg, time }) {
+  const splitingTime = new Date().getHours() - time?.split(":")[0];
   return (
     <>
       <div className="relative flex max-w-sm flex-col items-center justify-center rounded-lg border border-gray-200 bg-white shadow ">
         <img className="w-full rounded-t-lg" src={`${homeImg}`} alt="" />
         <span className="absolute left-2 top-2 rounded-sm bg-gray-400 px-2 text-white ">
-          {time}
+          {splitingTime} ساعت پیش
         </span>
         <div className="p-5">
           <a href="#">

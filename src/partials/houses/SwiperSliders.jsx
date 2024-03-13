@@ -1,61 +1,16 @@
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
 import HomeCart from "./HomeCart";
 import "swiper/css/navigation";
 import "swiper/css";
-
-const fakeData = [
-  {
-    title: "رهن و اجا2ره آپارتمان تهران",
-    subtitle: "۸۰ متر، محدوده پاسدارن، مکران جنوبی",
-    mortage: "600 میلیون رهن",
-    monthPrice: "31 میلیون تومن اجاره",
-    time: "50 دقیقه",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MDg4NTQxMzAsImV4cCI6MTc0MDM5MDEzMH0.Qr3JSQvnVgP69Zlmgsa3zUVKPzrj-Yt6juFDCnz8TkA&t=2024-02-25T09%3A42%3A10.542Z",
-  },
-  {
-    title: "رهن و اجاره آپ3ارتمان تهران",
-    subtitle: "۸۰ متر، محدوده پاسدارن، مکران جنوبی",
-    mortage: "600 میلیون رهن",
-    monthPrice: "31 میلیون تومن اجاره",
-    time: "50 دقیقه",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MDg4NTQxMzAsImV4cCI6MTc0MDM5MDEzMH0.Qr3JSQvnVgP69Zlmgsa3zUVKPzrj-Yt6juFDCnz8TkA&t=2024-02-25T09%3A42%3A10.542Z",
-  },
-  {
-    title: "رهن و 1اجاره23 آپارتمان تهران",
-    subtitle: "۸۰ متر، محدوده پاسدارن، مکران جنوبی",
-    mortage: "600 میلیون رهن",
-    monthPrice: "31 میلیون تومن اجاره",
-    time: "50 دقیقه",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MDg4NTQxMzAsImV4cCI6MTc0MDM5MDEzMH0.Qr3JSQvnVgP69Zlmgsa3zUVKPzrj-Yt6juFDCnz8TkA&t=2024-02-25T09%3A42%3A10.542Z",
-  },
-  {
-    title: "رهن و2 اجار543ه آپارتمان تهران",
-    subtitle: "۸۰ متر، محدوده پاسدارن، مکران جنوبی",
-    mortage: "600 میلیون رهن",
-    monthPrice: "31 میلیون تومن اجاره",
-    time: "50 دقیقه",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MDg4NTQxMzAsImV4cCI6MTc0MDM5MDEzMH0.Qr3JSQvnVgP69Zlmgsa3zUVKPzrj-Yt6juFDCnz8TkA&t=2024-02-25T09%3A42%3A10.542Z",
-  },
-  {
-    title: "رهن و 3678اجاره آپارتمان تهران",
-    subtitle: "۸۰ متر، محدوده پاسدارن، مکران جنوبی",
-    mortage: "600 میلیون رهن",
-    monthPrice: "31 میلیون تومن اجاره",
-    time: "50 دقیقه",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MDg4NTQxMzAsImV4cCI6MTc0MDM5MDEzMH0.Qr3JSQvnVgP69Zlmgsa3zUVKPzrj-Yt6juFDCnz8TkA&t=2024-02-25T09%3A42%3A10.542Z",
-  },
-  {
-    title: "رهن و4 اجارلبه آپارتمان تهران",
-    subtitle: "۸۰ متر، محدوده پاسدارن، مکران جنوبی",
-    mortage: "600 میلیون رهن",
-    time: "50 دقیقه",
-    monthPrice: "31 میلیون تومن اجاره",
-    img: "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MDg4NTQxMzAsImV4cCI6MTc0MDM5MDEzMH0.Qr3JSQvnVgP69Zlmgsa3zUVKPzrj-Yt6juFDCnz8TkA&t=2024-02-25T09%3A42%3A10.542Z",
-  },
-];
+import useHouse from "./useHouse";
+import Spinner from "../../features/Spinner";
 
 function SwiperSliders() {
+  const { data, isLoading } = useHouse();
+  if (isLoading || !data) {
+    return <Spinner />;
+  }
+  // const { created_at, rent_price, time, mortgage_price } = data;
   return (
     <>
       <div className="mt-16 flex w-full   flex-col items-center  ">
@@ -69,15 +24,15 @@ function SwiperSliders() {
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-5">
-        {fakeData.map((data) => (
+        {data.map((data) => (
           <HomeCart
-            time={data.time}
+            time={data.created_at}
             key={data.title}
             homeImg={data.img}
-            monthPrice={data.monthPrice}
-            mortgage={data.mortage}
+            monthPrice={data.rent_price}
+            mortgage={data.mortgage_price}
             subTitle={data.subtitle}
-            title={data.title}
+            title={data.grouping}
           />
         ))}
       </div>
