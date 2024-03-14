@@ -6,7 +6,11 @@ import Spinner from "../../features/Spinner";
 function LastNews() {
   const { data, isLoading } = useNews();
   if (isLoading || !data) {
-    return <Spinner />;
+    return (
+      <div className="flex justify-center">
+        <Spinner />;
+      </div>
+    );
   }
   return (
     <>

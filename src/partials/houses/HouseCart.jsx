@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg, time }) {
-  const splitingTime = new Date().getHours() - time?.split(":")[0];
+  const splitingTime =  time?.split(":")[0] - new Date().getHours();
   return (
     <>
       <div className="relative flex max-w-sm flex-col items-center justify-center rounded-lg border border-gray-200 bg-white shadow ">

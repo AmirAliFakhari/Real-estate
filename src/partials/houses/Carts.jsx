@@ -8,7 +8,11 @@ import Spinner from "../../features/Spinner";
 function Carts() {
   const { data, isLoading } = useHouse();
   if (isLoading || !data) {
-    return <Spinner />;
+    return (
+      <div className="flex justify-center">
+        <Spinner />;
+      </div>
+    );
   }
   return (
     <>
