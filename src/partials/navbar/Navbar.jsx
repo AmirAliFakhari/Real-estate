@@ -26,7 +26,7 @@ function Navbar() {
             ورود
           </Link>
           <Link
-            to="/register"
+            to="/register-house"
             type="button"
             className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border  border-red-500 px-3 py-2 text-center
              text-sm font-medium text-red-500 sm:flex "

@@ -1,13 +1,15 @@
 import { useForm } from "react-hook-form";
-import InputForm from "../../components/InputFom";
+import InputForm from "../../../components/InputFom";
 import useLogin from "./useLogin";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
-  const { singIn } = useLogin();
+  const navigate = useNavigate();
+  // const { singIn } = useLogin();
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    singIn({ email: data.email, password: data.password });
+    // singIn({ email: data.email, password: data.password });
   };
 
   return (
@@ -16,7 +18,7 @@ function SignIn() {
         onSubmit={handleSubmit(onSubmit)}
         className=" flex h-screen   flex-col items-center    justify-center text-center"
       >
-        <div className="flex h-96 w-80 flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 sm:h-[25rem] sm:w-[25rem] ">
+        <div className="flex h-[27rem] w-80 flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 sm:h-[25rem] sm:w-[25rem] ">
           <span className="text-xl font-bold">ورود</span>
           <span>به سقفینو خوش آمدید</span>
           <span>لطفاً برای ورود شماره تلفن موبایل خود را وارد کنید</span>
@@ -37,6 +39,13 @@ function SignIn() {
             className="w-full rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300  sm:w-auto"
           >
             ورود
+          </button>
+          <button
+            onClick={() => navigate("/signon")}
+            type="submit"
+            className="w-full rounded-lg bg-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-red-300  sm:w-auto"
+          >
+            هنوز ثبت نام نکردی؟
           </button>
           <div className="mb-4 flex items-center">
             <input

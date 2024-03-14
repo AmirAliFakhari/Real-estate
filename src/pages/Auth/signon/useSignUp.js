@@ -1,27 +1,29 @@
 import { useMutation } from "@tanstack/react-query";
-import login from "../../services/Auth/login";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import signUp from "../../../services/Auth/signUp";
 
-export default function useLogin() {
+export default function useSignUp() {
     const navigate = useNavigate()
     const {
-        mutate: singIn,
+        mutate: singUpUser,
         data,
         isPending
     } = useMutation({
-        mutationFn: (password, email) => login(password, email),
+        mutationFn: (password, firstname, lastname, email) => signUp(password, firstname, lastname, email),
 
         onSuccess: (data) => {
+            console.log(data)
             toast.success("درست زدي سيد")
             localStorage.setItem("id", data.user.id)
             navigate("/")
         }
         ,
         onError: (err) => {
+            console.log(err)
             toast.error("اشتب زدی سید")
         }
     });
 
-    return { singIn, data, isPending };
+    return { singUpUser, data, isPending };
 }

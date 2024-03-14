@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import AppLayout from "./pages/AppLayout";
-import RegisterHome from "./partials/RegisterHouse/RegisterHouse";
-import SignIn from "./partials/Auth/SignIn";
 import useHouse from "./partials/houses/useHouse";
 import useIntroduction from "./partials/Introduction/useIntroduction";
 import useNews from "./partials/news/useNews";
 import Spinner from "./features/Spinner";
+import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
+import SignIn from "./pages/Auth/signIn/SignIn";
+import SignOn from "./pages/Auth/signon/signOn";
 
 function App() {
   const { isLoading: houseLoading } = useHouse();
@@ -27,7 +28,8 @@ function App() {
         <Route element={<AppLayout />}>
           <Route element={<Layout />} path="/" />
         </Route>
-        <Route element={<RegisterHome />} path="register" />
+        <Route element={<RegisterHouse />} path="register-house" />
+        <Route element={<SignOn />} path="signon" />
         <Route element={<SignIn />} path="signIn" />
       </Routes>
     </BrowserRouter>
