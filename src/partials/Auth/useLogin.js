@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import login from "../../services/Auth/login";
+import Toast from "../../features/Toast";
 
 export default function useLogin() {
 
@@ -9,9 +10,7 @@ export default function useLogin() {
         data
     } = useMutation({
         mutationFn: (password, email) => login(password, email),
-        onSuccess: (data) => {
-            console.log(data)
-        },
+        onSuccess: (data) => (<Toast />),
         onError: (err) => {
             console.log(err)
         }
