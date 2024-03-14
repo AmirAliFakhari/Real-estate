@@ -1,23 +1,15 @@
 import { useForm } from "react-hook-form";
 import InputForm from "../../components/InputFom";
-import { useNavigate } from "react-router-dom";
 import useLogin from "./useLogin";
-import login from "../../services/Auth/login";
 
 function SignIn() {
-  const { data: singInData, singIn, isPending } = useLogin();
-
-  const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { singIn } = useLogin();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     singIn({ email: data.email, password: data.password });
   };
+
   return (
     <div className="bg-red-50">
       <form
@@ -36,7 +28,7 @@ function SignIn() {
           />
           <InputForm
             type="number"
-            textholder="شماره موبایلت رو وارد کن"
+            textholder="رمزت چیه ؟ "
             name="password"
             register={register("password")}
           />
