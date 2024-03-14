@@ -21,9 +21,9 @@ function SignIn() {
     <div className="bg-red-50">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto flex h-screen  max-w-sm flex-col justify-center    text-center align-middle"
+        className=" flex h-screen   flex-col items-center    justify-center text-center"
       >
-        <div className="flex h-[20rem] w-[25rem] flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 ">
+        <div className="flex h-96 w-80 flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 sm:h-[25rem] sm:w-[25rem] ">
           <span className="text-xl font-bold">ورود</span>
           <span>به سقفینو خوش آمدید</span>
           <span>لطفاً برای ورود شماره تلفن موبایل خود را وارد کنید</span>

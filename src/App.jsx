@@ -15,8 +15,9 @@ function App() {
 
   if (houseLoading || introLoading || newsLoading) {
     return (
-      <div className="flex h-screen w-screen items-center justify-center">
+      <div className="flex h-screen w-screen flex-col items-center justify-center gap-2">
         <Spinner />
+        <span className="text-sm font-light">امیرعلی فخاری زواره</span>
       </div>
     );
   }
