@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form";
 import InputForm from "../../components/InputFom";
-import login from "../../services/Auth/login";
 import { useNavigate } from "react-router-dom";
 import useLogin from "./useLogin";
+import login from "../../services/Auth/login";
 
 function SignIn() {
-  const { data, error, isLoading } = useLogin();
+  const { data: singInData, singIn, isPending } = useLogin();
+
   const navigate = useNavigate();
   const {
     register,
@@ -14,8 +15,8 @@ function SignIn() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data.teryak, data.teryakmail);
-    login(data.teryak, data.teryakmail);
+    console.log(data);
+    singIn({ email: data.email, password: data.password });
   };
   return (
     <div className="bg-red-50">
@@ -30,14 +31,14 @@ function SignIn() {
           <InputForm
             type="text"
             textholder="ایمیلت رو بزن"
-            name="ورود ساقی"
-            register={register("teryakmail")}
+            name="email"
+            register={register("email")}
           />
           <InputForm
             type="number"
             textholder="شماره موبایلت رو وارد کن"
-            name="ورود ساقی"
-            register={register("teryak")}
+            name="password"
+            register={register("password")}
           />
           <button
             type="submit"

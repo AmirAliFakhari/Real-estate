@@ -1,15 +1,21 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import login from "../../services/Auth/login";
 
 export default function useLogin() {
 
     const {
-        isLoading,
-        data,
-        error,
-    } = useQuery({
-        queryFn: () => login(),
+        mutate: singIn,
+        isPending,
+        data
+    } = useMutation({
+        mutationFn: (password, email) => login(password, email),
+        onSuccess: (data) => {
+            console.log(data)
+        },
+        onError: (err) => {
+            console.log(err)
+        }
     });
 
-    return { isLoading, error, data };
+    return { singIn, data, isPending };
 }
