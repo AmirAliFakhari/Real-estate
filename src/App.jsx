@@ -3,8 +3,23 @@ import Layout from "./pages/Layout";
 import AppLayout from "./pages/AppLayout";
 import RegisterHome from "./partials/RegisterHouse/RegisterHouse";
 import SignIn from "./partials/Auth/SignIn";
+import useHouse from "./partials/houses/useHouse";
+import useIntroduction from "./partials/Introduction/useIntroduction";
+import useNews from "./partials/news/useNews";
+import Spinner from "./features/Spinner";
 
 function App() {
+  const { isLoading: houseLoading } = useHouse();
+  const { isLoading: introLoading } = useIntroduction();
+  const { isLoading: newsLoading } = useNews();
+
+  if (houseLoading || introLoading || newsLoading) {
+    return (
+      <div className="flex h-screen w-screen items-center justify-center">
+        <Spinner />
+      </div>
+    );
+  }
   return (
     <BrowserRouter basename="/">
       <Routes>

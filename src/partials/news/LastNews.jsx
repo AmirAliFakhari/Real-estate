@@ -1,17 +1,10 @@
 import New from "./New";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useNews from "./useNews";
-import Spinner from "../../features/Spinner";
 
 function LastNews() {
-  const { data, isLoading } = useNews();
-  if (isLoading || !data) {
-    return (
-      <div className="flex justify-center">
-        <Spinner />;
-      </div>
-    );
-  }
+  const { data } = useNews();
+
   return (
     <>
       <div className="mt-16 flex w-full   flex-col items-center  ">

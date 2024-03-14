@@ -3,15 +3,7 @@ import useIntroduction from "../Introduction/useIntroduction";
 import Spinner from "../../features/Spinner";
 
 function Introduction() {
-  const { data, isLoading } = useIntroduction();
-
-  if (isLoading || !data) {
-    return (
-      <div className="flex justify-center">
-        <Spinner />;
-      </div>
-    );
-  }
+  const { data } = useIntroduction();
 
   return (
     <div className="mt-12 flex flex-col gap-7 ">

@@ -6,14 +6,8 @@ import useHouse from "./useHouse";
 import Spinner from "../../features/Spinner";
 
 function Carts() {
-  const { data, isLoading } = useHouse();
-  if (isLoading || !data) {
-    return (
-      <div className="flex justify-center">
-        <Spinner />;
-      </div>
-    );
-  }
+  const { data } = useHouse();
+
   return (
     <>
       <div className="mt-16 flex w-full   flex-col items-center  ">
