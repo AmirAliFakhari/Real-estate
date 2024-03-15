@@ -5,11 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 function SignIn() {
   const navigate = useNavigate();
-  // const { singIn } = useLogin();
+  const { singIn } = useLogin();
   const { register, handleSubmit } = useForm();
-
   const onSubmit = (data) => {
-    // singIn({ email: data.email, password: data.password });
+    singIn({ email: data.email, password: data.password });
   };
 
   return (
@@ -27,12 +26,14 @@ function SignIn() {
             textholder="ایمیلت رو بزن"
             name="email"
             register={register("email")}
+            defaulted="aafz1382@gmail.com"
           />
           <InputForm
             type="number"
             textholder="رمزت چیه ؟ "
             name="password"
             register={register("password")}
+            defaulted="32253577"
           />
           <button
             type="submit"

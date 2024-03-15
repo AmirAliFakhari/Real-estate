@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import LinkComp from "../../components/LinkComp";
+import { useSelector } from "react-redux";
 
 function Navbar() {
+  const authedUser = false;
+  // console.log(authedUser);
+  const userEmail = useSelector((state) => state.auth.email);
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  console.log(userEmail);
+
   return (
     <nav className=" fixed z-30 w-[100%] border border-b-stone-300  bg-white md:absolute md:flex">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-5 p-4 text-sm">
@@ -18,13 +25,23 @@ function Navbar() {
           </span>
         </a>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
-          <Link
-            to="/signIn"
-            type="button"
-            className="focus:ring-red-30 hidden rounded-lg   px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
-          >
-            ورود
-          </Link>
+          {isAuth ? (
+            <Link
+              to="/customer-panel"
+              type="button"
+              className="focus:ring-red-30 hidden rounded-lg   px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
+            >
+              {userEmail}
+            </Link>
+          ) : (
+            <Link
+              to="/signIn"
+              type="button"
+              className="focus:ring-red-30 hidden rounded-lg   px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
+            >
+              ورود
+            </Link>
+          )}
           <Link
             to="/register-house"
             type="button"
