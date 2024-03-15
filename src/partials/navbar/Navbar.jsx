@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import LinkComp from "../../components/LinkComp";
-import { useSelector } from "react-redux";
 
 function Navbar() {
-  const userEmail = useSelector((state) => state.auth.email);
-  const isAuth = useSelector((state) => state.auth.isAuth);
-  console.log(userEmail);
+  const local = localStorage.getItem("username");
 
   return (
     <nav className=" fixed z-30 w-[100%] border border-b-stone-300  bg-white md:absolute md:flex">
@@ -23,19 +20,22 @@ function Navbar() {
           </span>
         </a>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
-          {isAuth ? (
+          {local ? (
             <Link
               to="/customer-panel"
               type="button"
-              className="focus:ring-red-30 hidden rounded-lg   px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
+              className="mx-1 hidden rounded-lg border border-green-400 px-2 py-2 text-center text-sm  text-gray-800 hover:bg-green-500 focus:ring-red-400  sm:flex "
             >
-              {userEmail}
+              <span>
+                داشبورد
+                <span> {localStorage.getItem("username")} </span>
+              </span>
             </Link>
           ) : (
             <Link
               to="/signIn"
               type="button"
-              className="focus:ring-red-30 hidden rounded-lg   px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
+              className="focus:ring-red-30 hidden rounded-lg px-3   py-2 text-center text-sm font-medium text-gray-800  sm:flex "
             >
               ورود
             </Link>
@@ -43,8 +43,8 @@ function Navbar() {
           <Link
             to="/register-house"
             type="button"
-            className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border  border-red-500 px-3 py-2 text-center
-             text-sm font-medium text-red-500 sm:flex "
+            className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border  border-red-500 px-3 py-2 text-center text-sm font-medium
+             text-red-500 hover:bg-red-500 hover:text-white sm:flex "
           >
             ثبت آگهی
           </Link>

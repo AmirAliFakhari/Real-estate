@@ -8,6 +8,7 @@ import Spinner from "./features/Spinner";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 import SignIn from "./pages/Auth/signIn/SignIn";
 import SignOn from "./pages/Auth/signon/signOn";
+import Customer_panel from "./pages/Customer_panel";
 
 function App() {
   const { isLoading: houseLoading } = useHouse();
@@ -31,6 +32,7 @@ function App() {
         <Route element={<RegisterHouse />} path="register-house" />
         <Route element={<SignOn />} path="signon" />
         <Route element={<SignIn />} path="signIn" />
+        <Route element={<Customer_panel />} path="customer-panel" />
       </Routes>
     </BrowserRouter>
   );

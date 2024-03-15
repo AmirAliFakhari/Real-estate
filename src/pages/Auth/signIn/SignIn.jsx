@@ -26,14 +26,14 @@ function SignIn() {
             textholder="ایمیلت رو بزن"
             name="email"
             register={register("email")}
-            defaulted="aafz1382@gmail.com"
+            // defaulted="aafz1378@gmail.com"
           />
           <InputForm
             type="number"
             textholder="رمزت چیه ؟ "
             name="password"
             register={register("password")}
-            defaulted="32253577"
+            // defaulted="12345678"
           />
           <button
             type="submit"

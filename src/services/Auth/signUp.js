@@ -6,11 +6,12 @@ export default async function signUp({ password, firstname, lastname, email }) {
         email: email,
         options: {
             data: {
-                firstname: firstname,
-                lastname: lastname
+                firstname,
+                lastname
             }
         }
     })
+    console.log(data)
 
     if (error) throw new Error(error)
 

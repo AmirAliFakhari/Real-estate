@@ -2,9 +2,9 @@ import { useMutation } from "@tanstack/react-query";
 import login from "../../../services/Auth/login";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import useGetUser from "../../../services/Auth/useGetUser";
+// import useGetUser from "../../../services/Auth/useGetUser";
 import { useDispatch } from "react-redux";
-import { isAuthendticated, userEmail } from "../authSlice";
+import { userData } from "../authSlice";
 
 export default function useLogin() {
     const dispatch = useDispatch()
@@ -18,12 +18,9 @@ export default function useLogin() {
 
         onSuccess: (data) => {
             console.log(data)
+            localStorage.setItem("username", data.user.user_metadata.firstname)
             toast.success("درست زدي سيد")
             navigate("/")
-            dispatch(userEmail(data.user.email))
-            dispatch(isAuthendticated(data.user.role))
-
-
         }
         ,
         onError: () => {
