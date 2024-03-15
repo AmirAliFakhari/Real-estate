@@ -35,7 +35,7 @@ function LastNews() {
       >
         <div className="flex  flex-wrap items-center justify-center gap-5  ">
           {data.map((data) => (
-            <SwiperSlide key={data.title}>
+            <SwiperSlide key={data.id}>
               <New key={data.id} title={data.title} img={data.img} />
             </SwiperSlide>
           ))}

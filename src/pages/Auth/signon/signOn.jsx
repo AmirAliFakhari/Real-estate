@@ -24,20 +24,20 @@ function SignOn() {
         onSubmit={handleSubmit(onSubmit)}
         className=" flex h-screen flex-col items-center justify-center text-center"
       >
-        <div className="flex h-[28rem] w-80 flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 sm:h-[27rem] sm:w-[25rem] ">
+        <div className="flex h-[32rem] h-[32rem] w-80 flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 sm:w-[25rem] ">
           <span className="text-xl font-bold">ثبت نام</span>
           <span>برای ثبت‌نام اطلاعات زیر را تکمیل نمایید</span>
+          <InputForm
+            type="email"
+            textholder="ایمیل خود را وارد کنید"
+            name="email"
+            register={register("email")}
+          />
           <InputForm
             type="text"
             textholder="نام خود را وارد کنید"
             name="firstname"
             register={register("firstname")}
-          />
-          <InputForm
-            type="email"
-            textholder="نام خود را وارد کنید"
-            name="email"
-            register={register("email")}
           />
 
           <InputForm
@@ -57,7 +57,7 @@ function SignOn() {
             type="submit"
             className="w-full rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300  sm:w-auto"
           >
-            هنوز ثبت نام نکردی؟
+            ثبت نام
           </button>
           <button
             onClick={() => navigate("/signIn")}

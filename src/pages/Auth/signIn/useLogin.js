@@ -17,6 +17,7 @@ export default function useLogin() {
         mutationFn: (password, email) => login(password, email),
 
         onSuccess: (data) => {
+            console.log(data)
             toast.success("درست زدي سيد")
             navigate("/")
             dispatch(userEmail(data.user.email))

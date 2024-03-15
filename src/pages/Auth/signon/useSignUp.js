@@ -2,9 +2,12 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import signUp from "../../../services/Auth/signUp";
+import { useDispatch } from "react-redux";
+import { isAuthendticated, userEmail } from "../authSlice";
 
 export default function useSignUp() {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const {
         mutate: singUpUser,
         data,
@@ -14,14 +17,16 @@ export default function useSignUp() {
 
         onSuccess: (data) => {
             console.log(data)
-            toast.success("درست زدي سيد")
+            toast.success("ثبت نام شدی سید")
             localStorage.setItem("id", data.user.id)
+            dispatch(userEmail(data.user.email))
+            dispatch(isAuthendticated(data.user.role))
             navigate("/")
         }
         ,
         onError: (err) => {
             console.log(err)
-            toast.error("اشتب زدی سید")
+            toast.error("ثبت نام نشدی سید")
         }
     });
 
