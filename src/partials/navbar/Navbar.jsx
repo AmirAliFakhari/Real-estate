@@ -3,8 +3,6 @@ import LinkComp from "../../components/LinkComp";
 import { useSelector } from "react-redux";
 
 function Navbar() {
-  const authedUser = false;
-  // console.log(authedUser);
   const userEmail = useSelector((state) => state.auth.email);
   const isAuth = useSelector((state) => state.auth.isAuth);
   console.log(userEmail);
