@@ -35,22 +35,26 @@ export default function Stepper({
       <div className="mt-4">
         <h3>{stepsData[currentStep].title}</h3>
         <form className="" onSubmit={handleSubmit(onSubmit)}>
-          {stepsData[currentStep].inputs.map((inputData) => (
-            <InputForm
-              key={inputData.id}
-              title={inputData.title}
-              type={inputData.type}
-              name={inputData.name}
-              textholder={inputData.placeholder}
-              register={register(inputData.reg, {
-                required: {
-                  value: true,
-                  message: "Please complete the form",
-                },
-              })}
-              errors={errors}
-            />
-          ))}
+          <div className="flex flex-col gap-2 lg:flex-row">
+            {stepsData[currentStep].inputs.map((inputData) => (
+              <InputForm
+                key={inputData.id}
+                title={inputData.title}
+                currency={inputData.currency}
+                type={inputData.type}
+                defaulted={inputData.value}
+                name={inputData.name}
+                textholder={inputData.placeholder}
+                register={register(inputData.reg, {
+                  required: {
+                    value: true,
+                    message: "Please complete the form",
+                  },
+                })}
+                errors={errors}
+              />
+            ))}
+          </div>
           <Stepper_Button
             errors={errors}
             currentStep={currentStep}

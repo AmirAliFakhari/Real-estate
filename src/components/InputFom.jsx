@@ -8,6 +8,7 @@ function InputForm({
   name,
   defaulted,
   erros,
+  currency,
 }) {
   const [eyePass, setEyePass] = useState(false);
 
@@ -16,11 +17,11 @@ function InputForm({
       <label className="mb-1 block text-sm font-medium text-gray-900 dark:text-white">
         {title}
       </label>
-      <div className="relative">
+      <div className="relative ">
         <input
           type={eyePass ? type : "text"}
-          value={defaulted}
           id={name}
+          defaultValue={defaulted}
           className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
           placeholder={textholder}
           {...register}
