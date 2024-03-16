@@ -20,16 +20,16 @@ function Stepper_Button({ currentStep, setCurrentStep, errors }) {
   }
 
   return (
-    <section className="flex gap-10">
+    <section className="mt-5 flex justify-between">
       <button
         onClick={goToPreviousStep}
-        className="rounded-md bg-blue-600 p-2 text-white"
+        className="rounded-md bg-blue-500 px-5 py-1 text-white"
       >
         قبلی
       </button>
       <button
         onClick={goToNextStep}
-        className="rounded-md bg-blue-600 p-2 text-white"
+        className="rounded-md bg-red-600 px-5 py-1 text-white"
       >
         بعدی
       </button>

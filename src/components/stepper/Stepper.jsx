@@ -10,15 +10,12 @@ export default function Stepper({
 }) {
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
-  console.log(errors);
 
-  const onSubmit = (data) => {
-    if (currentStep === numberOfSteps - 1) {
-      console.log(data);
-    }
-    reset();
+  const onSubmit = () => {
+    // reset();
   };
 
+  //color of progressbar
   const activeColor = (index) =>
     currentStep >= index ? "bg-red-500" : "bg-gray-300";
   const isFinalStep = (index) => index === numberOfSteps - 1;
@@ -35,17 +32,15 @@ export default function Stepper({
           </div>
         ))}
       </div>
-
       <div className="mt-4">
         <h3>{stepsData[currentStep].title}</h3>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {stepsData[currentStep].inputs.map((inputData, index) => (
+        <form className="" onSubmit={handleSubmit(onSubmit)}>
+          {stepsData[currentStep].inputs.map((inputData) => (
             <InputForm
               key={inputData.id}
               type={inputData.type}
               name={inputData.name}
               textholder={inputData.placeholder}
-              // defaulted={inputData.value}
               register={register(inputData.reg, {
                 required: {
                   value: true,
