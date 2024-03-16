@@ -7,8 +7,9 @@ import useNews from "./partials/news/useNews";
 import Spinner from "./features/Spinner";
 import SignOn from "./pages/Auth/signon/signOn";
 import Customer_panel from "./pages/Customer_panel";
-import StepperForm from "./partials/stepper/StepperForm";
+import StepperForm from "./components/stepper/StepperForm";
 import SignIn from "./pages/Auth/signIn/SignIn";
+import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 function App() {
   const { isLoading: houseLoading } = useHouse();
   const { isLoading: introLoading } = useIntroduction();
@@ -28,7 +29,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route element={<Layout />} path="/" />
         </Route>
-        <Route element={<StepperForm />} path="register-house" />
+        <Route element={<RegisterHouse />} path="register-house" />
         <Route element={<SignOn />} path="signon" />
         <Route element={<SignIn />} path="signIn" />
         <Route element={<Customer_panel />} path="customer-panel" />

@@ -1,3 +1,4 @@
+import StepperForm from "../../components/stepper/StepperForm";
 import StepperStructure from "./StepperStructure";
 
 function RegisterHouse() {
@@ -10,7 +11,8 @@ function RegisterHouse() {
         />
       </div>
       <div className="flex flex-grow items-center justify-center">
-        <StepperStructure />
+        {/* <StepperStructure /> */}
+        <StepperForm />
       </div>
     </div>
   );

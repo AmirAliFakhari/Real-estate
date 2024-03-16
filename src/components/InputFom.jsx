@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-function InputForm({ title, type, textholder, register, name, defaulted }) {
+function InputForm({
+  title,
+  type,
+  textholder,
+  register,
+  name,
+  defaulted,
+  erros,
+}) {
   const [eyePass, setEyePass] = useState(false);
 
   return (
@@ -15,9 +23,9 @@ function InputForm({ title, type, textholder, register, name, defaulted }) {
           id={name}
           className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
           placeholder={textholder}
-          required
           {...register}
         />
+        {/* <span></span> */}
         <span
           className="absolute left-2 top-3"
           onClick={() => {
