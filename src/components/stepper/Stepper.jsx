@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import InputForm from "../InputFom";
 import stepsData from "../../services/data/formInputData";
 import Stepper_Button from "./Stepper_Button";
+import { useState } from "react";
 
 export default function Stepper({
   currentStep,
@@ -11,8 +12,14 @@ export default function Stepper({
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
 
-  const onSubmit = () => {
-    // API
+  const [count, setCount] = useState(0);
+
+  console.log(count);
+  const onSubmit = (data) => {
+    // Calling API
+    if (count === 3) {
+      console.log(data);
+    }
   };
 
   //color of progressbar
@@ -56,6 +63,8 @@ export default function Stepper({
             ))}
           </div>
           <Stepper_Button
+            setCount={setCount}
+            count={count}
             errors={errors}
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
