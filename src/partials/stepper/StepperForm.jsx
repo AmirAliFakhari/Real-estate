@@ -1,8 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import Stepper from "./Stepper";
 
 export default function StepperForm() {
-  const [currentStep, setCurrentStep] = React.useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
   const NUMBER_OF_STEPS = 5;
 
   const goToNextStep = () =>

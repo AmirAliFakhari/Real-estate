@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 
 export default function Stepper({ currentStep, numberOfSteps }) {
   const activeColor = (index) =>
@@ -8,12 +8,12 @@ export default function Stepper({ currentStep, numberOfSteps }) {
   return (
     <div className="flex items-center">
       {Array.from({ length: numberOfSteps }).map((_, index) => (
-        <React.Fragment key={index}>
+        <Fragment key={index}>
           <div className={`h-6 w-6 rounded-full ${activeColor(index)}`}></div>
           {isFinalStep(index) ? null : (
             <div className={`h-1 w-12 ${activeColor(index)}`}></div>
           )}
-        </React.Fragment>
+        </Fragment>
       ))}
     </div>
   );
