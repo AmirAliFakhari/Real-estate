@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import InputForm from "../InputFom";
 import stepsData from "../../services/data/formInputData";
 import Stepper_Button from "./Stepper_Button";
-import React from "react";
 
 export default function Stepper({
   currentStep,
@@ -17,7 +16,7 @@ export default function Stepper({
     if (currentStep === numberOfSteps - 1) {
       console.log(data);
     }
-    // reset();
+    reset();
   };
 
   const activeColor = (index) =>
@@ -42,11 +41,11 @@ export default function Stepper({
         <form onSubmit={handleSubmit(onSubmit)}>
           {stepsData[currentStep].inputs.map((inputData, index) => (
             <InputForm
-              key={index}
+              key={inputData.id}
               type={inputData.type}
               name={inputData.name}
               textholder={inputData.placeholder}
-              // value={inputData.value}
+              // defaulted={inputData.value}
               register={register(inputData.reg, {
                 required: {
                   value: true,
