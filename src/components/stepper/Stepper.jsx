@@ -8,11 +8,11 @@ export default function Stepper({
   numberOfSteps,
   setCurrentStep,
 }) {
-  const { register, handleSubmit, reset, formState } = useForm();
+  const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
 
   const onSubmit = () => {
-    // reset();
+    // API
   };
 
   //color of progressbar
@@ -38,6 +38,7 @@ export default function Stepper({
           {stepsData[currentStep].inputs.map((inputData) => (
             <InputForm
               key={inputData.id}
+              title={inputData.title}
               type={inputData.type}
               name={inputData.name}
               textholder={inputData.placeholder}

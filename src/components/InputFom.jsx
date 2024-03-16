@@ -25,14 +25,18 @@ function InputForm({
           placeholder={textholder}
           {...register}
         />
-        <span
-          className="absolute left-2 top-3"
-          onClick={() => {
-            setEyePass((state) => !state);
-          }}
-        >
-          <img src="src\assets\icons\eye.svg" />
-        </span>
+        {type === "password" ? (
+          <span
+            className="absolute left-2 top-3"
+            onClick={() => {
+              setEyePass((state) => !state);
+            }}
+          >
+            <img src="src\assets\icons\eye.svg" />
+          </span>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

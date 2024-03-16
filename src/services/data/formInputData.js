@@ -1,18 +1,20 @@
 const stepsData = [
     {
-        title: "Step 1",
+        // title: "مرحله اول",
         inputs: [
             {
                 id: 1,
+                title: "نوع معامله",
                 type: "text",
-                name: "input1",
+                name: "نوع معامله",
                 placeholder: "Enter input 1",
                 value: "",
                 reg: "name1",
-                value: "amie"
+
             },
             {
                 id: 2,
+                title: "نوع ملک",
                 type: "text",
                 name: "input2",
                 placeholder: "Enter input 2",
@@ -21,6 +23,7 @@ const stepsData = [
             },
             {
                 id: 3,
+                title: "رهن",
                 type: "text",
                 name: "input3",
                 placeholder: "Enter input 3",
@@ -29,6 +32,7 @@ const stepsData = [
             },
             {
                 id: 4,
+                title: "اجاره",
                 type: "text",
                 name: "input4",
                 placeholder: "Enter input 4",
@@ -38,7 +42,7 @@ const stepsData = [
         ],
     },
     {
-        title: "Step 1",
+        // title: "Step 1",
         inputs: [
             {
                 id: 5,
@@ -47,7 +51,6 @@ const stepsData = [
                 placeholder: "Enter input 12dasdas   ",
                 value: "",
                 reg: "name12",
-                value: "ami22e"
 
             },
             {
