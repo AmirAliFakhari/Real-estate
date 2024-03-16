@@ -29,7 +29,7 @@ function SignIn() {
             // defaulted="aafz1378@gmail.com"
           />
           <InputForm
-            type="number"
+            type="password"
             textholder="رمزت چیه ؟ "
             name="password"
             register={register("password")}
