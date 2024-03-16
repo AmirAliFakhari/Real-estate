@@ -1,28 +1,71 @@
 const stepsData = [
     {
         title: "Step 1",
-        type: "text",
-        name: "step1",
-        placeholder: "Enter your name",
-        value: "e",
-        reg: "name"
+        inputs: [
+            {
+                type: "text",
+                name: "input1",
+                placeholder: "Enter input 1",
+                value: "",
+                reg: "name1",
+            },
+            {
+                type: "text",
+                name: "input2",
+                placeholder: "Enter input 2",
+                value: "",
+                reg: "name2",
+            },
+            {
+                type: "text",
+                name: "input3",
+                placeholder: "Enter input 3",
+                value: "",
+                reg: "name3",
+            },
+            {
+                type: "text",
+                name: "input4",
+                placeholder: "Enter input 4",
+                value: "",
+                reg: "name4",
+            },
+        ],
     },
     {
-        title: "Step 2",
-        type: "email",
-        name: "step2",
-        placeholder: "Enter your email",
-        value: "af",
-        reg: "email"
+        title: "Step 1",
+        inputs: [
+            {
+                type: "text",
+                name: "input12",
+                placeholder: "Enter input 12dasdas   ",
+                value: "",
+                reg: "name12",
+            },
+            {
+                type: "text",
+                name: "input31",
+                placeholder: "Enter input 2",
+                value: "",
+                reg: "name2324",
+            },
+            {
+                type: "text",
+                name: "input3423",
+                placeholder: "Enter input 3",
+                value: "",
+                reg: "name3423543",
+            },
+            {
+                type: "text",
+                name: "input4sdf",
+                placeholder: "Enter input 4fsd",
+                value: "",
+                reg: "name4fds",
+            },
+        ],
     },
-    {
-        title: "Step 3",
-        type: "password",
-        name: "step3",
-        placeholder: "Enter your password",
-        value: "f",
-        reg: "password"
-    },
+    // Add more steps with their respective inputs
 ];
 
-export default stepsData
+export default stepsData;

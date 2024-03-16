@@ -25,7 +25,6 @@ function InputForm({
           placeholder={textholder}
           {...register}
         />
-        {/* <span></span> */}
         <span
           className="absolute left-2 top-3"
           onClick={() => {

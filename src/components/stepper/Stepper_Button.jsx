@@ -1,15 +1,20 @@
 function Stepper_Button({ currentStep, setCurrentStep, errors }) {
   const NUMBER_OF_STEPS = 3;
-
   function goToNextStep() {
-    if (!errors) {
+    if (
+      Object.values(errors).length === 0 ||
+      Object.values(errors).length === 0
+    ) {
       setCurrentStep((prev) =>
         prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1,
       );
     } else {
-      setCurrentStep((prev) => (prev += 0));
+      console.log(
+        "There are errors in the form. Cannot proceed to the next step.",
+      );
     }
   }
+
   function goToPreviousStep() {
     setCurrentStep((prev) => (prev <= 0 ? prev : prev - 1));
   }
