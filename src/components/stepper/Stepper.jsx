@@ -14,7 +14,6 @@ export default function Stepper({
 
   const [count, setCount] = useState(0);
 
-  console.log(count);
   const onSubmit = (data) => {
     // Calling API
     if (count === 3) {
