@@ -8,7 +8,7 @@ const stepsData = [
                 name: "نوع معامله",
                 placeholder: "لطفاً نوع معامله ر را وارد کنید",
                 value: "قسطی",
-                reg: "نوع معامله",
+                reg: "transaction_type",
 
             },
             {
@@ -18,7 +18,7 @@ const stepsData = [
                 name: "input2",
                 placeholder: "لطفاً نوع ملک را وارد کنید",
                 value: "تجاری",
-                reg: "نوع ملک",
+                reg: "type_land",
             },
             {
                 id: 3,
@@ -28,7 +28,7 @@ const stepsData = [
                 placeholder: "مثلاً ۵۰ میلیون تومان",
                 value: "۵۰ میلیون",
                 currency: "میلیون تومان",
-                reg: "رهن",
+                reg: "mortgage",
             },
             {
                 id: 4,
@@ -38,7 +38,7 @@ const stepsData = [
                 placeholder: "مثلاً ۲ میلیون تومان",
                 value: "۲۰ میلیون",
                 currency: "میلیون تومان",
-                reg: "اجاره",
+                reg: "rent",
             },
         ],
     },
@@ -51,7 +51,7 @@ const stepsData = [
                 name: "شهر",
                 placeholder: "لطفاً شهر مورد نظر را انتخاب کنید",
                 value: "اصفهان",
-                reg: "شهر",
+                reg: "city",
 
             },
             {
@@ -61,7 +61,7 @@ const stepsData = [
                 name: "منطقه",
                 placeholder: "لطفاً منطقه مورد نظر رانتخاب کنید",
                 value: "احمد آباد",
-                reg: "منطقه",
+                reg: "state",
             },
             {
                 id: 7,
@@ -70,7 +70,7 @@ const stepsData = [
                 name: "خیابان اصلی",
                 placeholder: "آدرس خود را وارد کنید",
                 value: "جی ",
-                reg: "خیبان اصلی",
+                reg: "street",
             },
             {
                 id: 8,
@@ -79,7 +79,7 @@ const stepsData = [
                 name: "خیابان فرعی/کوچه",
                 placeholder: "جزئیات آدرس را وارد کنید",
                 value: "قاصدک",
-                reg: "خیابان فرعی/کوچه",
+                reg: "auxiliary_road",
             },
         ],
     },
@@ -92,7 +92,7 @@ const stepsData = [
                 name: "متراژ(متر مربع)",
                 placeholder: "مساحت ملک خود را وارد کنید",
                 value: "متراژ(متر مربع)",
-                reg: "متراژ(متر مربع)",
+                reg: "area",
 
             },
             {
@@ -102,7 +102,7 @@ const stepsData = [
                 name: "اتاق",
                 placeholder: "تعداد اتاق‌ها را بنویسید",
                 value: "3",
-                reg: "اتاق",
+                reg: "room",
             },
             {
                 id: 11,
@@ -111,7 +111,7 @@ const stepsData = [
                 name: "طبقه",
                 placeholder: "طبقه ملک خود را بنویسید",
                 value: "۳",
-                reg: "طبقه",
+                reg: "floor",
             },
             {
                 id: 12,
@@ -121,7 +121,7 @@ const stepsData = [
                 placeholder: "طبقه ملک خود را بنویسید",
                 value: "۲۰ میلیون",
                 currency: "میلیون تومان",
-                reg: "تعداد طبقات",
+                reg: "number_floors",
             },
         ],
     },

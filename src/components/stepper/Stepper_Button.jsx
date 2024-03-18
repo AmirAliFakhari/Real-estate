@@ -39,7 +39,7 @@ function Stepper_Button({
         قبلی
       </button>
       <button
-        disabled={count === 3 ? true : ""}
+        disabled={count === 4 ? true : ""}
         onClick={goToNextStep}
         className="rounded-md bg-red-600 px-5 py-1 text-white"
       >

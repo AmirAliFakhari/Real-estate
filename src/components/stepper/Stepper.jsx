@@ -3,6 +3,7 @@ import InputForm from "../InputFom";
 import stepsData from "../../services/data/formInputData";
 import Stepper_Button from "./Stepper_Button";
 import { useState } from "react";
+import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
 
 export default function Stepper({
   currentStep,
@@ -11,13 +12,30 @@ export default function Stepper({
 }) {
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
+  const { data, regHouse } = useRegisterHouse();
 
   const [count, setCount] = useState(0);
 
   const onSubmit = (data) => {
+    console.log(count);
+    console.log(data);
     // Calling API
     if (count === 3) {
       console.log(data);
+      regHouse({
+        transaction_type: data.transaction_type,
+        mortgage: data.mortgage,
+        rent: data.rent,
+        city: data.city,
+        state: data.state,
+        street: data.street,
+        number_floors: data.number_floors,
+        floor: data.floor,
+        room: data.room,
+        type_land: data.type_land,
+        area: data.area,
+        auxiliary_road: data.auxiliary_road,
+      });
     }
   };
 
