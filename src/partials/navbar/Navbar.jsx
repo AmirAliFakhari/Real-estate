@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import LinkComp from "../../components/LinkComp";
+import { useSelector } from "react-redux";
 
 function Navbar() {
-  const local = localStorage.getItem("username");
-
+  const userRole = useSelector((state) => state.auth.userRole);
   return (
     <nav className=" fixed z-30 w-[100%] border border-b-stone-300  bg-white md:absolute md:flex">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-5 p-4 text-sm">
@@ -20,7 +20,7 @@ function Navbar() {
           </span>
         </a>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
-          {local ? (
+          {userRole === "authenticated" ? (
             <Link
               to="/customer-panel"
               type="button"
@@ -40,8 +40,9 @@ function Navbar() {
               ورود
             </Link>
           )}
+
           <Link
-            to="/register-house"
+            to={userRole ? "/register-house" : "signIn"}
             type="button"
             className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border  border-red-500 px-3 py-2 text-center text-sm font-medium
              text-red-500 hover:bg-red-500 hover:text-white sm:flex "

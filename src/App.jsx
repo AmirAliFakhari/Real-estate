@@ -19,6 +19,7 @@ function App() {
   const { isLoading: houseLoading } = useHouse();
   const { isLoading: introLoading } = useIntroduction();
   const { isLoading: newsLoading } = useNews();
+  const userRole = useSelector((state) => state.auth.userRole);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route element={<Layout />} path="/" />
         </Route>
+
         <Route element={<RegisterHouse />} path="register-house" />
         <Route element={<SignOn />} path="signon" />
         <Route element={<SignIn />} path="signIn" />
