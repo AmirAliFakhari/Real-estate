@@ -12,16 +12,13 @@ export default function Stepper({
 }) {
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
-  const { data, regHouse } = useRegisterHouse();
+  const { regHouse } = useRegisterHouse();
 
   const [count, setCount] = useState(0);
+  // console.log(currentStep);
 
   const onSubmit = (data) => {
-    console.log(count);
-    console.log(data);
-    // Calling API
     if (count === 3) {
-      console.log(data);
       regHouse({
         transaction_type: data.transaction_type,
         mortgage: data.mortgage,
@@ -39,7 +36,6 @@ export default function Stepper({
     }
   };
 
-  //color of progressbar
   const activeColor = (index) =>
     currentStep >= index ? "bg-red-500" : "bg-gray-300";
   const isFinalStep = (index) => index === numberOfSteps - 1;

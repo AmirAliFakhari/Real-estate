@@ -8,6 +8,7 @@ function Stepper_Button({
   setCount,
 }) {
   const NUMBER_OF_STEPS = 3;
+  console.log(count);
   function goToNextStep() {
     if (
       Object.values(errors).length === 0 ||
@@ -15,7 +16,7 @@ function Stepper_Button({
     ) {
       setCurrentStep(
         (prev) => (prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1),
-        setCount((c) => (c += 1)),
+        setCount((c) => (c === NUMBER_OF_STEPS ? c : c + 1)),
       );
     } else {
       console.log(
@@ -32,14 +33,14 @@ function Stepper_Button({
   return (
     <section className="mt-5 flex justify-between">
       <button
-        disabled={count === 0 ? true : ""}
+        disabled={count <= 0 ? true : ""}
         onClick={goToPreviousStep}
         className="rounded-md bg-blue-500 px-5 py-1 text-white"
       >
         قبلی
       </button>
       <button
-        disabled={count === 4 ? true : ""}
+        // disabled={count === 4 ? true : ""}
         onClick={goToNextStep}
         className="rounded-md bg-red-600 px-5 py-1 text-white"
       >
