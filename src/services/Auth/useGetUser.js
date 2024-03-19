@@ -9,10 +9,10 @@ export default function useGetUser() {
         isPending,
         isSuccess
     } = useMutation({
-        mutationFn: (data) => getUser(data),
+        mutationFn: () => getUser(),
 
         onSuccess: (data) => {
-            console.log(data)
+            // console.log(data)
             toast.success("اطلاعات گرفته شد")
             localStorage.setItem("data", JSON.stringify(data))
         }

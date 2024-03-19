@@ -7,13 +7,32 @@ import useNews from "./partials/news/useNews";
 import Spinner from "./features/Spinner";
 import SignOn from "./pages/Auth/signon/signOn";
 import Customer_panel from "./pages/Customer_panel";
-import StepperForm from "./components/stepper/StepperForm";
 import SignIn from "./pages/Auth/signIn/SignIn";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
+import getUser from "./services/Auth/getUser";
+
+import { useDispatch, useSelector } from "react-redux";
+import { userRole } from "./pages/Auth/authSlice";
+import { useEffect } from "react";
+
 function App() {
   const { isLoading: houseLoading } = useHouse();
   const { isLoading: introLoading } = useIntroduction();
   const { isLoading: newsLoading } = useNews();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function someFunction() {
+      try {
+        const userId = await getUser();
+
+        dispatch(userRole(userId));
+      } catch (error) {
+        console.error("Not Authenticated", error);
+      }
+    }
+    someFunction();
+  }, [dispatch]);
 
   if (houseLoading || introLoading || newsLoading) {
     return (
@@ -23,6 +42,7 @@ function App() {
       </div>
     );
   }
+
   return (
     <BrowserRouter basename="/">
       <Routes>

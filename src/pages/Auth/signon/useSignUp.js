@@ -2,7 +2,6 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { userData } from "../authSlice";
 import signUp from "../../../services/Auth/signUp";
 
 export default function useSignUp() {

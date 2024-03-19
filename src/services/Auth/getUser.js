@@ -5,8 +5,9 @@ export default async function getUser() {
     // const dispatch = useDispatch()
 
     const { data: { user } } = await supabase.auth.getUser()
-    console.log(user)
+    // console.log(user)
 
     return user;
 
 }
+
