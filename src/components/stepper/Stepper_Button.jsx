@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+import NUMBER_OF_STEPS from "./number-steps";
 
 function Stepper_Button({
   currentStep,
@@ -7,7 +8,6 @@ function Stepper_Button({
   count,
   setCount,
 }) {
-  const NUMBER_OF_STEPS = 4;
   function goToNextStep() {
     if (Object.values(errors).length === 0) {
       setCurrentStep(

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Stepper from "./Stepper";
+import NUMBER_OF_STEPS from "./number-steps";
 
 export default function StepperForm() {
   const [currentStep, setCurrentStep] = useState(0);
-  const NUMBER_OF_STEPS = 4;
 
   return (
     <div className="flex h-screen rounded-xl bg-gray-100 sm:rounded-l-3xl ">

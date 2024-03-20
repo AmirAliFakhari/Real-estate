@@ -20,7 +20,7 @@ export default function Stepper({
 
   const onSubmit = (data) => {
     console.log(data);
-    if (count === 4) {
+    if (count === 5) {
       regHouse({
         transaction_type: data.transaction_type,
         mortgage: data.mortgage,
@@ -66,7 +66,9 @@ export default function Stepper({
           {stepsData[currentStep].title}
         </h3>
         <form className="p-1" onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-2   gap-4 ">
+          <div
+            className={`grid ${count == 4 ? "grid-cols-1" : "grid-cols-2"}    gap-4 `}
+          >
             {stepsData[currentStep].inputs.map((inputData) => (
               <InputForm
                 key={inputData.id}
