@@ -1,5 +1,6 @@
 const stepsData = [
     {
+        title: "لطفا موارد زیر را تکمیل کنید",
         inputs: [
             {
                 id: 1,
@@ -8,7 +9,7 @@ const stepsData = [
                 name: "نوع معامله",
                 placeholder: "لطفاً نوع معامله ر را وارد کنید",
                 value: "قسطی",
-                reg: "transaction_type",
+                reg: "نوع معامله",
 
             },
             {
@@ -18,7 +19,7 @@ const stepsData = [
                 name: "input2",
                 placeholder: "لطفاً نوع ملک را وارد کنید",
                 value: "تجاری",
-                reg: "type_land",
+                reg: "نوع ملک",
             },
             {
                 id: 3,
@@ -28,7 +29,7 @@ const stepsData = [
                 placeholder: "مثلاً ۵۰ میلیون تومان",
                 value: "50000000",
                 currency: "میلیون تومان",
-                reg: "mortgage",
+                reg: "رهن",
             },
             {
                 id: 4,
@@ -38,11 +39,12 @@ const stepsData = [
                 placeholder: "مثلاً ۲ میلیون تومان",
                 value: "20000000",
                 currency: "میلیون تومان",
-                reg: "rent",
+                reg: "اجاره",
             },
         ],
     },
     {
+        title: "لطفا موارد زیر را تکمیل کنید",
         inputs: [
             {
                 id: 5,
@@ -51,7 +53,7 @@ const stepsData = [
                 name: "شهر",
                 placeholder: "لطفاً شهر مورد نظر را انتخاب کنید",
                 value: "اصفهان",
-                reg: "city",
+                reg: "شهر",
 
             },
             {
@@ -61,7 +63,7 @@ const stepsData = [
                 name: "منطقه",
                 placeholder: "لطفاً منطقه مورد نظر رانتخاب کنید",
                 value: "احمد آباد",
-                reg: "state",
+                reg: "منطقه",
             },
             {
                 id: 7,
@@ -70,7 +72,7 @@ const stepsData = [
                 name: "خیابان اصلی",
                 placeholder: "آدرس خود را وارد کنید",
                 value: "جی ",
-                reg: "street",
+                reg: "خیابان اصلی",
             },
             {
                 id: 8,
@@ -79,11 +81,12 @@ const stepsData = [
                 name: "خیابان فرعی/کوچه",
                 placeholder: "جزئیات آدرس را وارد کنید",
                 value: "قاصدک",
-                reg: "auxiliary_road",
+                reg: "خیابان فرعی/کوچه",
             },
         ],
     },
     {
+        title: "لطفا موارد زیر را تکمیل کنید",
         inputs: [
             {
                 id: 9,
@@ -126,6 +129,7 @@ const stepsData = [
         ],
     },
     {
+        title: "اگر توضیحات اضافی دارید در این قسمت بنویسید",
         inputs: [
             {
                 id: 13,

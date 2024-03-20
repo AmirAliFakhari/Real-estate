@@ -7,7 +7,6 @@ function InputForm({
   register,
   name,
   defaulted,
-  erros,
   currency,
 }) {
   const [eyePass, setEyePass] = useState(false);

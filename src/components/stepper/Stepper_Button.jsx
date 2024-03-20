@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 function Stepper_Button({
   currentStep,
   setCurrentStep,
@@ -6,19 +8,15 @@ function Stepper_Button({
   setCount,
 }) {
   const NUMBER_OF_STEPS = 4;
+  console.log(errors);
   function goToNextStep() {
-    if (
-      Object.values(errors).length === 0 ||
-      Object.values(errors).length === 0
-    ) {
+    if (Object.values(errors).length === 0) {
       setCurrentStep(
         (prev) => (prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1),
         setCount((c) => (c === NUMBER_OF_STEPS ? c : c + 1)),
       );
     } else {
-      console.log(
-        "There are errors in the form. Cannot proceed to the next step.",
-      );
+      toast.error(`${Object.keys(errors)} رو کامل نکردی!`);
     }
   }
 

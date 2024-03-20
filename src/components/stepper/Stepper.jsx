@@ -39,7 +39,7 @@ export default function Stepper({
   };
 
   const activeColor = (index) =>
-    currentStep >= index ? "bg-red-500" : "bg-gray-300";
+    currentStep >= index ? "bg-red-500 ease-in duration-500" : "bg-gray-300";
   const isFinalStep = (index) => index === numberOfSteps - 1;
 
   return (
@@ -47,15 +47,23 @@ export default function Stepper({
       <div className="flex items-center">
         {Array.from({ length: numberOfSteps }).map((_, index) => (
           <div className="flex items-center justify-center" key={index}>
-            <div className={`h-6 w-6 rounded-full ${activeColor(index)}`} />
+            <div
+              className={`flex h-6 w-6 justify-center rounded-full ${activeColor(index)}`}
+            >
+              <img className="w-1/2 " src="src\assets\icons\tick.svg" />
+            </div>
             {isFinalStep(index) ? null : (
-              <div className={`h-1 w-12 ${activeColor(index)}`} />
+              <div
+                className={`duration-50000 h-1 w-12 ease-in ${activeColor(index)}`}
+              />
             )}
           </div>
         ))}
       </div>
       <div className="mt-4">
-        <h3>{stepsData[currentStep].title}</h3>
+        <h3 className="mb-3 text-center md:text-right">
+          {stepsData[currentStep].title}
+        </h3>
         <form className="p-1" onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2   gap-4 ">
             {stepsData[currentStep].inputs.map((inputData) => (
@@ -73,7 +81,7 @@ export default function Stepper({
                     message: "Please complete the form",
                   },
                 })}
-                errors={errors}
+                // errors={errors}
               />
             ))}
           </div>
