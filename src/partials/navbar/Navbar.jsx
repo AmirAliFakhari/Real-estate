@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function Navbar() {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   const userRole = useSelector((state) => state.auth.userRole);
 
   return (
