@@ -13,6 +13,7 @@ export default async function registerHouseAPI({ userData, transaction_type, mor
         console.error(error);
         throw new Error(" could not be loaded");
     }
+    console.log(data)
 
     return data;
 }

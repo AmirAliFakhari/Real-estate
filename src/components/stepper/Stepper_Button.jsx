@@ -8,7 +8,6 @@ function Stepper_Button({
   setCount,
 }) {
   const NUMBER_OF_STEPS = 4;
-  console.log(errors);
   function goToNextStep() {
     if (Object.values(errors).length === 0) {
       setCurrentStep(

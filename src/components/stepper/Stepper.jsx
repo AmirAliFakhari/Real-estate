@@ -19,6 +19,7 @@ export default function Stepper({
   const userData = useSelector((state) => state.auth.userData);
 
   const onSubmit = (data) => {
+    console.log(data);
     if (count === 4) {
       regHouse({
         transaction_type: data.transaction_type,
