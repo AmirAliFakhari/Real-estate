@@ -23,7 +23,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       containerClassName=""
       containerStyle={{}}
       toastOptions={{
-        // Define default options
         className: "",
         duration: 5000,
         style: {
@@ -31,7 +30,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           color: "#109515",
         },
 
-        // Default options for specific types
         success: {
           duration: 3000,
           theme: {
