@@ -1,7 +1,6 @@
 import supabase from "../supabase";
 
 export default async function registerHouseAPI({ userData, transaction_type, mortgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area }) {
-    console.log({ userData });
 
     const { data, error } = await supabase
         .from('registerHouse')

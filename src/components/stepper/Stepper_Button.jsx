@@ -5,7 +5,7 @@ function Stepper_Button({
   count,
   setCount,
 }) {
-  const NUMBER_OF_STEPS = 3;
+  const NUMBER_OF_STEPS = 4;
   function goToNextStep() {
     if (
       Object.values(errors).length === 0 ||
@@ -32,12 +32,11 @@ function Stepper_Button({
       <button
         disabled={count <= 0 ? true : ""}
         onClick={goToPreviousStep}
-        className="rounded-md bg-blue-500 px-5 py-1 text-white"
+        className="rounded-md  bg-blue-500 px-5 py-1 text-white"
       >
         قبلی
       </button>
       <button
-        // disabled={count === 4 ? true : ""}
         onClick={goToNextStep}
         className="rounded-md bg-red-600 px-5 py-1 text-white"
       >
