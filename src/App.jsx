@@ -11,23 +11,22 @@ import SignIn from "./pages/Auth/signIn/SignIn";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 import getUser from "./services/Auth/getUser";
 
-import { useDispatch, useSelector } from "react-redux";
-import { userRole } from "./pages/Auth/authSlice";
+import { useDispatch } from "react-redux";
+import { userData, userRole } from "./pages/Auth/authSlice";
 import { useEffect } from "react";
 
 function App() {
   const { isLoading: houseLoading } = useHouse();
   const { isLoading: introLoading } = useIntroduction();
   const { isLoading: newsLoading } = useNews();
-  const userRole = useSelector((state) => state.auth.userRole);
   const dispatch = useDispatch();
 
   useEffect(() => {
     async function someFunction() {
       try {
-        const userId = await getUser();
-
-        dispatch(userRole(userId));
+        const user = await getUser();
+        dispatch(userRole(user.role));
+        dispatch(userData(user));
       } catch (error) {
         console.error("Not Authenticated", error);
       }

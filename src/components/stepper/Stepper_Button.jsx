@@ -1,5 +1,3 @@
-import { set } from "react-hook-form";
-
 function Stepper_Button({
   currentStep,
   setCurrentStep,
@@ -8,7 +6,6 @@ function Stepper_Button({
   setCount,
 }) {
   const NUMBER_OF_STEPS = 3;
-  console.log(count);
   function goToNextStep() {
     if (
       Object.values(errors).length === 0 ||

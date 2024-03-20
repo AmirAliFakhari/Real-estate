@@ -26,7 +26,7 @@ const stepsData = [
                 type: "number",
                 name: "input3",
                 placeholder: "مثلاً ۵۰ میلیون تومان",
-                value: "50000000d ",
+                value: "50000000",
                 currency: "میلیون تومان",
                 reg: "mortgage",
             },

@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import registerHouseAPI from "../../services/registerHouse/registerHouseAPI";
+import { useSelector } from "react-redux";
 
 export default function useRegisterHouse() {
     const navigate = useNavigate()
@@ -10,12 +11,12 @@ export default function useRegisterHouse() {
         data,
         isPending
     } = useMutation({
-        mutationFn: (transaction_type, morgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area) => registerHouseAPI(transaction_type, morgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area),
+        mutationFn: (transaction_type, morgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area, userData) =>
+            registerHouseAPI(transaction_type, morgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area, userData),
 
-        onSuccess: (data) => {
+
+        onSuccess: () => {
             toast.success("ثبت شد آگهی شید")
-            // console.log(data)
-            // localStorage.setItem("id", data.user.id)
             navigate("/")
         }
         ,

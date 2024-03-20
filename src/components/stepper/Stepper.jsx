@@ -4,6 +4,7 @@ import stepsData from "../../services/data/formInputData";
 import Stepper_Button from "./Stepper_Button";
 import { useState } from "react";
 import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
+import { useSelector } from "react-redux";
 
 export default function Stepper({
   currentStep,
@@ -15,7 +16,7 @@ export default function Stepper({
   const { regHouse } = useRegisterHouse();
 
   const [count, setCount] = useState(0);
-  // console.log(currentStep);
+  const userData = useSelector((state) => state.auth.userData);
 
   const onSubmit = (data) => {
     if (count === 3) {
@@ -32,6 +33,7 @@ export default function Stepper({
         type_land: data.type_land,
         area: data.area,
         auxiliary_road: data.auxiliary_road,
+        userData,
       });
     }
   };
