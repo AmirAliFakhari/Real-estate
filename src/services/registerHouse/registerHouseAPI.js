@@ -1,12 +1,11 @@
 import supabase from "../supabase";
 
 export default async function registerHouseAPI({ userData, ...d }) {
-    console.log({ ...d })
-
+    // console.log(d)
     const { data, error } = await supabase
         .from('registerHouse')
         .insert([
-            { ...d, userData },
+            { userData, ...d },
         ])
         .select();
 
@@ -14,7 +13,6 @@ export default async function registerHouseAPI({ userData, ...d }) {
         console.error(error);
         throw new Error(" could not be loaded");
     }
-    console.log(data)
 
     return data;
 }

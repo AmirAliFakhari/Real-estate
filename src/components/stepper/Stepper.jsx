@@ -21,6 +21,7 @@ export default function Stepper({
 
   const [count, setCount] = useState(0);
   const userData = useSelector((state) => state.auth.userData);
+  // console.log(userData);
 
   const onSubmit = (data) => {
     if (count === 6) {
