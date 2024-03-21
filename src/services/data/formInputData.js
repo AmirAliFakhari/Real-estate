@@ -81,7 +81,7 @@ const stepsData = [
                 name: "خیابان فرعی/کوچه",
                 placeholder: "جزئیات آدرس را وارد کنید",
                 value: "قاصدک",
-                reg: "auxiliary_road",
+                reg: "Auxiliary_Road",
             },
         ],
     },
@@ -91,7 +91,7 @@ const stepsData = [
             {
                 id: 9,
                 title: "متراژ(متر مربع)",
-                type: "number",
+                type: "text",
                 name: "متراژ(متر مربع)",
                 placeholder: "مساحت ملک خود را وارد کنید",
                 value: "متراژ(متر مربع)",
@@ -138,7 +138,7 @@ const stepsData = [
                 name: "پارکنیگ",
                 placeholder: "تعداد پارکینگ رو وارد کن ",
                 value: "۱ پارکینگ",
-                reg: "پارکینگ",
+                reg: "parking",
 
             },
             {
@@ -148,7 +148,7 @@ const stepsData = [
                 name: "سرویس بهداشتی",
                 placeholder: "تعداد سرویس بهداشتی رو وارد کن",
                 value: "۲ سرویس",
-                reg: "سرویس بهداشتی",
+                reg: "WC",
             },
             {
                 id: 15,
@@ -157,7 +157,7 @@ const stepsData = [
                 name: "انباری",
                 placeholder: "تعداد انباری رو وارد کن",
                 value: "۱ انباری",
-                reg: "انباری",
+                reg: "basement",
             },
             {
                 id: 16,
@@ -166,7 +166,7 @@ const stepsData = [
                 name: "نوع سرویس بهداشتی",
                 placeholder: "نوع سرویش بهداشتی رو وارد کن",
                 value: "فرنگی",
-                reg: "نوع سرویس بهداشتی",
+                reg: "WC_Type",
             },
             {
                 id: 17,
@@ -175,7 +175,7 @@ const stepsData = [
                 name: "آسانسور",
                 placeholder: "تعداد آسانسور رو وارد کن",
                 value: "۲ آسانسور",
-                reg: "آسانسور",
+                reg: "elevator",
             },
             {
                 id: 18,
@@ -184,7 +184,7 @@ const stepsData = [
                 name: "سیستم سرمایش",
                 placeholder: "تعداد آسانسور رو وارد کن",
                 value: "کولر آبی",
-                reg: "سیستم سرمایش",
+                reg: "Cooling_System",
             },
             {
                 id: 19,
@@ -193,7 +193,7 @@ const stepsData = [
                 name: "سیستم سرمایش",
                 placeholder: "جنس کف رو وارد کن",
                 value: "سرامیک",
-                reg: "جنس کف",
+                reg: "Floor_Material",
             },
             {
                 id: 20,
@@ -202,7 +202,7 @@ const stepsData = [
                 name: "سیستم سرمایش",
                 placeholder: "سیستم گرمایش رو وارد کن",
                 value: "شوفاژ",
-                reg: "سیستم گرمایش",
+                reg: "Heating_System",
             },
         ],
     },
@@ -214,9 +214,20 @@ const stepsData = [
                 title: "توضیحات",
                 type: "text",
                 name: "توضیحات",
-                // placeholder: "تعداد پارکینگ رو وارد کن ",
-                // value: "۱ پارکینگ",
-                reg: "exta-inf",
+                reg: "Exta_Inf",
+
+            }
+        ],
+    },
+    {
+        title: "در این قسمت می‌توانید عکس و ویدئو ملک خود را  بارگذاری کنید.",
+        inputs: [
+            {
+                id: 22,
+                title: "توضیحات",
+                type: "file",
+                name: "توضیحات",
+                reg: "pictures",
 
             }
         ],

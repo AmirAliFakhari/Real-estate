@@ -1,11 +1,12 @@
 import supabase from "../supabase";
 
-export default async function registerHouseAPI({ userData, transaction_type, mortgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area }) {
+export default async function registerHouseAPI({ userData, ...d }) {
+    console.log({ ...d })
 
     const { data, error } = await supabase
         .from('registerHouse')
         .insert([
-            { transaction_type, mortgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area, userData },
+            { ...d, userData },
         ])
         .select();
 

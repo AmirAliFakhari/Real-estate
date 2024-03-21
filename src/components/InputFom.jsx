@@ -10,6 +10,7 @@ function InputForm({
   currency,
 }) {
   const [eyePass, setEyePass] = useState(false);
+  /// aye ro dorost konnnnnnn!
 
   return (
     <div className="mb-2 flex  flex-col gap-1">
@@ -18,7 +19,7 @@ function InputForm({
       </label>
       <div className="relative ">
         <input
-          type={eyePass ? type : "text"}
+          type={type}
           id={name}
           defaultValue={defaulted}
           className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"

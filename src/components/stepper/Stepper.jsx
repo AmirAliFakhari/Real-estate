@@ -5,6 +5,10 @@ import Stepper_Button from "./Stepper_Button";
 import { useState } from "react";
 import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import uploadFile from "../../services/registerHouse/uploadFile";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 export default function Stepper({
   currentStep,
@@ -19,21 +23,10 @@ export default function Stepper({
   const userData = useSelector((state) => state.auth.userData);
 
   const onSubmit = (data) => {
-    console.log(data);
-    if (count === 5) {
+    if (count === 6) {
+      console.log(data.pictures[0]);
       regHouse({
-        transaction_type: data.transaction_type,
-        mortgage: data.mortgage,
-        rent: data.rent,
-        city: data.city,
-        state: data.state,
-        street: data.street,
-        number_floors: data.number_floors,
-        floor: data.floor,
-        room: data.room,
-        type_land: data.type_land,
-        area: data.area,
-        auxiliary_road: data.auxiliary_road,
+        ...data,
         userData,
       });
     }
@@ -45,6 +38,9 @@ export default function Stepper({
 
   return (
     <div className="flex flex-col items-center justify-center gap-2">
+      <Link to={"/"} className="flex items-center justify-center">
+        <img className="flex w-52 " src="src\assets\icons\icon2.svg" alt="" />
+      </Link>
       <div className="flex items-center">
         {Array.from({ length: numberOfSteps }).map((_, index) => (
           <div className="flex items-center justify-center" key={index}>

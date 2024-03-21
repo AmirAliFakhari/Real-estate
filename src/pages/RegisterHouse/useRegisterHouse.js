@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import registerHouseAPI from "../../services/registerHouse/registerHouseAPI";
 import { useSelector } from "react-redux";
+import uploadFile from "../../services/registerHouse/uploadFile";
 
 export default function useRegisterHouse() {
     const navigate = useNavigate()
@@ -11,8 +12,11 @@ export default function useRegisterHouse() {
         data,
         isPending
     } = useMutation({
-        mutationFn: (transaction_type, morgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area, userData) =>
+        mutationFn: (pictures, transaction_type, morgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area, userData) => {
             registerHouseAPI(transaction_type, morgage, rent, city, state, street, number_floors, floor, auxiliary_road, room, type_land, area, userData),
+                uploadFile(pictures)
+        },
+
 
 
         onSuccess: () => {
