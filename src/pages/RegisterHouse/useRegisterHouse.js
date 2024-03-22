@@ -16,7 +16,7 @@ export default function useRegisterHouse() {
             registerHouseAPI(d, userData)
         },
         onSuccess: () => {
-            toast.success("ثبت شد آگهی شد")
+            toast.success("آگهی ثبت شد سید")
             navigate("/")
         }
         ,

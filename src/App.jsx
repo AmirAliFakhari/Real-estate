@@ -14,6 +14,8 @@ import getUser from "./services/Auth/getUser";
 import { useDispatch } from "react-redux";
 import { userData, userRole } from "./pages/Auth/authSlice";
 import { useEffect } from "react";
+import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
+import Houses from "./pages/houses/Houses";
 
 function App() {
   const { isLoading: houseLoading } = useHouse();
@@ -48,12 +50,14 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route element={<Layout />} path="/" />
+          <Route element={<Houses />} path="houses" />
         </Route>
 
         <Route element={<RegisterHouse />} path="register-house" />
         <Route element={<SignOn />} path="signon" />
         <Route element={<SignIn />} path="signIn" />
         <Route element={<Customer_panel />} path="customer-panel" />
+        {/* <Route element={<SuccessfulReg />} path="successful-reg" /> */}
       </Routes>
     </BrowserRouter>
   );
