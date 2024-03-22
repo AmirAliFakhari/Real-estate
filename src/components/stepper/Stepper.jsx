@@ -6,9 +6,6 @@ import { useState } from "react";
 import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import uploadFile from "../../services/registerHouse/uploadFile";
-import { useMutation } from "@tanstack/react-query";
-import toast from "react-hot-toast";
 
 export default function Stepper({
   currentStep,
@@ -21,11 +18,9 @@ export default function Stepper({
 
   const [count, setCount] = useState(0);
   const userData = useSelector((state) => state.auth.userData);
-  // console.log(userData);
 
   const onSubmit = (data) => {
     if (count === 6) {
-      console.log(data.pictures[0]);
       regHouse({
         ...data,
         userData,

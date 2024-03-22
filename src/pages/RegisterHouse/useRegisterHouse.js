@@ -11,17 +11,12 @@ export default function useRegisterHouse() {
         data,
         isPending
     } = useMutation({
-        mutationFn: (d, userData) => {
-            console.log(d)
-            registerHouseAPI(d, userData),
-                console.log(d.pictures)
+        mutationFn: async (d, userData) => {
             uploadFile(d.pictures[0])
+            registerHouseAPI(d, userData)
         },
-
-
-
         onSuccess: () => {
-            toast.success("ثبت شد آگهی شید")
+            toast.success("ثبت شد آگهی شد")
             navigate("/")
         }
         ,

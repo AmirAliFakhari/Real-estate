@@ -19,6 +19,8 @@ function InputForm({
       </label>
       <div className="relative ">
         <input
+          accept={`image/png `}
+          multiple
           type={type}
           id={name}
           defaultValue={defaulted}

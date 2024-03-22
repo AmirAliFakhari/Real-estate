@@ -2,6 +2,7 @@ import supabase from "../supabase";
 
 export default async function uploadFile({ pictures }) {
     let random = Math.random()
+
     const { data, error } = await supabase
         .storage
         .from('apartments')
@@ -10,9 +11,9 @@ export default async function uploadFile({ pictures }) {
         })
 
     if (error) {
-        console.error(error);
         throw new Error(" could not be loaded");
     }
 
     return data;
 }
+
