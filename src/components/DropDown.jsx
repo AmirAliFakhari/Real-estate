@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
 import useClickOutside from "../hooks/useClickOutside";
 
-function DropDown({ title, items }) {
+function DropDown({ title, items, type }) {
   const [showDrop, setShowDrop] = useState(false);
+  console.log(type);
   const modalRef = useRef();
   useClickOutside(modalRef, () => {
     setShowDrop();
@@ -13,7 +14,7 @@ function DropDown({ title, items }) {
       <div className="flex flex-col" ref={modalRef}>
         <button
           onClick={() => setShowDrop((c) => !c)}
-          className="flex w-24 items-center justify-center rounded-lg border  py-2.5  text-center text-sm font-medium text-black hover:bg-red-800 hover:text-white focus:outline-none  "
+          className="flex w-24 items-center justify-center rounded-lg border  py-2.5  text-center text-sm font-medium text-black hover:bg-red-600 hover:text-white focus:outline-none  "
           type="button"
         >
           {title}
@@ -34,17 +35,17 @@ function DropDown({ title, items }) {
           </svg>
         </button>
         <div
-          className={`z-10 ${showDrop ? "" : "hidden"} w-28 divide-y divide-gray-100 rounded-lg shadow `}
+          className={`mt-1 ${showDrop ? "" : "hidden"} w-24 divide-y divide-gray-100 rounded-lg shadow `}
         >
           <div className="flex flex-col text-black ">
-            {items.map(
+            {items?.map(
               (data, index) => (
                 console.log(data),
                 (
                   <label key={index} className="flex gap-2">
                     <input
-                      type="checkbox"
-                      className="bg-slate-200 text-slate-600 "
+                      type={type === "range" ? type : "checkbox"}
+                      className="bg-slate-200 text-slate-600  "
                     />
                     {data}
                   </label>

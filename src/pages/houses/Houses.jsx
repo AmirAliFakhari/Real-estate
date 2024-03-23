@@ -44,8 +44,14 @@ function Houses() {
         <div className="  flex flex-wrap justify-between gap-2 ">
           <div className="hidden justify-center gap-2 sm:flex sm:flex-grow">
             {dropDownData.data.map((data, index) => (
-              <DropDown key={index} title={data.title} items={data.items} />
+              <DropDown
+                key={index}
+                title={data.title}
+                items={data?.items}
+                type={data.type}
+              />
             ))}
+            <input type="range" />
           </div>
           <div className="flex  flex-grow justify-start px-5">
             <Filter title="فیلتر" />
