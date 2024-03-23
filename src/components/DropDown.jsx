@@ -1,27 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import useClickOutside from "../hooks/useClickOutside";
 
 function DropDown({ title, number }) {
   const [showDrop, setShowDrop] = useState(false);
   const modalRef = useRef();
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      console.log(!modalRef.current?.contains(event.target));
-      if (!modalRef.current?.contains(event.target)) {
-        setShowDrop(false);
-      }
-    }
-
-    document.body.addEventListener("click", handleClickOutside);
-    return () => {
-      document.body.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  useClickOutside(modalRef, () => {
+    setShowDrop();
+  });
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" ref={modalRef}>
       <button
-        ref={modalRef}
         onClick={() => setShowDrop((c) => !c)}
         className="flex w-28 items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5  text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
         type="button"
