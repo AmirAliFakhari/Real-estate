@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import useClickOutside from "../hooks/useClickOutside";
 
-function DropDown({ title, number }) {
+function DropDown({ title, items }) {
   const [showDrop, setShowDrop] = useState(false);
+  console.log(title);
   const modalRef = useRef();
   useClickOutside(modalRef, () => {
     setShowDrop();
@@ -32,44 +33,21 @@ function DropDown({ title, number }) {
           />
         </svg>
       </button>
-
       <div
         id="dropdown"
         className={`z-10 ${showDrop ? "" : "hidden"} w-28 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700`}
       >
         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              ولی عصر
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              انقلاب
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              قیطریه
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              تجریش
-            </a>
-          </li>
+          {items?.map((data) => (
+            <li key={data}>
+              <a
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                {data}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

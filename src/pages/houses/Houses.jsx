@@ -1,12 +1,12 @@
 import DropDown from "../../components/DropDown";
+import dropDownData from "../../services/data/dropDownData";
 function Houses() {
   return (
     <div className="relative top-[80px]">
       <div className="flex">
-        <DropDown title="منطقه" />
-        <DropDown title="منطقه" />
-        <DropDown title="منطقه" />
-        <DropDown title="منطقه" />
+        {dropDownData.data.map((data, index) => (
+          <DropDown key={index} title={data.title} items={data.items} />
+        ))}
       </div>
     </div>
   );
