@@ -88,7 +88,7 @@ function Navbar() {
                 <LinkComp title="خرید" src="key" />
               </li>
               <li>
-                <LinkComp title="املاک و مستغلات" src="house-2" />
+                <LinkComp title="املاک و مستغلات" src="house-2" to="houses" />
               </li>
               <li>
                 <LinkComp title="مشاورین و املاک" src="people" />
