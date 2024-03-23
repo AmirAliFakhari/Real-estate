@@ -2,15 +2,15 @@ const dropDownData =
 {
     "data": [
         {
-            "title": "Data 1",
-            "items": ["Item 1-1", "Item 1-2", "Item 1-3", "Item 1-4"]
+            "title": "منطقه",
+            "items": ["تجریش", "نیاوران", "انقلاب", "ولی عصر"]
         },
         {
-            "title": "Data 2",
-            "items": ["Item 2-1", "Item 2-2", "Item 2-3", "Item 2-4"]
+            "title": "نوع ملک",
+            "items": ["تجاری", "ویلایی"]
         },
         {
-            "title": "Data 3",
+            "title": "قیمت",
             "items": ["Item 3-1", "Item 3-2", "Item 3-3", "Item 3-4"]
         },
         {

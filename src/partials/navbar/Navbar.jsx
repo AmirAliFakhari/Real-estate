@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function Navbar() {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   const userRole = useSelector((state) => state.auth.userRole);
 
   return (
@@ -71,9 +71,7 @@ function Navbar() {
             </button>
           </div>
           <div
-            className={`${
-              hidden ? "hidden" : ""
-            } w-full items-center justify-between duration-300 ease-in-out md:order-1 md:flex md:w-auto`}
+            className={`${hidden ? "hidden" : ""}  w-full items-center justify-between md:order-1 md:flex md:w-auto`}
           >
             <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-6 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
               <li className="flex md:hidden">
@@ -90,7 +88,7 @@ function Navbar() {
                 <LinkComp title="خرید" src="key" />
               </li>
               <li>
-                <LinkComp title="املاک و مستغلات" src="house-2" to="houses" />
+                <LinkComp title="املاک و مستغلات" src="house-2" />
               </li>
               <li>
                 <LinkComp title="مشاورین و املاک" src="people" />
