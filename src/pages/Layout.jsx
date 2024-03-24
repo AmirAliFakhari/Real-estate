@@ -4,6 +4,7 @@ import LastNews from "../partials/news/LastNews";
 import FooterPage from "../partials/footer/Footer";
 import HeaderSlide from "../partials/headerSlide/HeaderSlide";
 import Carts from "../partials/houses/Carts";
+import MapAd from "../partials/house-ad/MapAd";
 
 export default function Layout() {
   return (
@@ -14,6 +15,7 @@ export default function Layout() {
       <LastNews />
       <About />
       <FooterPage />
+      <MapAd />
     </div>
   );
 }

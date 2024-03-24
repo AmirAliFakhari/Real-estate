@@ -6,6 +6,7 @@ import App from "./App";
 import { Provider } from "react-redux";
 import store from "./services/store";
 import { Toaster } from "react-hot-toast";
+import "../node_modules/leaflet/dist/leaflet.css";
 
 const queryClient = new QueryClient();
 
