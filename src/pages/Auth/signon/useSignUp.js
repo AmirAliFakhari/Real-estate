@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import signUp from "../../../services/Auth/signUp";
-import { userRole } from "../authSlice";
+import { userData, userRole } from "../authSlice";
 import getUser from "../../../services/Auth/getUser";
 
 export default function useSignUp() {
@@ -19,16 +19,17 @@ export default function useSignUp() {
         onSuccess: (data) => {
             async function someFunction() {
                 try {
-                    const userId = await getUser();
+                    const userD = await getUser();
 
-                    dispatch(userRole(userId));
+                    dispatch(userData(userD));
+                    dispatch(userRole(userD.role));
                 } catch (error) {
                     console.error("Not Authenticated", error);
                 }
             }
             someFunction()
             toast.success("ثبت نام شدی سید")
-            localStorage.setItem("id", data.user.id)
+            // localStorage.setItem("id", data.user.id)
             navigate("/")
         }
         ,

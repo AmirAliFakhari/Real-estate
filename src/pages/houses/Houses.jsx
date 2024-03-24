@@ -2,7 +2,6 @@ import { useState } from "react";
 import DropDown from "../../components/DropDown";
 import dropDownData from "../../services/data/dropDownData";
 import Advertisements from "../../partials/house-ad/Advertisements";
-import MapAd from "../../partials/house-ad/MapAd";
 function Houses() {
   const [rangeValue, setRangeValue] = useState(500);
 
@@ -88,9 +87,8 @@ function Houses() {
           </div>
         </div>
       </div>
-      <div className="absolute top-56 mt-10 grid  auto-cols-max grid-flow-col grid-cols-2 px-5">
+      <div className="  top-56 mt-10   px-5">
         <Advertisements />
-        <MapAd />
       </div>
     </>
   );

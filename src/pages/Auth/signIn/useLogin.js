@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 // import useGetUser from "../../../services/Auth/useGetUser";
 import { useDispatch } from "react-redux";
-import { userRole } from "../authSlice";
+import { userData, userRole } from "../authSlice";
 import getUser from "../../../services/Auth/getUser";
 
 export default function useLogin() {
@@ -17,20 +17,20 @@ export default function useLogin() {
     } = useMutation({
         mutationFn: (password, email) => login(password, email),
 
-        onSuccess: (data) => {
-            localStorage.setItem("username", data.user.user_metadata.firstname)
+        onSuccess: () => {
+            // localStorage.setItem("username", data.user.user_metadata.firstname)
             async function someFunction() {
                 try {
-                    const userId = await getUser();
-
-                    dispatch(userRole(userId));
+                    const userD = await getUser();
+                    dispatch(userData(userD));
+                    dispatch(userRole(userD.role));
+                    navigate("/")
                 } catch (error) {
                     console.error("Not Authenticated", error);
                 }
             }
             someFunction()
             toast.success("درست زدي سيد")
-            navigate("/")
         }
         ,
         onError: () => {

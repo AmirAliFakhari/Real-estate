@@ -11,10 +11,8 @@ export default function useGetUser() {
     } = useMutation({
         mutationFn: () => getUser(),
 
-        onSuccess: (data) => {
-            // console.log(data)
+        onSuccess: () => {
             toast.success("اطلاعات گرفته شد")
-            localStorage.setItem("data", JSON.stringify(data))
         }
         ,
         onError: (err) => {

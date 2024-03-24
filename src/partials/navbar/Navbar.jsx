@@ -6,6 +6,10 @@ import { useState } from "react";
 function Navbar() {
   const [hidden, setHidden] = useState(true);
   const userRole = useSelector((state) => state.auth.userRole);
+  const userUserName = useSelector((state) => state.auth.userData)
+    ?.user_metadata?.firstname;
+  console.log(userUserName);
+  console.log(userRole);
 
   return (
     <>
@@ -32,7 +36,7 @@ function Navbar() {
               >
                 <span>
                   داشبورد
-                  <span> {localStorage.getItem("username")} </span>
+                  <span>{userUserName} </span>
                 </span>
               </Link>
             ) : (

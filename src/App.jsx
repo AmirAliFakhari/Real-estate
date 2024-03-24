@@ -11,7 +11,7 @@ import SignIn from "./pages/Auth/signIn/SignIn";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 import getUser from "./services/Auth/getUser";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userData, userRole } from "./pages/Auth/authSlice";
 import { useEffect } from "react";
 import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
@@ -22,7 +22,6 @@ function App() {
   const { isLoading: introLoading } = useIntroduction();
   const { isLoading: newsLoading } = useNews();
   const dispatch = useDispatch();
-
   useEffect(() => {
     async function someFunction() {
       try {
