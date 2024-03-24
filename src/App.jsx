@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import AppLayout from "./pages/AppLayout";
-import useHouse from "./partials/houses/useHouse";
 import useIntroduction from "./partials/Introduction/useIntroduction";
 import useNews from "./partials/news/useNews";
 import Spinner from "./features/Spinner";
@@ -16,9 +15,10 @@ import { userData, userRole } from "./pages/Auth/authSlice";
 import { useEffect } from "react";
 import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
 import Houses from "./pages/houses/Houses";
+import useLastHouse from "./partials/houses/useLastHouse";
 
 function App() {
-  const { isLoading: houseLoading } = useHouse();
+  const { isLoading: houseLoading } = useLastHouse();
   const { isLoading: introLoading } = useIntroduction();
   const { isLoading: newsLoading } = useNews();
   const dispatch = useDispatch();

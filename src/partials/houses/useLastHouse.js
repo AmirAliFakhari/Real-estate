@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import { houseAPI } from "../../services/houseAPI/houseAPI";
+import houseAPI from "../../services/houseAPI/houseAPI";
 
-export default function useHouse() {
+export default function useLastHouse() {
     const {
         isLoading,
         data,
         error,
     } = useQuery({
-        queryKey: ["house"],
+        queryKey: ["last-house"],
         queryFn: () => houseAPI(),
     });
 

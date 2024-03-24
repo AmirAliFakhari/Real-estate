@@ -15,7 +15,6 @@ export default function Layout() {
       <LastNews />
       <About />
       <FooterPage />
-      <MapAd />
     </div>
   );
 }

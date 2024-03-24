@@ -51,7 +51,7 @@ function Houses() {
             </div>
           </form>
           <div className="  flex flex-wrap justify-between gap-2 px-5 ">
-            <div className="hidden justify-center gap-2 sm:flex sm:flex-grow">
+            <div className="hidden justify-start gap-2 sm:flex sm:flex-grow">
               {dropDownData.data.map((data, index) => (
                 <DropDown
                   key={index}

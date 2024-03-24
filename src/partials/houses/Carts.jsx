@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import HomeCart from "./HouseCart";
 import "swiper/css/navigation";
 import "swiper/css";
-import useHouse from "./useHouse";
 import Spinner from "../../features/Spinner";
+import useLastHouse from "./useLastHouse";
 
 function Carts() {
-  const { data } = useHouse();
+  const { data } = useLastHouse();
 
   return (
     <>

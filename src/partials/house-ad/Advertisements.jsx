@@ -5,8 +5,8 @@ function Advertisements() {
   const { data } = useHouse();
 
   return (
-    <div className="flex flex-grow flex-wrap items-center justify-center gap-5">
-      {data.map((data) => (
+    <div className="flex flex-grow flex-wrap items-center justify-start gap-5">
+      {data?.map((data) => (
         <HomeCart
           time={data.created_at}
           key={data.id}
