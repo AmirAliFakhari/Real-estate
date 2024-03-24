@@ -1,7 +1,13 @@
+import { useState } from "react";
 import DropDown from "../../components/DropDown";
-import Filter from "../../components/Filter";
 import dropDownData from "../../services/data/dropDownData";
 function Houses() {
+  const [rangeValue, setRangeValue] = useState(500);
+
+  function changeRange(e) {
+    setRangeValue(e);
+  }
+
   return (
     <div className="relative left-0 top-[80px]">
       <div className="flex  flex-col gap-5">
@@ -41,7 +47,7 @@ function Houses() {
             </button>
           </div>
         </form>
-        <div className="  flex flex-wrap justify-between gap-2 ">
+        <div className="  flex flex-wrap justify-between gap-2 px-5 ">
           <div className="hidden justify-center gap-2 sm:flex sm:flex-grow">
             {dropDownData.data.map((data, index) => (
               <DropDown
@@ -51,11 +57,30 @@ function Houses() {
                 type={data.type}
               />
             ))}
-            <input type="range" />
           </div>
-          <div className="flex  flex-grow justify-start px-5">
-            <Filter title="فیلتر" />
-            <Filter title="جدیدترین" />
+          <div className="flex max-h-10 flex-grow flex-col justify-start gap-2  rounded-lg border border-slate-200   sm:justify-center ">
+            <span>از {rangeValue} میلیون</span>
+            <input
+              onChange={(e) => changeRange(e.target.value)}
+              type="range"
+              defaultValue="500"
+              min="100"
+              max="1500"
+              className="h-2  cursor-pointer appearance-none rounded-lg bg-gray-200 "
+            />
+          </div>
+          <div className="relative sm:hidden">
+            <img
+              className="absolute top-[10px] px-1 sm:top-3 sm:w-7"
+              src="src\assets\icons\filter-search.svg"
+              alt=""
+            />
+            <button
+              type="button"
+              className="  w-36 rounded-lg  border border-gray-200 py-2.5  text-sm font-medium text-black hover:bg-red-600 focus:outline-none "
+            >
+              <span className=" flex  justify-center px-1">فیلتر</span>
+            </button>
           </div>
         </div>
       </div>

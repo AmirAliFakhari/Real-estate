@@ -3,7 +3,6 @@ import useClickOutside from "../hooks/useClickOutside";
 
 function DropDown({ title, items, type }) {
   const [showDrop, setShowDrop] = useState(false);
-  console.log(type);
   const modalRef = useRef();
   useClickOutside(modalRef, () => {
     setShowDrop();
@@ -18,40 +17,39 @@ function DropDown({ title, items, type }) {
           type="button"
         >
           {title}
-          <svg
-            className="ms-3 h-2.5 w-2.5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m1 1 4 4 4-4"
-            />
-          </svg>
+          {type === "checkbox" ? (
+            <svg
+              className="ms-3 h-2.5 w-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          ) : (
+            ""
+          )}
         </button>
         <div
           className={`mt-1 ${showDrop ? "" : "hidden"} w-24 divide-y divide-gray-100 rounded-lg shadow `}
         >
           <div className="flex flex-col text-black ">
-            {items?.map(
-              (data, index) => (
-                console.log(data),
-                (
-                  <label key={index} className="flex gap-2">
-                    <input
-                      type={type === "range" ? type : "checkbox"}
-                      className="bg-slate-200 text-slate-600  "
-                    />
-                    {data}
-                  </label>
-                )
-              ),
-            )}
+            {items?.map((data, index) => (
+              <label key={index} className="flex gap-2">
+                <input
+                  type={type === "range" ? type : "checkbox"}
+                  className="bg-slate-200 text-slate-600  "
+                />
+                {data}
+              </label>
+            ))}
           </div>
         </div>
       </div>

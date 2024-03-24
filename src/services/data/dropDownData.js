@@ -3,18 +3,22 @@ const dropDownData =
     "data": [
         {
             "title": "منطقه",
-            "type": "chackbox",
+            "type": "checkbox",
             "items": ["تجریش", "نیاوران", "انقلاب", "ولی عصر"]
         },
         {
             "title": "نوع ملک",
-            "type": "chackbox",
+            "type": "checkbox",
             "items": ["تجاری", "ویلایی"]
         },
         {
-            "title": "Data 4",
-            "type": "chackbox",
-            "items": ["Item 4-1", "Item 4-2", "Item 4-3", "Item 4-4"]
+            "title": "متراژ",
+            "type": "checkbox",
+            "items": ["200-به بالا", "15-200", "100-150", "50-100"]
+        },
+        {
+            "title": "فیلتر",
+            "type": "button",
         }
     ]
 }
