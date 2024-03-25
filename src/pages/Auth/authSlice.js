@@ -4,7 +4,8 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState: {
         userData: null,
-        userRole: null
+        userRole: null,
+        image_id: Math.random()
     },
     reducers: {
         userRole: (state, action) => {

@@ -10,15 +10,15 @@ import SignIn from "./pages/Auth/signIn/SignIn";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 import getUser from "./services/Auth/getUser";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { userData, userRole } from "./pages/Auth/authSlice";
 import { useEffect } from "react";
-import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
+// import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
 import Houses from "./pages/houses/Houses";
-import useLastHouse from "./partials/houses/useLastHouse";
+import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
 
 function App() {
-  const { isLoading: houseLoading } = useLastHouse();
+  const { lastRegLoading } = useRegisterHouse();
   const { isLoading: introLoading } = useIntroduction();
   const { isLoading: newsLoading } = useNews();
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ function App() {
     someFunction();
   }, [dispatch]);
 
-  if (houseLoading || introLoading || newsLoading) {
+  if (introLoading || newsLoading || lastRegLoading) {
     return (
       <div className="flex h-screen w-screen flex-col items-center justify-center gap-2">
         <Spinner />

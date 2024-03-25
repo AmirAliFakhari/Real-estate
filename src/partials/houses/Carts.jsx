@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import HomeCart from "./HouseCart";
 import "swiper/css/navigation";
 import "swiper/css";
-import Spinner from "../../features/Spinner";
-import useLastHouse from "./useLastHouse";
+import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
+// import Spinner from "../../features/Spinner";
+// import useLastHouse from "./useLastHouse";
 
 function Carts() {
-  const { data } = useLastHouse();
+  const { getLastRegData } = useRegisterHouse();
 
   return (
     <>
@@ -20,16 +21,18 @@ function Carts() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-5">
-        {data.map((data) => (
+      <div className="flex    flex-wrap items-baseline justify-center gap-5 sm:justify-start">
+        {getLastRegData?.map((data) => (
           <HomeCart
             time={data.created_at}
             key={data.id}
-            homeImg={data.img}
-            monthPrice={data.rent_price}
-            mortgage={data.mortgage_price}
-            subTitle={data.subtitle}
+            image_id={data.image_id}
+            monthPrice={data.rent}
+            mortgage={data.mortgage}
+            state={data.state}
+            street={data.street}
             title={data.grouping}
+            area={data.area}
           />
         ))}
       </div>

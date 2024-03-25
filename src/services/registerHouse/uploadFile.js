@@ -1,14 +1,11 @@
 import supabase from "../supabase";
 
-export default async function uploadFile({ pictures }) {
-    let random = Math.random()
-
+export default async function uploadFile(image_id2, picture) {
+    console.log(image_id2)
     const { data, error } = await supabase
         .storage
         .from('apartments')
-        .upload(`${random}-registerHouse.png`, pictures, {
-            cacheControl: '3600',
-        })
+        .upload(`${image_id2}-registerHouse.png`, picture)
 
     if (error) {
         throw new Error(" could not be loaded");

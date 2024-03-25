@@ -1,20 +1,22 @@
+import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
 import HomeCart from "../houses/HouseCart";
-import useHouse from "../houses/useHouse";
+// import useHouse from "../houses/useHouse";
 
 function Advertisements() {
-  const { data } = useHouse();
-
+  const { getRegData } = useRegisterHouse();
   return (
-    <div className="flex flex-grow flex-wrap items-center justify-start gap-5">
-      {data?.map((data) => (
+    <div className="flex    flex-wrap items-baseline justify-center gap-5 sm:justify-start">
+      {getRegData?.map((data) => (
         <HomeCart
           time={data.created_at}
           key={data.id}
-          homeImg={data.img}
-          monthPrice={data.rent_price}
-          mortgage={data.mortgage_price}
-          subTitle={data.subtitle}
+          image_id={data.image_id}
+          monthPrice={data.rent}
+          mortgage={data.mortgage}
+          state={data.state}
+          street={data.street}
           title={data.grouping}
+          area={data.area}
         />
       ))}
     </div>

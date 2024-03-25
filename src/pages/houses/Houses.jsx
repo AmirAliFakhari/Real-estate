@@ -88,9 +88,11 @@ function Houses() {
           </div>
         </div>
       </div>
-      <div className="absolute top-56 mt-10 grid  auto-cols-max grid-flow-col grid-cols-2 px-5">
+      <div className=" mt-28 grid   px-5  sm:auto-cols-max sm:grid-flow-col sm:grid-cols-2">
         <Advertisements />
-        <MapAd />
+        <div className="sticky top-0 h-screen overflow-y-auto">
+          <MapAd />
+        </div>
       </div>
     </>
   );

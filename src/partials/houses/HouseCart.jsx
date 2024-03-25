@@ -1,11 +1,24 @@
 import { Link } from "react-router-dom";
 
-function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg, time }) {
-  const splitingTime =  time?.split(":")[0] - new Date().getHours();
+function HomeCart({
+  title,
+  state,
+  mortgage,
+  monthPrice,
+  image_id,
+  time,
+  street,
+  area,
+}) {
+  const splitingTime = time?.split(":")[0] - new Date().getHours();
   return (
     <>
-      <div className="relative flex max-w-sm flex-col items-center justify-center rounded-lg border border-gray-200 bg-white shadow ">
-        <img className="w-full rounded-t-lg" src={`${homeImg}`} alt="" />
+      <div className="relative flex h-[23rem] w-60 max-w-sm flex-col items-center justify-center rounded-lg border border-gray-200 bg-white shadow ">
+        <img
+          className="h-48  w-64 rounded-t-lg object-cover"
+          src={`https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/apartments/${image_id}-registerHouse.png`}
+          alt=""
+        />
         <span className="absolute left-2 top-2 rounded-sm bg-gray-400 px-2 text-white ">
           {splitingTime} ساعت پیش
         </span>
@@ -16,10 +29,10 @@ function HomeCart({ title, subTitle, mortgage, monthPrice, homeImg, time }) {
             </h5>
           </a>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {subTitle}
+            {state} | {street} | {`${area} متر مربع`}
           </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {mortgage} | {monthPrice}
+            {mortgage} میلیون رهن | {monthPrice} میلیون اجاره
           </p>
           <Link className="hover:bg-blue-red inline-flex items-center rounded-lg border border-red-700 px-3 py-2 text-center text-sm font-medium text-red-700 focus:outline-none focus:ring-4 focus:ring-blue-300 ">
             مشاهده

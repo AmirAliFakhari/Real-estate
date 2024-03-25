@@ -91,10 +91,10 @@ const stepsData = [
             {
                 id: 9,
                 title: "متراژ(متر مربع)",
-                type: "text",
-                name: "متراژ(متر مربع)",
+                type: "number",
+                name: "متراژ(متر مربع) 200",
                 placeholder: "مساحت ملک خود را وارد کنید",
-                value: "متراژ(متر مربع)",
+                value: "100",
                 reg: "area",
 
             },
@@ -227,7 +227,7 @@ const stepsData = [
                 title: "توضیحات",
                 type: "file",
                 name: "توضیحات",
-                reg: "pictures",
+                reg: "picture",
 
             }
         ],

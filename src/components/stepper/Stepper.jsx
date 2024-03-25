@@ -18,12 +18,15 @@ export default function Stepper({
 
   const [count, setCount] = useState(0);
   const userData = useSelector((state) => state.auth.userData);
+  // const image_id = Math.random();
+  let image_id = useSelector((state) => state.auth.image_id);
 
   const onSubmit = (data) => {
     if (count === 6) {
       regHouse({
         ...data,
         userData,
+        image_id,
       });
     }
   };

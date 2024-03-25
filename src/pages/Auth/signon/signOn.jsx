@@ -9,7 +9,7 @@ function SignOn() {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     singUpUser({
       firstname: data.firstname,
       lastname: data.lastname,
