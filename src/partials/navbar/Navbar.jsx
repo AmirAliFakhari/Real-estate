@@ -8,8 +8,6 @@ function Navbar() {
   const userRole = useSelector((state) => state.auth.userRole);
   const userUserName = useSelector((state) => state.auth.userData)
     ?.user_metadata?.firstname;
-  console.log(userUserName);
-  console.log(userRole);
 
   return (
     <>

@@ -1,10 +1,9 @@
 import Introduction from "../partials/Introduction/Introduction";
 import About from "../partials/about/About";
 import LastNews from "../partials/news/LastNews";
-import FooterPage from "../partials/footer/Footer";
 import HeaderSlide from "../partials/headerSlide/HeaderSlide";
 import Carts from "../partials/houses/Carts";
-import MapAd from "../partials/house-ad/MapAd";
+import Footer from "../partials/footer/Footer";
 
 export default function Layout() {
   return (
@@ -14,7 +13,6 @@ export default function Layout() {
       <Introduction />
       <LastNews />
       <About />
-      {/* <FooterPage /> */}
     </div>
   );
 }

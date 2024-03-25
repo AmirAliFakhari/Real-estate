@@ -1,9 +1,9 @@
 function AboutCart({ text, img }) {
   return (
     <>
-      <div className="flex  h-64 flex-col items-center justify-center gap-7 rounded-xl bg-slate-50 shadow-2xl shadow-red-100 drop-shadow-2xl ">
+      <div className="flex  h-64 flex-col items-center justify-center gap-7 rounded-xl bg-slate-50 shadow-2xl drop-shadow-xl ">
         <img className="w-fit" src={`${img}`} alt="" />
-        <p className="w-52 text-lg font-light  sm:text-xl">{text}</p>
+        <p className="w-52 text-lg font-light  sm:text-lg">{text}</p>
       </div>
     </>
   );

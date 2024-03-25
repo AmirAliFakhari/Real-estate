@@ -26,7 +26,7 @@ function About() {
           اما در سقفینو مشاوران املاک کِنار شما می‌مانند
         </span>
       </div>
-      <div className="mt-10 flex flex-wrap justify-center gap-7">
+      <div className="mt-10 flex flex-wrap justify-center gap-16">
         {TextData.map((res) => (
           <AboutCart text={res.text} img={res.img} key={res.text} />
         ))}
