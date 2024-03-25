@@ -14,7 +14,7 @@ export default function Layout() {
       <Introduction />
       <LastNews />
       <About />
-      <FooterPage />
+      {/* <FooterPage /> */}
     </div>
   );
 }
