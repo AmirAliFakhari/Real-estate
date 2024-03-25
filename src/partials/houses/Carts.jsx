@@ -21,7 +21,7 @@ function Carts() {
         </div>
       </div>
 
-      <div className="flex    flex-wrap items-baseline justify-center gap-5 sm:justify-start">
+      <div className="flex    flex-wrap items-baseline justify-center gap-5 ">
         {getLastRegData?.map((data) => (
           <HomeCart
             time={data.created_at}
