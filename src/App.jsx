@@ -1,4 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { userData, userRole } from "./pages/Auth/authSlice";
+
 import Layout from "./pages/Layout";
 import AppLayout from "./pages/AppLayout";
 import useIntroduction from "./partials/Introduction/useIntroduction";
@@ -9,10 +13,6 @@ import Customer_panel from "./pages/Customer_panel";
 import SignIn from "./pages/Auth/signIn/SignIn";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 import getUser from "./services/Auth/getUser";
-
-import { useDispatch } from "react-redux";
-import { userData, userRole } from "./pages/Auth/authSlice";
-import { useEffect } from "react";
 // import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
 import Houses from "./pages/houses/Houses";
 import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
@@ -45,20 +45,18 @@ function App() {
   }
 
   return (
-    <BrowserRouter basename="/">
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route element={<Layout />} path="/" />
-          <Route element={<Houses />} path="houses" />
-        </Route>
+    <Routes>
+      <Route element={<AppLayout />}>
+        <Route element={<Layout />} path="/" />
+        <Route element={<Houses />} path="houses" />
+      </Route>
+      <Route element={<RegisterHouse />} path="register-house" />
 
-        <Route element={<RegisterHouse />} path="register-house" />
-        <Route element={<SignOn />} path="signon" />
-        <Route element={<SignIn />} path="signIn" />
-        <Route element={<Customer_panel />} path="customer-panel" />
-        {/* <Route element={<SuccessfulReg />} path="successful-reg" /> */}
-      </Routes>
-    </BrowserRouter>
+      <Route element={<SignOn />} path="signon" />
+      <Route element={<SignIn />} path="signIn" />
+      <Route element={<Customer_panel />} path="customer-panel" />
+      {/* <Route element={<SuccessfulReg />} path="successful-reg" /> */}
+    </Routes>
   );
 }
 

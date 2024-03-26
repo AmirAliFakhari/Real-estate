@@ -16,7 +16,7 @@ export default function useSignUp() {
     } = useMutation({
         mutationFn: (password, firstname, lastname, email) => signUp(password, firstname, lastname, email),
 
-        onSuccess: (data) => {
+        onSuccess: () => {
             async function someFunction() {
                 try {
                     const userD = await getUser();

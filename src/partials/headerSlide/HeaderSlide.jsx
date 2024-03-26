@@ -2,7 +2,7 @@ function HeaderSlide() {
   return (
     <div className="relative">
       <img
-        src="https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/sign/apartments/apartment.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhcGFydG1lbnRzL2FwYXJ0bWVudC5zdmciLCJpYXQiOjE3MTAxNTY1MTcsImV4cCI6MTc0MTY5MjUxN30.2J32ZKLQV6Z5gDUsQAbb0xTYvEnFkui3XPmh4-KLLy8&t=2024-03-11T11%3A28%3A34.962Z"
+        src="src\assets\imgs\unsplash_hCU4fimRW-c.svg"
         alt="Background"
         className="h-auto w-full "
       />
@@ -16,12 +16,12 @@ function HeaderSlide() {
           </span>
         </div>
         <div className="absolute  top-[200%]">
-          <div className="-translate-y-1/12  flex w-screen -translate-x-1/2 flex-col items-center justify-start gap-2 ">
+          <div className="-translate-y-1/12  flex w-screen  -translate-x-1/2 flex-col items-center justify-start gap-2 ">
             <div className="relative">
               <input
                 type="text"
                 placeholder="کجا می خوای بری!"
-                className="w-80 rounded-lg border border-stone-700 bg-slate-50 py-3 pl-4 sm:w-[25rem]"
+                className="w-80 rounded-lg border border-stone-100 bg-slate-50 py-3 pl-4  sm:w-[25rem]"
               />
               <img
                 className="absolute inset-y-0 left-0 ml-1 mr-0 mt-[13px]"

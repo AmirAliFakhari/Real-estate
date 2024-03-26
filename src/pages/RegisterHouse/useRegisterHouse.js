@@ -1,12 +1,13 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+
 import toast from "react-hot-toast";
 import registerHouseAPI, { getLastRegisterHouseAPI, getRegisterHouseAPI } from "../../services/registerHouse/registerHouseAPI";
 import uploadFile from "../../services/registerHouse/uploadFile";
-import { useNavigate } from "react-router-dom";
 
 export default function useRegisterHouse() {
+    const navigate = useNavigate();
 
-    const navigate = useNavigate;
     const {
         mutate: regHouse,
         data: regHouseData,
@@ -33,7 +34,7 @@ export default function useRegisterHouse() {
     });
 
     const { data: getLastRegData, isLoading: lastRegLoading } = useQuery({
-        queryKey: ["registerHouse"],
+        queryKey: ["LastRegisterHouse"],
         queryFn: getLastRegisterHouseAPI
     });
 

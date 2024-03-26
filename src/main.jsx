@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./services/store";
 import { Toaster } from "react-hot-toast";
 import "../node_modules/leaflet/dist/leaflet.css";
+import { BrowserRouter } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
@@ -14,7 +15,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </Provider>
     </React.StrictMode>
     <Toaster

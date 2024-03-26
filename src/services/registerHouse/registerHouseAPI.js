@@ -1,8 +1,6 @@
 import supabase from "../supabase";
 
 export default async function registerHouseAPI({ userData, image_id2, ...d }) {
-    console.log(image_id2)
-
     const { data, error } = await supabase
         .from('registerHouse')
         .insert([

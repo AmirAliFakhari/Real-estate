@@ -8,7 +8,7 @@ import Footer from "../partials/footer/Footer";
 export default function Layout() {
   return (
     <div className="relative top-[69.6px] ">
-      <HeaderSlide src="slidephoto.svg" />
+      <HeaderSlide src="slide-image.png" />
       <Carts />
       <Introduction />
       <LastNews />
