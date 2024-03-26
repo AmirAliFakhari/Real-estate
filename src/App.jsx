@@ -16,6 +16,7 @@ import getUser from "./services/Auth/getUser";
 // import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
 import Houses from "./pages/houses/Houses";
 import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
+import ShowHouse from "./pages/showHouse/ShowHouse";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();
@@ -49,9 +50,10 @@ function App() {
       <Route element={<AppLayout />}>
         <Route element={<Layout />} path="/" />
         <Route element={<Houses />} path="houses" />
+        <Route element={<ShowHouse />} path="houses/:image_id" />
       </Route>
-      <Route element={<RegisterHouse />} path="register-house" />
 
+      <Route element={<RegisterHouse />} path="register-house" />
       <Route element={<SignOn />} path="signon" />
       <Route element={<SignIn />} path="signIn" />
       <Route element={<Customer_panel />} path="customer-panel" />
