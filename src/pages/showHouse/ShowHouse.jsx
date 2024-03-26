@@ -1,6 +1,11 @@
-function ShowHouse() {
-  console.log("salam");
-  return <div className="top-16 bg-red-700">saa</div>;
+function ShowHouses() {
+  return (
+    <>
+      <div className="relative left-0 top-[80px]">
+        <div className="flex justify-center">salm</div>
+      </div>
+    </>
+  );
 }
 
-export default ShowHouse;
+export default ShowHouses;
