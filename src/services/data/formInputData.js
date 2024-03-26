@@ -126,6 +126,24 @@ const stepsData = [
                 currency: "میلیون تومان",
                 reg: "number_floors",
             },
+            {
+                id: 121,
+                title: "lat",
+                type: "text",
+                name: "مختصات",
+                placeholder: "31.8974",
+                value: "31.8974",
+                reg: "lat",
+            },
+            {
+                id: 122,
+                title: "long",
+                type: "text",
+                name: "مختصات",
+                placeholder: "54.3606",
+                value: "54.3606",
+                reg: "long",
+            },
         ],
     },
     {
@@ -217,6 +235,7 @@ const stepsData = [
                 reg: "Exta_Inf",
 
             }
+
         ],
     },
     {
