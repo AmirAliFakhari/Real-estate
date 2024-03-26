@@ -37,7 +37,7 @@ export async function getLastRegisterHouseAPI() {
 
     const { data: getRegisterHouse, error } = await supabase
         .from('registerHouse')
-        .select('*').limit(9)
+        .select('*').limit(8)
 
 
     if (error) {

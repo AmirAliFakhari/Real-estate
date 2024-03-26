@@ -15,13 +15,13 @@ function Carts() {
         <div className="mb-4 flex w-[85%] justify-between">
           <p className="font-semibold "> جدیدترین خانه‌های اجاره‌ای تهران </p>
 
-          <Link to="/all-hpmes" className="text-gray-700 ">
+          <Link to="houses" className="text-gray-700 ">
             مشاهده همه
           </Link>
         </div>
       </div>
 
-      <div className="flex    flex-wrap items-baseline justify-center gap-5 ">
+      <div className="mx-auto    flex w-[78rem] flex-wrap items-baseline justify-center gap-10 ">
         {getLastRegData?.map((data) => (
           <HomeCart
             time={data.created_at}
