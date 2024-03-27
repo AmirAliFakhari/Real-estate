@@ -1,19 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import useClickOutside from "../hooks/useClickOutside";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Discuss } from "react-loader-spinner";
+import { data1 } from "../pages/Auth/authSlice";
 
 function DropDown({ title, items, type }) {
   const [showDrop, setShowDrop] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
-
-  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState();
   const modalRef = useRef();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     setSearchParams({ q: searchQuery });
-    // navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
   };
 
   useClickOutside(modalRef, () => {
@@ -39,6 +38,7 @@ function DropDown({ title, items, type }) {
               <label
                 onClick={(event) => {
                   setSearchQuery(event.target.textContent);
+                  setShowDrop(false);
                   handleSubmit(event);
                 }}
                 key={index}
