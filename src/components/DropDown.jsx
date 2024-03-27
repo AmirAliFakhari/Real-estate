@@ -5,17 +5,16 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 function DropDown({ title, items, type }) {
   const [showDrop, setShowDrop] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams.get(""));
-  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
 
+  const navigate = useNavigate();
   const modalRef = useRef();
 
-  useEffect(() => {
-    if (searchQuery) {
-      setSearchParams(searchQuery);
-      navigate(`/search?q=${searchQuery}`);
-    }
-  }, [navigate, searchQuery, setSearchParams]);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSearchParams({ q: searchQuery });
+    // navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+  };
 
   useClickOutside(modalRef, () => {
     setShowDrop(false);
@@ -39,8 +38,8 @@ function DropDown({ title, items, type }) {
             {items?.map((data, index) => (
               <label
                 onClick={(event) => {
-                  event.preventDefault();
                   setSearchQuery(event.target.textContent);
+                  handleSubmit(event);
                 }}
                 key={index}
                 className="messageCheckbox flex cursor-pointer gap-2 hover:bg-red-500 "
