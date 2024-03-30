@@ -1,24 +1,25 @@
-import { useEffect, useRef, useState } from "react";
-import useClickOutside from "../hooks/useClickOutside";
-import { useSearchParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { Discuss } from "react-loader-spinner";
-import { data1 } from "../pages/Auth/authSlice";
+import { useRef, useState } from "react";
+import { filter } from "../services/registerHouse/registerHouseAPI";
 
-function DropDown({ title, items, type }) {
+export default function DropDown({
+  name,
+  options,
+  selectedItems,
+  setSelectedItems,
+}) {
   const [showDrop, setShowDrop] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState();
   const modalRef = useRef();
 
-  const handleSubmit = () => {
-    setSearchParams({ q: searchQuery });
+  const handleSubmit = (itemName) => {
+    setSelectedItems((prevItems) => ({
+      ...prevItems,
+      [name]: itemName,
+    }));
+    filter(selectedItems);
+
+    setShowDrop(false);
   };
 
-  useClickOutside(modalRef, () => {
-    setShowDrop(false);
-  });
-  //// image button bezar bara drop ha
   return (
     <>
       <div className="flex flex-col" ref={modalRef}>
@@ -27,25 +28,20 @@ function DropDown({ title, items, type }) {
           className="flex w-24 items-center justify-center rounded-lg border  py-2.5  text-center text-sm font-medium text-black hover:bg-red-600 hover:text-white focus:outline-none"
           type="button"
         >
-          {title}
-          {type === "checkbox" ? <img src="" alt="" /> : ""}
+          {name}
         </button>
         <div
           className={`mt-1 ${showDrop ? "" : "hidden"} w-24 divide-y divide-gray-100 rounded-lg shadow`}
         >
-          <div className=" flex flex-col text-black ">
-            {items?.map((data, index) => (
+          <div>
+            {options?.map((item, index) => (
               <label
-                onClick={(event) => {
-                  setSearchQuery(event.target.textContent);
-                  setShowDrop(false);
-                  handleSubmit(event);
-                }}
+                onClick={() => handleSubmit(item)}
                 key={index}
                 className="messageCheckbox flex cursor-pointer gap-2 hover:bg-red-500 "
               >
                 <input type="button" className="bg-slate-200 text-slate-600" />
-                {data}
+                {item}
               </label>
             ))}
           </div>
@@ -54,5 +50,3 @@ function DropDown({ title, items, type }) {
     </>
   );
 }
-
-export default DropDown;

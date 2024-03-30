@@ -5,6 +5,7 @@ import Advertisements from "../../partials/house-ad/Advertisements";
 import MapAd from "../../partials/house-ad/MapAd";
 function Houses() {
   const [rangeValue, setRangeValue] = useState(500);
+  const [selectedItems, setSelectedItems] = useState({});
 
   function changeRange(e) {
     setRangeValue(e);
@@ -52,12 +53,13 @@ function Houses() {
           </form>
           <div className="  flex flex-wrap justify-between gap-2 px-5 ">
             <div className="hidden justify-start gap-2 sm:flex sm:flex-grow">
-              {dropDownData.data.map((data, index) => (
+              {dropDownData.dropdowns.map((dropdown, index) => (
                 <DropDown
                   key={index}
-                  title={data.title}
-                  items={data?.items}
-                  type={data.type}
+                  name={dropdown.name}
+                  options={dropdown.options}
+                  selectedItems={selectedItems}
+                  setSelectedItems={setSelectedItems}
                 />
               ))}
             </div>

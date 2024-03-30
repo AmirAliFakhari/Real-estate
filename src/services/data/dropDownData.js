@@ -1,26 +1,21 @@
 const dropDownData =
 {
-    "data": [
+    "dropdowns": [
         {
-            "title": "منطقه",
-            "type": "checkbox",
-            "items": ["تجریش", "نیاوران", "انقلاب", "ولی عصر"]
+            "name": "area",
+            "options": ["option1", "option2", "100"]
         },
         {
-            "title": "نوع ملک",
-            "type": "checkbox",
-            "items": ["تجاری", "ویلایی"]
+            "name": "type",
+            "options": ["تجاری", "optionB", "optionC"]
         },
         {
-            "title": "متراژ",
-            "type": "checkbox",
-            "items": ["200-به بالا", "15-200", "100-150", "50-100"]
+            "name": "city",
+            "options": ["تهران", "اصفهان", "e"]
         },
-        {
-            "title": "فیلتر",
-            "type": "button",
-        }
-    ]
+
+    ],
+    "selectedItems": {}
 }
 
 

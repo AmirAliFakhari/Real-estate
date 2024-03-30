@@ -6,13 +6,41 @@ export default async function registerHouseAPI({ userData, image_id2, ...d }) {
         .insert([
             { userData, ...d, image_id: image_id2 },
         ])
-        .select();
+        .select()
 
     if (error) {
         console.error(error);
         throw new Error(" could not be loaded");
     }
 
+    return data;
+}
+
+export async function filter({ city, area, type }) {
+    console.log(city, area, type);
+
+    let query = supabase.from('registerHouse').select('*');
+
+    if (city) {
+        query = query.filter('city', 'eq', city);
+    }
+
+    if (area) {
+        query = query.filter('area', 'eq', area);
+    }
+
+    if (type) {
+        query = query.filter('type_land', 'eq', type);
+    }
+
+    const { data, error } = await query;
+
+    console.log(data);
+
+    if (error) {
+        console.error(error);
+        throw new Error("Could not get data from Supabase.");
+    }
     return data;
 }
 
