@@ -8,6 +8,7 @@ import store from "./services/store";
 import { Toaster } from "react-hot-toast";
 import "../node_modules/leaflet/dist/leaflet.css";
 import { BrowserRouter } from "react-router-dom";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient();
 
@@ -43,5 +44,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         },
       }}
     />
+    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>,
 );

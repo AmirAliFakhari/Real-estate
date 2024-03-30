@@ -1,12 +1,20 @@
-import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
+import { useEffect } from "react";
+import useFilterRegHouse from "../../services/registerHouse/useFilterRegHouse";
 import HomeCart from "../houses/HouseCart";
-// import useHouse from "../houses/useHouse";
+import { filterRegHouse } from "../../services/registerHouse/registerHouseAPI";
 
-function Advertisements() {
-  const { getRegData } = useRegisterHouse();
+function Advertisements({ selectedItems }) {
+  const { isLoading, data } = useFilterRegHouse(selectedItems);
+
+  useEffect(() => {
+    filterRegHouse(selectedItems);
+  }, [selectedItems, filterRegHouse]);
+
+  if (isLoading) return <div>salam</div>;
+  console.log(data);
   return (
-    <div className="flex    flex-wrap items-baseline justify-center gap-5 sm:justify-start">
-      {getRegData?.map((data) => (
+    <div className="flex flex-wrap items-baseline justify-center gap-5 sm:justify-start">
+      {data?.map((data) => (
         <HomeCart
           time={data.created_at}
           key={data.id}

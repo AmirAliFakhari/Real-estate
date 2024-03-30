@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { filter } from "../services/registerHouse/registerHouseAPI";
+import { filterRegHouse } from "../services/registerHouse/registerHouseAPI";
 
 export default function DropDown({
   name,
@@ -15,7 +15,6 @@ export default function DropDown({
       ...prevItems,
       [name]: itemName,
     }));
-    filter(selectedItems);
 
     setShowDrop(false);
   };

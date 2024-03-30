@@ -91,7 +91,7 @@ function Houses() {
         </div>
       </div>
       <div className=" mt-28 grid   px-5  sm:auto-cols-max sm:grid-flow-col sm:grid-cols-2">
-        <Advertisements />
+        <Advertisements selectedItems={selectedItems} />
         <div className="sticky top-0 h-screen overflow-y-auto">
           <MapAd />
         </div>
