@@ -6,7 +6,7 @@ function NotFound() {
       <div className="flex flex-col items-center justify-center gap-3 ">
         <img src="src\assets\imgs\notFound.svg" className="w-fit" alt="" />
         <span className="font-bold">صفحه‌ مورد نظر گم شده!</span>
-        <span>
+        <span className="text-center">
           املاک به‌سرعت در حال خرید و فروش و اجاره‌اند، از صفحه اصلی گزینه مورد
           نظر را جست‌وجو کنید.
         </span>
