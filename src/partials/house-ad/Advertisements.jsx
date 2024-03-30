@@ -22,7 +22,7 @@ function Advertisements({ selectedItems, rangeValue }) {
     return <div>چنین آگهی وجود نداره (:</div>;
 
   return (
-    <div className="flex flex-wrap items-baseline justify-center gap-5 sm:justify-start">
+    <div className="mb-2 flex flex-wrap items-baseline justify-center gap-5 sm:justify-start">
       {data?.map((data) => (
         <HomeCart
           time={data.created_at}

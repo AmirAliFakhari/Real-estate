@@ -17,6 +17,7 @@ import getUser from "./services/Auth/getUser";
 import Houses from "./pages/houses/Houses";
 import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
 import ShowHouse from "./pages/showHouse/ShowHouse";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();
@@ -51,6 +52,7 @@ function App() {
         <Route element={<Layout />} path="/" />
         <Route element={<Houses />} path="houses" />
         <Route element={<ShowHouse />} path="houses/:image_id" />
+        <Route path="*" element={<NotFound />} />
       </Route>
 
       <Route element={<RegisterHouse />} path="register-house" />
