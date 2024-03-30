@@ -40,7 +40,7 @@ export default function DropDown({
                 className="messageCheckbox flex cursor-pointer gap-2 hover:bg-red-500 "
               >
                 <input type="button" className="bg-slate-200 text-slate-600" />
-                {item}
+                {name === "area" ? item + "متر" : item}
               </label>
             ))}
           </div>

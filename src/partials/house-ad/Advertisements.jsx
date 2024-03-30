@@ -2,20 +2,25 @@ import { useEffect } from "react";
 import useFilterRegHouse from "../../services/registerHouse/useFilterRegHouse";
 import HomeCart from "../houses/HouseCart";
 import { filterRegHouse } from "../../services/registerHouse/registerHouseAPI";
-import Stepper from "awesome-react-stepper";
+import Spinner from "../../features/Spinner";
 
-function Advertisements({ selectedItems }) {
-  const { isLoading, data } = useFilterRegHouse(selectedItems);
+function Advertisements({ selectedItems, rangeValue }) {
+  const { isLoading, data } = useFilterRegHouse(selectedItems, rangeValue);
 
   useEffect(() => {
-    filterRegHouse(selectedItems);
-  }, [selectedItems, filterRegHouse]);
+    filterRegHouse();
+  }, []);
 
-  if (isLoading) return <Stepper />;
+  if (isLoading)
+    return (
+      <div className="flex flex-col items-center justify-center">
+        <Spinner />
+        <span>وایسا پیدا کنم</span>
+      </div>
+    );
   else if (!data || data.length === 0)
     return <div>چنین آگهی وجود نداره (:</div>;
 
-  console.log(data);
   return (
     <div className="flex flex-wrap items-baseline justify-center gap-5 sm:justify-start">
       {data?.map((data) => (

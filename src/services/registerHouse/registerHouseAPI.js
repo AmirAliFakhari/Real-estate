@@ -16,8 +16,8 @@ export default async function registerHouseAPI({ userData, image_id2, ...d }) {
     return data;
 }
 
-export async function filterRegHouse({ city, area, type }) {
-
+export async function filterRegHouse({ city, area, type, transaction, state }, rangeValue) {
+    console.log(rangeValue)
     let query = supabase.from('registerHouse').select('*');
 
     if (city) {
@@ -30,6 +30,17 @@ export async function filterRegHouse({ city, area, type }) {
 
     if (type) {
         query = query.filter('type_land', 'eq', type);
+    }
+
+    if (transaction) {
+        query = query.filter('transaction_type', 'eq', transaction);
+    }
+
+    if (state) {
+        query = query.filter('state', 'eq', state);
+    }
+    if (rangeValue) {
+        query = query.filter('mortgage', 'gte', rangeValue);
     }
 
     const { data, error } = await query;
