@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { userData, userRole } from "./pages/Auth/authSlice";
@@ -13,6 +13,7 @@ import Customer_panel from "./pages/Customer_panel";
 import SignIn from "./pages/Auth/signIn/SignIn";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 import getUser from "./services/Auth/getUser";
+import RealStates from "./pages/RealStates";
 // import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
 import Houses from "./pages/houses/Houses";
 import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
@@ -52,6 +53,7 @@ function App() {
         <Route element={<Layout />} path="/" />
         <Route element={<Houses />} path="houses" />
         <Route element={<ShowHouse />} path="houses/:image_id" />
+        <Route element={<RealStates />} path="realStates" />
         <Route path="*" element={<NotFound />} />
       </Route>
 
