@@ -155,7 +155,7 @@ const stepsData = [
                 type: "text",
                 name: "پارکنیگ",
                 placeholder: "تعداد پارکینگ رو وارد کن ",
-                value: "۱ پارکینگ",
+                value: "1",
                 reg: "parking",
 
             },

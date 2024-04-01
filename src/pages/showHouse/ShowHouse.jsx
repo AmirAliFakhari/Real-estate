@@ -1,15 +1,25 @@
 import { Link, useLocation, useParams } from "react-router-dom";
-import ShowHomeIcon from "../../components/ShowHomeIcon";
 import ShowHomeRow from "../../components/ShowHomeRow";
 import Features from "../../partials/house-ad/Features";
 import ExplainRow from "../../partials/house-ad/Explain";
 import MapUniqueAd from "../../partials/house-ad/MapUniqueAd";
 import getHour from "../../utils/getHour";
+import useRelatedRegHouse from "./useRelatedRegHouse";
+import HomeCart from "../../partials/houses/HouseCart";
+import ShowHomeIconRow from "../../components/ShowHomeIconRow";
 
 function ShowHouses() {
   const { image_id } = useParams();
   const location = useLocation();
   const state = location.state;
+
+  const { data, isLoading } = useRelatedRegHouse(
+    state.rent,
+    state.state,
+    state.city,
+    state.area,
+  );
+
   return (
     <>
       <div className="relative left-0 top-[80px]">
@@ -31,24 +41,7 @@ function ShowHouses() {
             <div className="mt-2 flex  flex-wrap gap-1 px-5 sm:gap-2 sm:ps-10">
               {
                 <>
-                  <ShowHomeIcon
-                    src="src\assets\icons\ruler&pen.svg"
-                    title="متراژ"
-                    unit="متر"
-                    state={state.area}
-                  />
-                  <ShowHomeIcon
-                    src="src\assets\icons\lamp.svg"
-                    title="اتاق"
-                    unit="خواب"
-                    state={state.room}
-                  />
-                  <ShowHomeIcon
-                    src="src\assets\icons\buliding.svg"
-                    title="طبقه"
-                    unit="تا"
-                    state={state.number_floors}
-                  />
+                  <ShowHomeIconRow state={state} />
                 </>
               }
             </div>
@@ -82,6 +75,40 @@ function ShowHouses() {
         </div>
         <div className="mt-5 ps-10">
           <span>زمان ثبت آگهی: {getHour(state.time)} ساعت پیش</span>
+        </div>
+        <div className=" mt-5">
+          <span className="ps-10 font-bold">آگهی های مرتبط</span>
+          <div className="mx-auto    mt-10 flex flex-wrap items-baseline justify-center gap-10 md:justify-start xl:w-[78rem] ">
+            {!isLoading
+              ? data?.map((data) => (
+                  <HomeCart
+                    time={data.created_at}
+                    key={data.id}
+                    image_id={data.image_id}
+                    monthPrice={data.rent}
+                    mortgage={data.mortgage}
+                    state={data.state}
+                    street={data.street}
+                    title={data.name}
+                    area={data.area}
+                    city={data.city}
+                    room={data.room}
+                    number_floors={data.number_floors}
+                    rent={data.rent}
+                    parking={data.parking}
+                    basement={data.basement}
+                    Floor_Material={data.Floor_Material}
+                    WC_Type={data.WC_Type}
+                    Cooling_System={data.Cooling_System}
+                    Heating_System={data.Heating_System}
+                    elevator={data.elevator}
+                    WC={data.WC}
+                    long={data.long}
+                    lat={data.lat}
+                  />
+                ))
+              : ""}
+          </div>
         </div>
       </div>
     </>
