@@ -10,7 +10,7 @@ import {
 import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
 import { Link } from "react-router-dom";
 
-function MapWithText() {
+function MapAd() {
   const { getRegData } = useRegisterHouse();
 
   return (
@@ -48,4 +48,4 @@ function MapWithText() {
   );
 }
 
-export default MapWithText;
+export default MapAd;

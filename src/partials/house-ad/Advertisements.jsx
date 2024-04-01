@@ -46,6 +46,8 @@ function Advertisements({ selectedItems, rangeValue }) {
           Heating_System={data.Heating_System}
           elevator={data.elevator}
           WC={data.WC}
+          long={data.long}
+          lat={data.lat}
         />
       ))}
     </div>

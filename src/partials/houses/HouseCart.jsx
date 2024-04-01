@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import getHour from "../../utils/getHour";
 
 function HomeCart({
   title,
@@ -21,8 +22,9 @@ function HomeCart({
   Heating_System,
   WC_Type,
   WC,
+  lat,
+  long,
 }) {
-  const splitingTime = time?.split(":")[0] - new Date().getHours();
   return (
     <>
       <div className="relative flex h-[23rem] w-60 max-w-sm flex-col items-center justify-center rounded-lg border border-gray-200 bg-white shadow ">
@@ -32,7 +34,7 @@ function HomeCart({
           alt=""
         />
         <span className="absolute left-2 top-2 rounded-sm bg-gray-400 px-2 text-white ">
-          {splitingTime} ساعت پیش
+          {getHour(time)} ساعت پیش
         </span>
         <div className="p-5">
           <a href="#">
@@ -66,6 +68,9 @@ function HomeCart({
               Heating_System,
               WC_Type,
               WC,
+              long,
+              lat,
+              time,
             }}
             className="hover:bg-blue-red inline-flex items-center rounded-lg border border-red-700 px-3 py-2 text-center text-sm font-medium text-red-700 focus:outline-none focus:ring-4 focus:ring-blue-300 "
           >
