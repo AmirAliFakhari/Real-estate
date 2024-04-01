@@ -10,7 +10,6 @@ function ShowHouses() {
   const { image_id } = useParams();
   const location = useLocation();
   const state = location.state;
-
   return (
     <>
       <div className="relative left-0 top-[80px]">
