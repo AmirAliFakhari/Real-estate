@@ -9,6 +9,10 @@ function HomeCart({
   time,
   street,
   area,
+  city,
+  room,
+  number_floors,
+  rent,
 }) {
   const splitingTime = time?.split(":")[0] - new Date().getHours();
   return (
@@ -25,7 +29,7 @@ function HomeCart({
         <div className="p-5">
           <a href="#">
             <h5 className="mb-2 font-vazir text-base font-bold tracking-tight text-gray-900 dark:text-white">
-              {title}
+              رهن و اجاره آپارتمان در {city}
             </h5>
           </a>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -36,6 +40,17 @@ function HomeCart({
           </p>
           <Link
             to={`/houses/${image_id}`}
+            state={{
+              mortgage,
+              monthPrice,
+              street,
+              area,
+              city,
+              state,
+              room,
+              number_floors,
+              rent,
+            }}
             className="hover:bg-blue-red inline-flex items-center rounded-lg border border-red-700 px-3 py-2 text-center text-sm font-medium text-red-700 focus:outline-none focus:ring-4 focus:ring-blue-300 "
           >
             مشاهده

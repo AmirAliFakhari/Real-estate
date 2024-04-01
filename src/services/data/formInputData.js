@@ -122,7 +122,7 @@ const stepsData = [
                 type: "text",
                 name: "تعداد طبقات",
                 placeholder: "طبقه ملک خود را بنویسید",
-                value: "20000000",
+                value: "2",
                 currency: "میلیون تومان",
                 reg: "number_floors",
             },

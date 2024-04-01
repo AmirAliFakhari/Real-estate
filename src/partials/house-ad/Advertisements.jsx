@@ -32,8 +32,12 @@ function Advertisements({ selectedItems, rangeValue }) {
           mortgage={data.mortgage}
           state={data.state}
           street={data.street}
-          title={data.grouping}
+          title={data.name}
           area={data.area}
+          city={data.city}
+          room={data.room}
+          number_floors={data.number_floors}
+          rent={data.rent}
         />
       ))}
     </div>
