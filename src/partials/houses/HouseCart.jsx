@@ -27,7 +27,7 @@ function HomeCart({
 }) {
   return (
     <>
-      <div className="relative flex h-[23rem] w-60 max-w-sm flex-col items-center justify-center rounded-lg border border-gray-200 bg-white shadow ">
+      <div className="relative flex h-[25rem] w-60 max-w-sm flex-col items-center justify-center rounded-lg border border-gray-200 bg-white shadow ">
         <img
           className="h-48  w-64 rounded-t-lg object-cover"
           src={`https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/apartments/${image_id}-registerHouse.png`}
