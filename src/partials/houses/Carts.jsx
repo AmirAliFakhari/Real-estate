@@ -3,8 +3,6 @@ import HomeCart from "./HouseCart";
 import "swiper/css/navigation";
 import "swiper/css";
 import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
-// import Spinner from "../../features/Spinner";
-// import useLastHouse from "./useLastHouse";
 
 function Carts() {
   const { getLastRegData } = useRegisterHouse();
@@ -31,8 +29,22 @@ function Carts() {
             mortgage={data.mortgage}
             state={data.state}
             street={data.street}
-            title={data.grouping}
+            title={data.name}
             area={data.area}
+            city={data.city}
+            room={data.room}
+            number_floors={data.number_floors}
+            rent={data.rent}
+            parking={data.parking}
+            basement={data.basement}
+            Floor_Material={data.Floor_Material}
+            WC_Type={data.WC_Type}
+            Cooling_System={data.Cooling_System}
+            Heating_System={data.Heating_System}
+            elevator={data.elevator}
+            WC={data.WC}
+            long={data.long}
+            lat={data.lat}
           />
         ))}
       </div>
