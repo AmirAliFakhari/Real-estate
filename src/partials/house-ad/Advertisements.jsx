@@ -38,6 +38,14 @@ function Advertisements({ selectedItems, rangeValue }) {
           room={data.room}
           number_floors={data.number_floors}
           rent={data.rent}
+          parking={data.parking}
+          basement={data.basement}
+          Floor_Material={data.Floor_Material}
+          WC_Type={data.WC_Type}
+          Cooling_System={data.Cooling_System}
+          Heating_System={data.Heating_System}
+          elevator={data.elevator}
+          WC={data.WC}
         />
       ))}
     </div>
