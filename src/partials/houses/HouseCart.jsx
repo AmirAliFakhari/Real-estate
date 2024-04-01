@@ -13,6 +13,14 @@ function HomeCart({
   room,
   number_floors,
   rent,
+  parking,
+  basement,
+  elevator,
+  Floor_Material,
+  Cooling_System,
+  Heating_System,
+  WC_Type,
+  WC,
 }) {
   const splitingTime = time?.split(":")[0] - new Date().getHours();
   return (
@@ -50,6 +58,14 @@ function HomeCart({
               room,
               number_floors,
               rent,
+              parking,
+              basement,
+              elevator,
+              Floor_Material,
+              Cooling_System,
+              Heating_System,
+              WC_Type,
+              WC,
             }}
             className="hover:bg-blue-red inline-flex items-center rounded-lg border border-red-700 px-3 py-2 text-center text-sm font-medium text-red-700 focus:outline-none focus:ring-4 focus:ring-blue-300 "
           >

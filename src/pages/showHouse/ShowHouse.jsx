@@ -1,12 +1,12 @@
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import ShowHomeIcon from "../../components/ShowHomeIcon";
 import ShowHomeRow from "../../components/ShowHomeRow";
+import Features from "../../partials/house-ad/Features";
 
 function ShowHouses() {
   const { image_id } = useParams();
   const location = useLocation();
   const state = location.state;
-  console.log(state.number_floors);
   return (
     <>
       <div className="relative left-0 top-[80px]">
@@ -49,7 +49,21 @@ function ShowHouses() {
         </div>
         <ShowHomeRow state={state.mortgage} title="ودیعه" />
         <ShowHomeRow state={state.rent} title="اجاره ماهیانه" />
-        <ShowHomeRow state={state.mortgage} title="ودیعه" />
+        <div className="mx-5 mt-2 flex justify-between rounded-md border border-gray-200 px-2 font-extralight sm:ms-10 sm:w-[31rem]">
+          <div className="flex flex-col gap-2">
+            <span>ساعاتی پیش تهران</span>
+            <span>
+              شناسه آگهی:
+              {image_id}
+            </span>
+          </div>
+          <Link className="">
+            <span className="flex items-center justify-center text-left text-red-500">
+              گزارش تخلف آگهی
+            </span>
+          </Link>
+        </div>
+        <Features state={state} title="امکانات" />
       </div>
     </>
   );
