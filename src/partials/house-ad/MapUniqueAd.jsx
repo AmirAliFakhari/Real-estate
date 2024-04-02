@@ -1,6 +1,6 @@
 import { MapContainer, Marker, TileLayer, Tooltip } from "react-leaflet";
 
-function MapUniqueAd({ long, lat }) {
+function MapUniqueAd({ long, lat, state }) {
   return (
     <MapContainer
       center={[32.4279, 53.688]}
@@ -20,8 +20,8 @@ function MapUniqueAd({ long, lat }) {
       <Marker title="salam" position={[lat, long]}>
         <Tooltip direction="center" offset={[100, 0]}>
           <div className="flex flex-col items-center justify-center font-bold">
-            <span> قیمیت اجاره: </span>
-            <span> قیمت رهن : </span>
+            <span> قیمیت اجاره: {state.rent}</span>
+            <span> قیمت رهن : {state.mortgage}</span>
             <img
               src="https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/apartments/1057726-registerHouse.png"
               alt=""

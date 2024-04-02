@@ -1,10 +1,13 @@
+import getUser from "../Auth/getUser";
 import supabase from "../supabase";
 
 export default async function registerHouseAPI({ userData, image_id2, ...d }) {
+    const user = await getUser()
+    const userID = user.id
     const { data, error } = await supabase
         .from('registerHouse')
         .insert([
-            { userData, ...d, image_id: image_id2 },
+            { userData, ...d, image_id: image_id2, userID },
         ])
         .select()
 

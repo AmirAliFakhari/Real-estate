@@ -54,13 +54,13 @@ function App() {
         <Route element={<Houses />} path="houses" />
         <Route element={<ShowHouse />} path="houses/:image_id" />
         <Route element={<RealStates />} path="realStates" />
+        <Route element={<Customer_panel />} path="customer-panel" />
         <Route path="*" element={<NotFound />} />
       </Route>
 
       <Route element={<RegisterHouse />} path="register-house" />
       <Route element={<SignOn />} path="signon" />
       <Route element={<SignIn />} path="signIn" />
-      <Route element={<Customer_panel />} path="customer-panel" />
       {/* <Route element={<SuccessfulReg />} path="successful-reg" /> */}
     </Routes>
   );

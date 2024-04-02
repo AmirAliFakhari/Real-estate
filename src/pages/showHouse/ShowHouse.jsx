@@ -66,6 +66,7 @@ function ShowHouses() {
           </div>
           <div className="z-0 mt-10 flex w-full justify-center xl:w-auto">
             <MapUniqueAd
+              state={state}
               height="70vh"
               width="70%"
               long={state.long}
