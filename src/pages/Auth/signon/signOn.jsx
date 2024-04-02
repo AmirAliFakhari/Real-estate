@@ -13,6 +13,7 @@ function SignOn() {
     singUpUser({
       firstname: data.firstname,
       lastname: data.lastname,
+      phone: data.phone,
       password: data.password,
       email: data.email,
     });
@@ -24,7 +25,7 @@ function SignOn() {
         onSubmit={handleSubmit(onSubmit)}
         className=" flex h-screen flex-col items-center justify-center text-center"
       >
-        <div className="flex h-[32rem] h-[32rem] w-80 flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 sm:w-[25rem] ">
+        <div className="flex h-fit  w-80 flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 sm:w-[25rem] ">
           <span className="text-xl font-bold">ثبت نام</span>
           <span>برای ثبت‌نام اطلاعات زیر را تکمیل نمایید</span>
           <InputForm
@@ -45,6 +46,12 @@ function SignOn() {
             textholder="نام خانوادگی خود را وارد کنید"
             name="lastname"
             register={register("lastname")}
+          />
+          <InputForm
+            type="number"
+            textholder="شماره موبایل خود را وارد کنید"
+            name="phone"
+            register={register("phone")}
           />
           <InputForm
             type="number"

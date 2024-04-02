@@ -24,7 +24,6 @@ function App() {
   const { lastRegLoading } = useRegisterHouse();
   const { isLoading: introLoading } = useIntroduction();
   const { isLoading: newsLoading } = useNews();
-  const userRole = useSelector((state) => state.auth.userRole);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -39,6 +38,8 @@ function App() {
     }
     someFunction();
   }, [dispatch]);
+
+  const userR = useSelector((state) => state.auth.userRole);
 
   if (introLoading || newsLoading || lastRegLoading) {
     return (
@@ -55,7 +56,7 @@ function App() {
         <Route element={<Layout />} path="/" />
         <Route element={<Houses />} path="houses" />
         <Route element={<ShowHouse />} path="houses/:image_id" />
-        {userRole ? (
+        {userR ? (
           <Route element={<Customer_panel />} path="customer-panel" />
         ) : (
           ""
@@ -63,11 +64,7 @@ function App() {
         <Route element={<RealStates />} path="realStates" />
         <Route path="*" element={<NotFound />} />
       </Route>
-      {userRole ? (
-        <Route element={<RegisterHouse />} path="register-house" />
-      ) : (
-        ""
-      )}
+      {userR ? <Route element={<RegisterHouse />} path="register-house" /> : ""}
       <Route element={<SignOn />} path="signon" />
       <Route element={<SignIn />} path="signIn" />
       {/* <Route element={<SuccessfulReg />} path="successful-reg" /> */}

@@ -14,7 +14,7 @@ export default function useSignUp() {
         data,
         isPending
     } = useMutation({
-        mutationFn: (password, firstname, lastname, email) => signUp(password, firstname, lastname, email),
+        mutationFn: (password, firstname, lastname, email, phone) => signUp(password, firstname, lastname, email, phone),
 
         onSuccess: () => {
             async function someFunction() {

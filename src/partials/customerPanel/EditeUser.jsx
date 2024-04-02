@@ -46,7 +46,7 @@ function EditeUser() {
         <InputForm
           key="3"
           title="شماره موبایل"
-          type="numbers"
+          type="number"
           defaulted={userPhone}
           name=""
           textholder="شماره موبایل خود را وارد کنید"
