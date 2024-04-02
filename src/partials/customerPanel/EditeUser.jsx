@@ -3,14 +3,17 @@ import InputForm from "../../components/InputFom";
 import useEditeUser from "./useEditeUser";
 
 function EditeUser() {
-  const { register, handleSubmit, formState } = useForm();
-  // const { errors } = formState;
-  // console.log(errors);
+  const { register, handleSubmit, reset } = useForm();
+
   const { editeUpUser } = useEditeUser();
   const userEmail = localStorage.getItem("userEmail");
   const userFirstname = localStorage.getItem("userFirstname");
   const userLastname = localStorage.getItem("userLastname");
   const userPhone = localStorage.getItem("userPhone");
+  const resetForm = () => {
+    reset();
+  };
+
   const onSubmit = (data) => {
     editeUpUser({
       firstname: data.firstName,
@@ -77,7 +80,7 @@ function EditeUser() {
         />
         <InputForm
           key="5"
-          title="رمز عبور"
+          title="رمز عبور جدید"
           type="number"
           name=""
           textholder="رمز عبور را وارد کنید"
@@ -93,7 +96,12 @@ function EditeUser() {
         <button type="submit" className=" rounded-md bg-red-500 p-2 text-white">
           دخیره اطلاعات
         </button>
-        {/* <button className="rounded-md border border-red-400 p-2">انصراف</button> */}
+        <button
+          onClick={() => resetForm()}
+          className="rounded-md border border-red-400 p-2"
+        >
+          انصراف
+        </button>
       </div>
     </form>
   );
