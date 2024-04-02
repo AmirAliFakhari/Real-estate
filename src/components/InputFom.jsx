@@ -8,6 +8,7 @@ function InputForm({
   name,
   defaulted,
   currency,
+  value,
 }) {
   const [eyePass, setEyePass] = useState(false);
   /// aye ro dorost konnnnnnn!
@@ -22,6 +23,8 @@ function InputForm({
           accept={`image/png `}
           multiple
           type={type}
+          value={value}
+          disabled={value ? true : false}
           id={name}
           defaultValue={defaulted}
           className={`block ${type === "file" ? "custom-file-input" : ""} w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500`}

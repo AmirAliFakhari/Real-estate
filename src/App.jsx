@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userData, userRole } from "./pages/Auth/authSlice";
 
 import Layout from "./pages/Layout";
@@ -24,6 +24,8 @@ function App() {
   const { lastRegLoading } = useRegisterHouse();
   const { isLoading: introLoading } = useIntroduction();
   const { isLoading: newsLoading } = useNews();
+  const userRole = useSelector((state) => state.auth.userRole);
+
   const dispatch = useDispatch();
   useEffect(() => {
     async function someFunction() {
@@ -53,12 +55,19 @@ function App() {
         <Route element={<Layout />} path="/" />
         <Route element={<Houses />} path="houses" />
         <Route element={<ShowHouse />} path="houses/:image_id" />
+        {userRole ? (
+          <Route element={<Customer_panel />} path="customer-panel" />
+        ) : (
+          ""
+        )}
         <Route element={<RealStates />} path="realStates" />
-        <Route element={<Customer_panel />} path="customer-panel" />
         <Route path="*" element={<NotFound />} />
       </Route>
-
-      <Route element={<RegisterHouse />} path="register-house" />
+      {userRole ? (
+        <Route element={<RegisterHouse />} path="register-house" />
+      ) : (
+        ""
+      )}
       <Route element={<SignOn />} path="signon" />
       <Route element={<SignIn />} path="signIn" />
       {/* <Route element={<SuccessfulReg />} path="successful-reg" /> */}
