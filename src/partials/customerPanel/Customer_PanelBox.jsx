@@ -48,7 +48,7 @@ function Customer_PanelBox() {
           </div>
         </div>
       </div>
-      <div className="col-span-full h-96 p-1 sm:col-span-2 sm:h-full">
+      <div className="col-span-full h-fit p-1 sm:col-span-2 sm:h-full">
         <div className="h-full rounded-lg border border-gray-400 p-1">
           {selectedMenuItem === "edit" && <EditeUser />}
           {selectedMenuItem === "add" && "but"}
