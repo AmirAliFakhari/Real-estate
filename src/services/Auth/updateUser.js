@@ -1,14 +1,20 @@
 import supabase from "../supabase";
 
-export default async function login({ password, email }) {
+export default async function updateUser({ password, firstname, lastname, phone }) {
+    console.log(phone, password, lastname, firstname)
 
     const { data, error } = await supabase.auth.updateUser({
         password: password,
-        email: email
+
+        data: {
+            firstname,
+            lastname,
+            phone
+        }
     })
 
     if (error) throw new Error("there is a error!")
-
+    console.log(data)
     return data;
 
 }

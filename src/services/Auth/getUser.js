@@ -10,7 +10,6 @@ export default async function getUser() {
     localStorage.setItem("userFirstname", user.user_metadata.firstname)
     localStorage.setItem("userLastname", user.user_metadata.lastname)
     localStorage.setItem("userPhone", user.user_metadata.phone)
-    console.log(user)
 
     return user;
 

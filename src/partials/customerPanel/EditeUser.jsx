@@ -1,14 +1,24 @@
 import { useForm } from "react-hook-form";
 import InputForm from "../../components/InputFom";
+import useEditeUser from "./useEditeUser";
 
 function EditeUser() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState } = useForm();
+  // const { errors } = formState;
+  // console.log(errors);
+  const { editeUpUser } = useEditeUser();
   const userEmail = localStorage.getItem("userEmail");
   const userFirstname = localStorage.getItem("userFirstname");
   const userLastname = localStorage.getItem("userLastname");
   const userPhone = localStorage.getItem("userPhone");
   const onSubmit = (data) => {
-    console.log(data);
+    editeUpUser({
+      firstname: data.firstName,
+      lastname: data.lastName,
+      phone: data.phone,
+      email: data.email,
+      password: data.password,
+    });
   };
 
   return (
@@ -64,12 +74,6 @@ function EditeUser() {
           name=""
           value={userEmail}
           textholder="ایمیل خود را وارد کنید"
-          register={register("email", {
-            required: {
-              value: true,
-              message: "Please complete the email",
-            },
-          })}
         />
         <InputForm
           key="5"
@@ -86,10 +90,10 @@ function EditeUser() {
         />
       </div>
       <div className="flex flex-row-reverse gap-5 pe-5">
-        <button className=" rounded-md bg-red-500 p-2 text-white">
+        <button type="submit" className=" rounded-md bg-red-500 p-2 text-white">
           دخیره اطلاعات
         </button>
-        <button className="rounded-md border border-red-400 p-2">انصراف</button>
+        {/* <button className="rounded-md border border-red-400 p-2">انصراف</button> */}
       </div>
     </form>
   );

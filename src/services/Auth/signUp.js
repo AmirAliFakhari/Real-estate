@@ -10,7 +10,7 @@ export default async function signUp({ password, firstname, lastname, email, pho
             data: {
                 firstname,
                 lastname,
-                phone: phone
+                phone
             }
 
         }
