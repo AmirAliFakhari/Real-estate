@@ -1,13 +1,14 @@
 import getUser from "../Auth/getUser";
 import supabase from "../supabase";
 
-export default async function registerHouseAPI({ userData, image_id2, ...d }) {
+export default async function registerHouseAPI({ userData, image_id2, data }) {
+    console.log(userData)
     const user = await getUser()
     const userID = user.id
-    const { data, error } = await supabase
+    const { d, error } = await supabase
         .from('registerHouse')
         .insert([
-            { userData, ...d, image_id: image_id2, userID },
+            { userData, ...data, image_id: image_id2, userID },
         ])
         .select()
 
@@ -16,7 +17,7 @@ export default async function registerHouseAPI({ userData, image_id2, ...d }) {
         throw new Error(" could not be loaded");
     }
 
-    return data;
+    return d;
 }
 
 export async function filterRegHouse({ city, area, type, transaction, state }, rangeValue) {

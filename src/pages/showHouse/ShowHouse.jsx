@@ -7,6 +7,7 @@ import getHour from "../../utils/getHour";
 import useRelatedRegHouse from "./useRelatedRegHouse";
 import HomeCart from "../../partials/houses/HouseCart";
 import ShowHomeIconRow from "../../components/ShowHomeIconRow";
+import useRealtor, { useRealtorImg } from "../../services/house/useRealtor";
 
 function ShowHouses() {
   const { image_id } = useParams();
@@ -20,6 +21,14 @@ function ShowHouses() {
     state.area,
   );
 
+  const { data: realtorData, isLoading: isLoadingRealtor } = useRealtor({
+    image_id,
+  });
+  if (!isLoadingRealtor)
+    console.log(realtorData[0].userData.user_metadata.firstname);
+
+  const { data: realtorImgData, isLoading: isLoadingRealtorImg } =
+    useRealtorImg(!isLoadingRealtor ? { userID: realtorData[0].userID } : "");
   return (
     <>
       <div className="relative left-0 top-[80px]">
@@ -32,9 +41,30 @@ function ShowHouses() {
         </div>
         <div className="grid w-full grid-flow-row items-center justify-center xl:grid-cols-2">
           <div>
-            <p className="mt-5 flex items-center justify-start ps-10 text-gray-500">
-              رهن و اجاره آپارتمان در{state.city}
-            </p>
+            <div className="flex w-full justify-between px-5">
+              <p className="mt-5 flex items-center justify-start  text-gray-500">
+                رهن و اجاره آپارتمان در{state.city}
+              </p>
+              <div className="mt-5 flex items-center justify-center gap-3">
+                <img
+                  className="h-10 w-10 rounded-lg"
+                  src={
+                    !isLoadingRealtorImg
+                      ? realtorImgData
+                      : "src/assets/icons/profile-circle.svg"
+                  }
+                  alt=""
+                />
+
+                <span>
+                  {!isLoadingRealtor
+                    ? realtorData[0].userData.user_metadata.firstname +
+                      " " +
+                      realtorData[0].userData.user_metadata.lastname
+                    : "صبر کن"}
+                </span>
+              </div>
+            </div>
             <p className="mt-5 flex items-center justify-start ps-10 font-bold text-black">
               {state.area} | {state.state} | {state.street}
             </p>

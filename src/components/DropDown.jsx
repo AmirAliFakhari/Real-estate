@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { filterRegHouse } from "../services/registerHouse/registerHouseAPI";
+import { filterRegHouse } from "../services/house/registerHouseAPI";
 
 export default function DropDown({
   name,

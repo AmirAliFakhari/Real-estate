@@ -22,8 +22,8 @@ export default function Stepper({
   const onSubmit = (data) => {
     if (count === 6) {
       regHouse({
-        ...data,
-        userData,
+        data: data,
+        userData: userData,
       });
     }
   };

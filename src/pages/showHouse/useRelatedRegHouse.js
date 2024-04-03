@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getRelatedRegisterHouseAPI } from "../../services/registerHouse/registerHouseAPI";
+import { getRelatedRegisterHouseAPI } from "../../services/house/registerHouseAPI";
 
 export default function useRelatedRegHouse(rent, state, city, area) {
 

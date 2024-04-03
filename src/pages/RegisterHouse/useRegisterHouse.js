@@ -1,9 +1,10 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 import toast from "react-hot-toast";
-import registerHouseAPI, { getLastRegisterHouseAPI, getRegisterHouseAPI } from "../../services/registerHouse/registerHouseAPI";
-import uploadFile from "../../services/registerHouse/uploadFile";
+import registerHouseAPI, { getLastRegisterHouseAPI, getRegisterHouseAPI } from "../../services/house/registerHouseAPI";
+import uploadFile from "../../services/house/uploadFile";
 
 export default function useRegisterHouse() {
     const navigate = useNavigate();
@@ -13,10 +14,11 @@ export default function useRegisterHouse() {
         data: regHouseData,
         isPending
     } = useMutation({
-        mutationFn: async (d, userData) => {
-            const uniqueId = generateUniqueId();
-            uploadFile(uniqueId, d.picture[0]);
-            registerHouseAPI({ ...d, userData, image_id2: uniqueId });
+        mutationFn: async ({ data, userData }) => {
+            const uniqueId = uuidv4();
+            uploadFile(uniqueId, data.picture[0]);
+            console.log(userData)
+            registerHouseAPI({ data, userData, image_id2: uniqueId });
         },
         onSuccess: () => {
             toast.success("آگهی ثبت شد سید");
@@ -41,6 +43,3 @@ export default function useRegisterHouse() {
     return { regHouse, regHouseData, isPending, getRegData, getLastRegData, lastRegLoading };
 }
 
-function generateUniqueId() {
-    return Math.floor(1000000 + Math.random() * 90000);
-}

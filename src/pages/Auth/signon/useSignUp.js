@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import signUp from "../../../services/Auth/signUp";
 import { userData, userRole } from "../authSlice";
 import getUser from "../../../services/Auth/getUser";
-import uploadAvatarUserID from "../../../services/Auth/uploadAvatarUrl";
 
 export default function useSignUp() {
     const navigate = useNavigate()

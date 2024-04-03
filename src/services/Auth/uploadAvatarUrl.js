@@ -16,7 +16,8 @@ export default async function getAvatarURL() {
     return data;
 }
 
-export async function uploadAvatarUrl({ avatar, myuuid }) {
+export async function uploadAvatarUrl({ avatar, myuuid, image_id3 }) {
+    console.log(image_id3)
     const userID = localStorage.getItem("userID");
     const supaURL =
         "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/avatars/";
@@ -24,12 +25,11 @@ export async function uploadAvatarUrl({ avatar, myuuid }) {
     const avatarName = avatar?.name;
     const avatarURL = `${supaURL}${myuuid}-${avatarName}`;
 
-    // Use 'upsert' to update an existing row or insert a new one
     const { data, error } = await supabase
         .from('userAvatar')
-        .upsert({ userID: userID, avatar: avatarURL })
+        .upsert({ userID: userID, avatar: avatarURL, uniqueId: image_id3 })
 
-
+    console.log(data)
 
     if (error) {
         console.error('Upsert error:', error.message);

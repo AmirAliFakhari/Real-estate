@@ -1,4 +1,4 @@
-import useFilterRegHouse from "../../services/registerHouse/useFilterRegHouse";
+import useFilterRegHouse from "../../services/house/useFilterRegHouse";
 import HomeCart from "../houses/HouseCart";
 import Spinner from "../../features/Spinner";
 
