@@ -2,16 +2,37 @@ import { useState } from "react";
 import Customer_PanelMenu from "./Customer_PanelMenu";
 import Customer_PanelUser from "./Customer_PanelUser";
 import EditeUser from "./EditeUser";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MyAdds from "./MyAdds";
+import SavedAdds from "./SavedAdds";
+import supabase from "../../services/supabase";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { userRole } from "../../pages/Auth/authSlice";
 
 function Customer_PanelBox() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
 
   const handleMenuItemClick = (menuItem) => {
     setSelectedMenuItem(menuItem);
   };
+
+  const { error, mutate: handleLogOut } = useMutation({
+    mutationFn: () => supabase.auth.signOut(),
+    onSuccess: () => {
+      toast.success("خارج شدی");
+      dispatch(userRole(null));
+      navigate("/");
+    },
+
+    onError: (err) => {
+      toast.error(err.message);
+      console.log(error);
+    },
+  });
 
   return (
     <div className="grid grid-cols-3 p-2">
@@ -40,12 +61,12 @@ function Customer_PanelBox() {
               <Customer_PanelMenu
                 title="آگهی‌های ذخیره‌شده"
                 src="Vector"
-                onclick={() => handleMenuItemClick("Vector")}
+                onclick={() => handleMenuItemClick("saved-adds")}
               />
               <Customer_PanelMenu
                 title="خروج"
                 src="logout"
-                onclick={() => handleMenuItemClick("logout")}
+                onclick={() => handleLogOut()}
               />
             </div>
           </div>
@@ -55,8 +76,8 @@ function Customer_PanelBox() {
         <div className="h-full rounded-lg border border-gray-400 p-1">
           {selectedMenuItem === "edit" && <EditeUser />}
           {selectedMenuItem === "my-adds" && <MyAdds />}
-          {selectedMenuItem === "add" && "but2"}
-          {selectedMenuItem === "add" && "but3"}
+          {selectedMenuItem === "saved-adds" && <SavedAdds />}
+          {/* {selectedMenuItem === "log-out" &&} */}
           {!selectedMenuItem && <EditeUser />}
         </div>
       </div>
