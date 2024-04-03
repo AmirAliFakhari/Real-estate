@@ -16,7 +16,6 @@ export default async function houseRealtor({ image_id }) {
 
 
 export async function houseRealtorImg({ userID }) {
-    console.log(userID)
     const { data, error } = await supabase
         .from('userAvatar')
         .select()
@@ -27,5 +26,21 @@ export async function houseRealtorImg({ userID }) {
         throw new Error(" could not be loaded");
     }
 
-    return data[0].avatar;
+    return data;
+}
+
+export async function houseRealtorAdds({ userID }) {
+    console.log(userID)
+    const { data, error } = await supabase
+        .from('registerHouse')
+        .select()
+        .eq("userID", userID)
+
+    if (error) {
+        console.error(error);
+        throw new Error(" could not be loaded");
+    }
+
+    console.log(data)
+    return data;
 }

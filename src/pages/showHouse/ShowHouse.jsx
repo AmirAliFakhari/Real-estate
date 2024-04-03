@@ -7,7 +7,10 @@ import getHour from "../../utils/getHour";
 import useRelatedRegHouse from "./useRelatedRegHouse";
 import HomeCart from "../../partials/houses/HouseCart";
 import ShowHomeIconRow from "../../components/ShowHomeIconRow";
-import useRealtor, { useRealtorImg } from "../../services/house/useRealtor";
+import useRealtor, {
+  useRealtorAdds,
+  useRealtorImg,
+} from "../../services/house/useRealtor";
 
 function ShowHouses() {
   const { image_id } = useParams();
@@ -27,6 +30,11 @@ function ShowHouses() {
 
   const { data: realtorImgData, isLoading: isLoadingRealtorImg } =
     useRealtorImg(!isLoadingRealtor ? { userID: realtorData[0].userID } : "");
+
+  const { data: realtorAdds, isLoading: isLoadingAdds } = useRealtorAdds(
+    !isLoadingRealtor ? { userID: realtorData[0].userID } : "",
+  );
+
   const id =
     !isLoadingRealtor && realtorData[0]?.userData.id.split("-").slice(0, 3);
   return (
@@ -50,7 +58,7 @@ function ShowHouses() {
                   className="h-10 w-10 rounded-lg"
                   src={
                     !isLoadingRealtorImg
-                      ? realtorImgData
+                      ? realtorImgData[0]?.avatar
                       : "src/assets/icons/profile-circle.svg"
                   }
                   alt=""
@@ -64,6 +72,11 @@ function ShowHouses() {
                       : "صبر کن"}
                   </span>
                   <Link
+                    state={
+                      !isLoadingAdds && {
+                        realtorAdds,
+                      }
+                    }
                     to={`/user/${id}`}
                     className="rounded-lg bg-red-500 px-5 text-white"
                   >

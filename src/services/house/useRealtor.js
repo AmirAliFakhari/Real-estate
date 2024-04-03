@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import houseRealtor, { houseRealtorImg } from "./houseRealtor";
+import houseRealtor, { houseRealtorAdds, houseRealtorImg } from "./houseRealtor";
 
 export default function useRealtor({ image_id }) {
     const {
@@ -24,6 +24,21 @@ export function useRealtorImg({ userID }) {
     } = useQuery({
         queryKey: ["realtorImg", userID],
         queryFn: () => houseRealtorImg({ userID }),
+    });
+    return { isLoading, error, data };
+}
+
+
+
+export function useRealtorAdds({ userID }) {
+
+    const {
+        isLoading,
+        data,
+        error,
+    } = useQuery({
+        queryKey: ["realtorAdds", userID],
+        queryFn: () => houseRealtorAdds({ userID }),
     });
     return { isLoading, error, data };
 }
