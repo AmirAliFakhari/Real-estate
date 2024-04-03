@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import signUp from "../../../services/Auth/signUp";
 import { userData, userRole } from "../authSlice";
 import getUser from "../../../services/Auth/getUser";
+import uploadAvatarUserID from "../../../services/Auth/uploadAvatarUrl";
 
 export default function useSignUp() {
     const navigate = useNavigate()
@@ -16,7 +17,7 @@ export default function useSignUp() {
     } = useMutation({
         mutationFn: (password, firstname, lastname, email, phone) => signUp(password, firstname, lastname, email, phone),
 
-        onSuccess: () => {
+        onSuccess: async () => {
             async function someFunction() {
                 try {
                     const userD = await getUser();
@@ -27,7 +28,7 @@ export default function useSignUp() {
                     console.error("Not Authenticated", error);
                 }
             }
-            someFunction()
+            await someFunction()
             toast.success("ثبت نام شدی سید")
             // localStorage.setItem("id", data.user.id)
             navigate("/")

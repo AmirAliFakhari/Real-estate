@@ -6,7 +6,6 @@ export default async function login({ password, email }) {
         password: password,
 
     })
-    console.log(data.raw_user_meta_data)
     if (error) throw new Error("there is a error!")
 
     return data;

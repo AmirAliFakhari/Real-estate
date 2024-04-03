@@ -68,6 +68,7 @@ export default function Stepper({
                 currency={inputData.currency}
                 type={inputData.type}
                 defaulted={inputData.value}
+                className={inputData.className}
                 name={inputData.name}
                 textholder={inputData.placeholder}
                 register={register(inputData.reg, {

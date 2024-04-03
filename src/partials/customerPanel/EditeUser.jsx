@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import InputForm from "../../components/InputFom";
 import useEditeUser from "./useEditeUser";
+import { uploadAvatarUrl } from "../../services/Auth/uploadAvatarUrl";
+import { v4 as uuidv4 } from "uuid";
+import uploadAvatar from "../../services/Auth/uploadAvatar";
 
 function EditeUser() {
   const { register, handleSubmit, reset } = useForm();
@@ -13,6 +16,7 @@ function EditeUser() {
   const resetForm = () => {
     reset();
   };
+  const myuuid = uuidv4();
 
   const onSubmit = (data) => {
     editeUpUser({
@@ -21,7 +25,10 @@ function EditeUser() {
       phone: data.phone,
       email: data.email,
       password: data.password,
+      avatar: data.avatar,
     });
+    uploadAvatarUrl({ avatar: data.avatar[0], myuuid: myuuid });
+    uploadAvatar({ myuuid: myuuid, avatar: data.avatar[0] });
   };
 
   return (
@@ -88,6 +95,20 @@ function EditeUser() {
             required: {
               value: true,
               message: "Please complete the password",
+            },
+          })}
+        />
+        <InputForm
+          key="6"
+          title="عکس پروفایل خود را بارگذاری کنید"
+          type="file"
+          name=""
+          className=""
+          textholder="عکس پروفایل خود را بارگذاری کنید"
+          register={register("avatar", {
+            required: {
+              value: false,
+              // message: "Please complete the p",
             },
           })}
         />

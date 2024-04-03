@@ -9,7 +9,7 @@ export default function useEditeUser() {
         data,
         isPending
     } = useMutation({
-        mutationFn: (password, firstname, lastname, phone) => updateUser(password, firstname, lastname, phone),
+        mutationFn: (password, firstname, lastname, phone, avatar) => updateUser(password, firstname, lastname, phone, avatar),
 
         onSuccess: () => {
             toast.success("اطلاعات ویرایش شد")

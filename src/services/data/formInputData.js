@@ -246,6 +246,7 @@ const stepsData = [
                 title: "توضیحات",
                 type: "file",
                 name: "توضیحات",
+                className: "custom-file-input",
                 reg: "picture",
 
             }

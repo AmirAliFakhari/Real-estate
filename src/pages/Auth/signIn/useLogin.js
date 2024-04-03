@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userData, userRole } from "../authSlice";
 import getUser from "../../../services/Auth/getUser";
+import uploadAvatarUserID from "../../../services/Auth/uploadAvatarUrl";
 
 export default function useLogin() {
     const dispatch = useDispatch()
@@ -17,7 +18,7 @@ export default function useLogin() {
     } = useMutation({
         mutationFn: (password, email) => login(password, email),
 
-        onSuccess: () => {
+        onSuccess: async () => {
             // localStorage.setItem("username", data.user.user_metadata.firstname)
             async function someFunction() {
                 try {
@@ -29,7 +30,7 @@ export default function useLogin() {
                     console.error("Not Authenticated", error);
                 }
             }
-            someFunction()
+            await someFunction()
             toast.success("درست زدي سيد")
         }
         ,
