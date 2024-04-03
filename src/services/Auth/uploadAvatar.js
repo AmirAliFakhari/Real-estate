@@ -1,7 +1,6 @@
 import supabase from "../supabase";
 
 export default async function uploadAvatar({ avatar, myuuid }) {
-    console.log(avatar)
     const { error, data } = await supabase
         .storage
         .from('avatars')

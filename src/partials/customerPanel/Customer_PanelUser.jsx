@@ -4,7 +4,6 @@ function Customer_PanelUser() {
   const { data, isLoading } = useEditeAvatar();
   const userFirstName = localStorage.getItem("userFirstname");
 
-  if (!isLoading) console.log(data[0]?.avatar);
   return (
     <div className="flex h-full items-center justify-start gap-2 ps-3 ">
       <img

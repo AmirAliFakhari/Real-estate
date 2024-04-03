@@ -23,17 +23,18 @@ export async function uploadAvatarUrl({ avatar, myuuid }) {
 
     const avatarName = avatar?.name;
     const avatarURL = `${supaURL}${myuuid}-${avatarName}`;
-    console.log(avatarURL)
 
+    // Use 'upsert' to update an existing row or insert a new one
     const { data, error } = await supabase
         .from('userAvatar')
-        .insert([{ avatar: avatarURL, userID: userID }]);
+        .upsert({ userID: userID, avatar: avatarURL })
+
+
 
     if (error) {
-        console.error('Insert error:', error.message);
+        console.error('Upsert error:', error.message);
         throw new Error(error.message);
     }
 
-    console.log('Inserted data:', data);
     return data;
 }
