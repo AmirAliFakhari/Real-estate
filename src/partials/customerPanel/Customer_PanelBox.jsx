@@ -2,8 +2,11 @@ import { useState } from "react";
 import Customer_PanelMenu from "./Customer_PanelMenu";
 import Customer_PanelUser from "./Customer_PanelUser";
 import EditeUser from "./EditeUser";
+import { Link, useNavigate } from "react-router-dom";
+import MyAdds from "./MyAdds";
 
 function Customer_PanelBox() {
+  const navigate = useNavigate();
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
 
   const handleMenuItemClick = (menuItem) => {
@@ -27,12 +30,12 @@ function Customer_PanelBox() {
               <Customer_PanelMenu
                 title="ثبت آگهی جدید"
                 src="add-circle"
-                onclick={() => handleMenuItemClick("add")}
+                onclick={() => navigate("/register-house")}
               />
               <Customer_PanelMenu
                 title="آگهی‌های من"
                 src="receipt-text"
-                onclick={() => handleMenuItemClick("receipt-text")}
+                onclick={() => handleMenuItemClick("my-adds")}
               />
               <Customer_PanelMenu
                 title="آگهی‌های ذخیره‌شده"
@@ -51,8 +54,7 @@ function Customer_PanelBox() {
       <div className="col-span-full h-fit  p-1 sm:col-span-2 sm:h-full">
         <div className="h-full rounded-lg border border-gray-400 p-1">
           {selectedMenuItem === "edit" && <EditeUser />}
-          {selectedMenuItem === "add" && "but"}
-          {selectedMenuItem === "add" && "but1"}
+          {selectedMenuItem === "my-adds" && <MyAdds />}
           {selectedMenuItem === "add" && "but2"}
           {selectedMenuItem === "add" && "but3"}
           {!selectedMenuItem && <EditeUser />}

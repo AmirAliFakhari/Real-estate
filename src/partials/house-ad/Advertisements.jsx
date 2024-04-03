@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import useFilterRegHouse from "../../services/registerHouse/useFilterRegHouse";
 import HomeCart from "../houses/HouseCart";
-import { filterRegHouse } from "../../services/registerHouse/registerHouseAPI";
 import Spinner from "../../features/Spinner";
 
 function Advertisements({ selectedItems, rangeValue }) {
