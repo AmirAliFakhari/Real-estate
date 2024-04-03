@@ -4,6 +4,7 @@ import HomeCart from "../partials/houses/HouseCart";
 function UserRealtor() {
   const location = useLocation();
   const state = location.state;
+  console.log(state.realtorAdds);
 
   return (
     <div className="relative left-0 top-[80px]">
@@ -16,10 +17,12 @@ function UserRealtor() {
             alt=""
           />
           <span className="absolute bottom-11 right-36 w-fit rounded-lg bg-red-500 p-2 text-xs text-white sm:right-44 sm:text-base">
-            شماره تماس : 09130748001
+            شماره تماس : {state.realtorAdds[0]?.userData.user_metadata.phone}
           </span>
           <span className="absolute bottom-0 right-36 rounded-lg bg-red-500 p-2 text-white sm:right-44">
-            امیرعلی فخاری
+            {state.realtorAdds[0]?.userData.user_metadata.firstname +
+              " " +
+              state.realtorAdds[0]?.userData.user_metadata.lastname}
           </span>
         </div>
       </div>
