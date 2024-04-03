@@ -10,7 +10,6 @@ export default async function houseRealtor({ image_id }) {
         console.error(error);
         throw new Error(" could not be loaded");
     }
-    console.log(data[0].userID)
 
     return data;
 }

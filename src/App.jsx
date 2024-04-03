@@ -19,6 +19,7 @@ import Houses from "./pages/houses/Houses";
 import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
 import ShowHouse from "./pages/showHouse/ShowHouse";
 import NotFound from "./pages/NotFound";
+import UserRealtor from "./pages/UserRealtor";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();
@@ -61,6 +62,7 @@ function App() {
         ) : (
           ""
         )}
+        <Route path="user/:userID" element={<UserRealtor />} />
         <Route element={<RealStates />} path="realStates" />
         <Route path="*" element={<NotFound />} />
       </Route>

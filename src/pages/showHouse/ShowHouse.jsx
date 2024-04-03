@@ -24,11 +24,11 @@ function ShowHouses() {
   const { data: realtorData, isLoading: isLoadingRealtor } = useRealtor({
     image_id,
   });
-  if (!isLoadingRealtor)
-    console.log(realtorData[0].userData.user_metadata.firstname);
 
   const { data: realtorImgData, isLoading: isLoadingRealtorImg } =
     useRealtorImg(!isLoadingRealtor ? { userID: realtorData[0].userID } : "");
+  const id =
+    !isLoadingRealtor && realtorData[0]?.userData.id.split("-").slice(0, 3);
   return (
     <>
       <div className="relative left-0 top-[80px]">
@@ -55,14 +55,21 @@ function ShowHouses() {
                   }
                   alt=""
                 />
-
-                <span>
-                  {!isLoadingRealtor
-                    ? realtorData[0].userData.user_metadata.firstname +
-                      " " +
-                      realtorData[0].userData.user_metadata.lastname
-                    : "صبر کن"}
-                </span>
+                <div className="flex flex-col items-start justify-start">
+                  <span>
+                    {!isLoadingRealtor
+                      ? realtorData[0].userData.user_metadata.firstname +
+                        " " +
+                        realtorData[0].userData.user_metadata.lastname
+                      : "صبر کن"}
+                  </span>
+                  <Link
+                    to={`/user/${id}`}
+                    className="rounded-lg bg-red-500 px-5 text-white"
+                  >
+                    مشاهده
+                  </Link>
+                </div>
               </div>
             </div>
             <p className="mt-5 flex items-center justify-start ps-10 font-bold text-black">
@@ -80,10 +87,6 @@ function ShowHouses() {
             <div className="mx-5 mt-2 flex justify-between rounded-md border border-gray-200 px-2 font-extralight sm:ms-10 sm:w-[31rem]">
               <div className="flex flex-col gap-2">
                 <span>ساعاتی پیش تهران</span>
-                <span>
-                  شناسه آگهی:
-                  {image_id}
-                </span>
               </div>
               <Link to="/" className="">
                 <span className="flex items-center justify-center text-left text-red-500">
