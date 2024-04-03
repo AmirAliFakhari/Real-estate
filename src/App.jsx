@@ -20,6 +20,7 @@ import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
 import ShowHouse from "./pages/showHouse/ShowHouse";
 import NotFound from "./pages/NotFound";
 import UserRealtor from "./pages/UserRealtor";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();
@@ -58,11 +59,15 @@ function App() {
         <Route element={<Houses />} path="houses" />
         <Route element={<ShowHouse />} path="houses/:image_id" />
         {userR ? (
-          <Route element={<Customer_panel />} path="customer-panel" />
+          <>
+            <Route element={<Customer_panel />} path="customer-panel" />
+            <Route path="user/:userID" element={<UserRealtor />} />
+          </>
         ) : (
           ""
         )}
-        <Route path="user/:userID" element={<UserRealtor />} />
+
+        <Route element={<AboutUs />} path="about" />
         <Route element={<RealStates />} path="realStates" />
         <Route path="*" element={<NotFound />} />
       </Route>
