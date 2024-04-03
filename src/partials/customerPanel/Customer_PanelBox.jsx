@@ -8,12 +8,9 @@ import SavedAdds from "./SavedAdds";
 import supabase from "../../services/supabase";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
-import { userRole } from "../../pages/Auth/authSlice";
 
 function Customer_PanelBox() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
 
   const handleMenuItemClick = (menuItem) => {
@@ -24,7 +21,7 @@ function Customer_PanelBox() {
     mutationFn: () => supabase.auth.signOut(),
     onSuccess: () => {
       toast.success("خارج شدی");
-      dispatch(userRole(null));
+      localStorage.clear();
       navigate("/");
     },
 

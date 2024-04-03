@@ -30,7 +30,7 @@ function App() {
     async function someFunction() {
       try {
         const user = await getUser();
-        dispatch(userRole(user.role));
+        dispatch(userRole(user?.role));
         dispatch(userData(user));
       } catch (error) {
         console.error("Not Authenticated", error);

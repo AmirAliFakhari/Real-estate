@@ -2,11 +2,9 @@ import { useMutation } from "@tanstack/react-query";
 import login from "../../../services/Auth/login";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-// import useGetUser from "../../../services/Auth/useGetUser";
 import { useDispatch } from "react-redux";
 import { userData, userRole } from "../authSlice";
 import getUser from "../../../services/Auth/getUser";
-import uploadAvatarUserID from "../../../services/Auth/uploadAvatarUrl";
 
 export default function useLogin() {
     const dispatch = useDispatch()

@@ -55,7 +55,7 @@ function ShowHouses() {
                   {image_id}
                 </span>
               </div>
-              <Link className="">
+              <Link to="/" className="">
                 <span className="flex items-center justify-center text-left text-red-500">
                   گزارش تخلف آگهی
                 </span>
