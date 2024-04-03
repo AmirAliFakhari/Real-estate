@@ -4,7 +4,6 @@ import HomeCart from "../partials/houses/HouseCart";
 function UserRealtor() {
   const location = useLocation();
   const state = location.state;
-  console.log(state.realtorAdds);
 
   return (
     <div className="relative left-0 top-[80px]">
@@ -12,8 +11,8 @@ function UserRealtor() {
         <div>
           <img className="w-full" src="src\assets\imgs\Banner.png" alt="" />
           <img
-            className="absolute bottom-[-10px] right-10 h-32 w-32 sm:h-44 sm:w-44"
-            src="src\assets\imgs\Photo.svg"
+            className="absolute bottom-[-10px] right-10 h-32 w-32 rounded-full object-cover sm:h-44 sm:w-44"
+            src={state.realtorImgData[0]?.avatar}
             alt=""
           />
           <span className="absolute bottom-11 right-36 w-fit rounded-lg bg-red-500 p-2 text-xs text-white sm:right-44 sm:text-base">

@@ -35,6 +35,8 @@ function ShowHouses() {
     !isLoadingRealtor ? { userID: realtorData[0].userID } : "",
   );
 
+  // if (!isLoadingRealtorImg) console.log(realtorImgData);
+
   const id =
     !isLoadingRealtor && realtorData[0]?.userData.id.split("-").slice(0, 3);
   return (
@@ -57,9 +59,8 @@ function ShowHouses() {
                 <img
                   className="h-10 w-10 rounded-lg"
                   src={
-                    !isLoadingRealtorImg
-                      ? realtorImgData[0]?.avatar
-                      : "src/assets/icons/profile-circle.svg"
+                    (!isLoadingRealtorImg && realtorImgData[0]?.avatar) ||
+                    "src/assets/icons/profile-circle.svg"
                   }
                   alt=""
                 />
@@ -73,8 +74,10 @@ function ShowHouses() {
                   </span>
                   <Link
                     state={
-                      !isLoadingAdds && {
+                      !isLoadingAdds &&
+                      !isLoadingRealtorImg && {
                         realtorAdds,
+                        realtorImgData,
                       }
                     }
                     to={`/user/${id}`}

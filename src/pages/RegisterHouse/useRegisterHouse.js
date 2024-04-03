@@ -17,7 +17,6 @@ export default function useRegisterHouse() {
         mutationFn: async ({ data, userData }) => {
             const uniqueId = uuidv4();
             uploadFile(uniqueId, data.picture[0]);
-            console.log(userData)
             registerHouseAPI({ data, userData, image_id2: uniqueId });
         },
         onSuccess: () => {
