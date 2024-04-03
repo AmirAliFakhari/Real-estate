@@ -7,10 +7,6 @@ import Spinner from "../../features/Spinner";
 function Advertisements({ selectedItems, rangeValue }) {
   const { isLoading, data } = useFilterRegHouse(selectedItems, rangeValue);
 
-  useEffect(() => {
-    filterRegHouse();
-  }, []);
-
   if (isLoading)
     return (
       <div className="flex flex-col items-center justify-center">

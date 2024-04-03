@@ -12,7 +12,7 @@ export default async function updateUser({ password, firstname, lastname, phone 
         }
     })
 
-    if (error) throw new Error("there is a error!")
+    if (error) throw new Error(error)
     return data;
 
 }

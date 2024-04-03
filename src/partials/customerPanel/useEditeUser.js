@@ -16,8 +16,7 @@ export default function useEditeUser() {
         }
         ,
         onError: (err) => {
-            console.log(err)
-            toast.error("اطلاعات ویرایش نشد")
+            toast.error(err.message)
         }
     });
 
