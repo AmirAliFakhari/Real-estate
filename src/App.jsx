@@ -22,6 +22,7 @@ import NotFound from "./pages/NotFound";
 import UserRealtor from "./pages/realState/UserRealtor";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import News from "./pages/news/News";
+import Customer_panelAdmin from "./pages/Customer_panelAdmin";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();
@@ -43,6 +44,7 @@ function App() {
   }, [dispatch]);
 
   const userR = useSelector((state) => state.auth.userRole);
+  const userD = useSelector((state) => state.auth.userData);
 
   if (introLoading || newsLoading || lastRegLoading) {
     return (
@@ -59,14 +61,12 @@ function App() {
         <Route element={<Layout />} path="/" />
         <Route element={<Houses />} path="houses" />
         <Route element={<ShowHouse />} path="houses/:image_id" />
-        {userR ? (
+        {userR && userD.user_metadata.newRole != "" && (
           <>
             <Route element={<Customer_panel />} path="customer-panel" />
             <Route path="user/:userID" element={<UserRealtor />} />
             <Route path="new" element={<News />} />
           </>
-        ) : (
-          ""
         )}
 
         <Route element={<AboutUs />} path="about" />

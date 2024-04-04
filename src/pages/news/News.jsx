@@ -5,7 +5,7 @@ function News() {
   return (
     <div className="relative left-0 top-[80px]">
       <span className="ps-5 text-xl font-bold">اخبار املاک</span>
-      <div className="flex flex-col gap-32">
+      <div className="flex flex-col gap-20">
         <TopNews
         // calender={calender}
         // subtitle={subtitle}

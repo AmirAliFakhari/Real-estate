@@ -28,7 +28,11 @@ function Navbar() {
           <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
             {userRole === "authenticated" ? (
               <Link
-                to="/customer-panel"
+                to={
+                  userUserName?.user_metadata?.newRole == ""
+                    ? "/customer-panel"
+                    : "/customer-panel-admin"
+                }
                 type="button"
                 className="mx-1 hidden rounded-lg border border-green-400 px-2 py-2 text-center text-sm  text-gray-800 hover:bg-green-500 focus:ring-red-400  sm:flex "
               >
