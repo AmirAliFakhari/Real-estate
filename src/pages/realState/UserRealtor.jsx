@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import HomeCart from "../partials/houses/HouseCart";
+import HomeCart from "../../partials/houses/HouseCart";
 
 function UserRealtor() {
   const location = useLocation();

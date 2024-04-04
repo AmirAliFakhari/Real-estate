@@ -1,12 +1,12 @@
 import { Link, useLocation, useParams } from "react-router-dom";
-import ShowHomeRow from "../../components/ShowHomeRow";
+import ShowHomeRow from "../../components/realState/ShowHomeRow";
 import Features from "../../partials/house-ad/Features";
 import ExplainRow from "../../partials/house-ad/Explain";
 import MapUniqueAd from "../../partials/house-ad/MapUniqueAd";
 import getHour from "../../utils/getHour";
 import useRelatedRegHouse from "./useRelatedRegHouse";
 import HomeCart from "../../partials/houses/HouseCart";
-import ShowHomeIconRow from "../../components/ShowHomeIconRow";
+import ShowHomeIconRow from "../../components/realState/ShowHomeIconRow";
 import useRealtor, {
   useRealtorAdds,
   useRealtorImg,

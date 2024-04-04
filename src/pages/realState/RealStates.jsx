@@ -1,4 +1,4 @@
-import RealStateBox from "../partials/RealStates/RealStateBox";
+import RealStateBox from "../../partials/RealStates/RealStateBox";
 
 function RealStates() {
   return (

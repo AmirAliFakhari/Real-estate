@@ -9,18 +9,18 @@ import useIntroduction from "./partials/Introduction/useIntroduction";
 import useNews from "./partials/news/useNews";
 import Spinner from "./features/Spinner";
 import SignOn from "./pages/Auth/signon/signOn";
-import Customer_panel from "./pages/Customer_panel";
+import Customer_panel from "./pages/panel/Customer_panel";
 import SignIn from "./pages/Auth/signIn/SignIn";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 import getUser from "./services/Auth/getUser";
-import RealStates from "./pages/RealStates";
+import RealStates from "./pages/realState/RealStates";
 // import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
 import Houses from "./pages/houses/Houses";
 import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
 import ShowHouse from "./pages/showHouse/ShowHouse";
 import NotFound from "./pages/NotFound";
-import UserRealtor from "./pages/UserRealtor";
-import AboutUs from "./pages/AboutUs";
+import UserRealtor from "./pages/realState/UserRealtor";
+import AboutUs from "./pages/aboutUs/AboutUs";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();

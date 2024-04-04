@@ -1,4 +1,4 @@
-import FeaturesRow from "../../components/FeaturesRow";
+import FeaturesRow from "../../components/realState/FeaturesRow";
 
 function Features({ title, state }) {
   return (

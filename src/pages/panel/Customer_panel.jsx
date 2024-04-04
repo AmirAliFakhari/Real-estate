@@ -1,4 +1,4 @@
-import Customer_PanelBox from "../partials/customerPanel/Customer_PanelBox";
+import Customer_PanelBox from "../../partials/customerPanel/Customer_PanelBox";
 
 function Customer_panel() {
   return (
