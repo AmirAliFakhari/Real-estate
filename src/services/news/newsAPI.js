@@ -15,4 +15,24 @@ export default async function lastNewsAPI() {
 }
 
 
+export async function insertNewsAPI() {
+
+    const { data, error } = await supabase
+        .from('news')
+        .insert(
+            { type: "salam", subtitle: "sa", created_at: "dasd", img: "dsad", title: "dsad" },
+        )
+        .select()
+
+    if (error) {
+        console.error(error);
+        throw new Error("Cabins could not be loaded");
+    }
+    console.log(data)
+    return data;
+}
+
+
+
+
 

@@ -45,7 +45,6 @@ function App() {
 
   const userR = useSelector((state) => state.auth.userRole);
   const userD = useSelector((state) => state.auth.userData);
-  console.log(userD?.user_metadata?.newRole);
   if (introLoading || newsLoading || lastRegLoading) {
     return (
       <div className="flex h-screen w-screen flex-col items-center justify-center gap-2">
@@ -69,12 +68,16 @@ function App() {
           </>
         ) : (
           <>
-            <Route
-              element={<Customer_panelAdmin />}
-              path="customer-panel-admin"
-            />
-            <Route path="user/:userID" element={<UserRealtor />} />
-            <Route path="new" element={<News />} />
+            {userD && (
+              <>
+                <Route
+                  element={<Customer_panelAdmin />}
+                  path="customer-panel-admin"
+                />
+                <Route path="user/:userID" element={<UserRealtor />} />
+                <Route path="new" element={<News />} />
+              </>
+            )}
           </>
         )}
 
