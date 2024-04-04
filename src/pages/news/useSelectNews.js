@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import lastNewsAPI from "../../services/news/newsAPI";
+import { newsAPI } from "../../services/news/newsAPI";
 
-export default function useNews() {
+export default function useSelectNews() {
 
     const {
         isLoading,
@@ -9,7 +9,7 @@ export default function useNews() {
         error,
     } = useQuery({
         queryKey: ["news"],
-        queryFn: () => lastNewsAPI(),
+        queryFn: () => newsAPI(),
     });
 
     return { isLoading, error, data };

@@ -6,7 +6,7 @@ import { userData, userRole } from "./pages/Auth/authSlice";
 import Layout from "./pages/Layout";
 import AppLayout from "./pages/AppLayout";
 import useIntroduction from "./partials/Introduction/useIntroduction";
-import useNews from "./partials/news/useNews";
+import useNews from "./partials/news/useLastNews";
 import Spinner from "./features/Spinner";
 import SignOn from "./pages/Auth/signon/signOn";
 import Customer_panel from "./pages/panel/Customer_panel";
@@ -22,7 +22,7 @@ import NotFound from "./pages/NotFound";
 import UserRealtor from "./pages/realState/UserRealtor";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import News from "./pages/news/News";
-import Customer_panelAdmin from "./pages/Customer_panelAdmin";
+import Customer_panelAdmin from "./pages/panel/Customer_panelAdmin";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();

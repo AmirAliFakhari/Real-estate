@@ -1,6 +1,6 @@
 import New from "./New";
 import { Swiper, SwiperSlide } from "swiper/react";
-import useNews from "./useNews";
+import useNews from "./useLastNews";
 
 function LastNews() {
   const { data } = useNews();

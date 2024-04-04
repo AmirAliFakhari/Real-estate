@@ -4,7 +4,7 @@ export default async function lastNewsAPI() {
 
     let { data: news, error } = await supabase
         .from('news')
-        .select('*')
+        .select('*').limit(4)
 
     if (error) {
         console.error(error);
@@ -32,6 +32,19 @@ export async function insertNewsAPI() {
     return data;
 }
 
+export async function newsAPI() {
+
+    let { data: news, error } = await supabase
+        .from('news')
+        .select('*')
+
+    if (error) {
+        console.error(error);
+        throw new Error("Cabins could not be loaded");
+    }
+
+    return news;
+}
 
 
 
