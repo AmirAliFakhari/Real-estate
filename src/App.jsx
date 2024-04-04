@@ -68,10 +68,14 @@ function App() {
             <Route path="new" element={<News />} />
           </>
         ) : (
-          <Route
-            element={<Customer_panelAdmin />}
-            path="customer-panel-admin"
-          />
+          <>
+            <Route
+              element={<Customer_panelAdmin />}
+              path="customer-panel-admin"
+            />
+            <Route path="user/:userID" element={<UserRealtor />} />
+            <Route path="new" element={<News />} />
+          </>
         )}
 
         <Route element={<AboutUs />} path="about" />

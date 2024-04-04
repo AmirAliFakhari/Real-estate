@@ -18,7 +18,7 @@ function SignIn() {
         className=" flex h-screen   flex-col items-center    justify-center text-center"
       >
         <div className="flex h-[27rem] w-80 flex-col justify-center gap-3 rounded-lg bg-slate-50 px-6 sm:h-[25rem] sm:w-[25rem] ">
-          <span className="text-xl font-bold">ورود</span>
+          <span className="text-xl font-bold">ورود || ادمین || عادی</span>
           <span>به سقفینو خوش آمدید</span>
           <span>لطفاً برای ورود شماره تلفن موبایل خود را وارد کنید</span>
           <InputForm
