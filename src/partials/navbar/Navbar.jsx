@@ -96,7 +96,7 @@ function Navbar() {
                 <LinkComp to="about" title="درباره ما" src="people" />
               </li>
               <li>
-                <LinkComp title="اخبار روز" src="receipt-2" />
+                <LinkComp title="اخبار روز" to="new" />
               </li>
             </ul>
           </div>
