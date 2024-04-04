@@ -1,22 +1,23 @@
 import { useForm } from "react-hook-form";
 import InputForm from "../../components/InputFom";
-import useEditeUser from "../customerPanel/useEditeUser";
+import useInsertNews from "../../pages/news/useInsertNews";
 
 const InsertNew = () => {
-  const { editeUpUser } = useEditeUser();
+  const { insertNew } = useInsertNews();
   const { register, handleSubmit, reset } = useForm();
-
+  let today = new Date().toLocaleDateString("fa-IR");
   const resetForm = () => {
     reset();
   };
   const onSubmit = (data) => {
-    editeUpUser({
-      firstname: data.firstName,
-      lastname: data.lastName,
-      phone: data.phone,
-      email: data.email,
-      password: data.password,
-      avatar: data.avatar,
+    console.log(data);
+    insertNew({
+      title: data.title,
+      subtitle: data.subtitle,
+      text: data.text,
+      img: data.img,
+      time: data.time,
+      today: today,
     });
   };
 
@@ -26,75 +27,67 @@ const InsertNew = () => {
       <div className="p-5">
         <InputForm
           key="1"
-          title="نام "
+          title="نام خبر"
           type="text"
-          // defaulted={userFirstname}
           name="نام "
           textholder="نام خود را وارد کنید"
-          register={register("firstName", {
+          register={register("title", {
             required: {
               value: true,
-              message: "Please complete the firstname",
+              message: "Please complete the title",
             },
           })}
         />
         <InputForm
           key="2"
-          title=" نام خانوادگی"
+          title="توضیح کوتاه"
           // defaulted={userLastname}
           type="text"
-          name="نام خانوادگی"
-          textholder=" نام خانوادگی خود را وارد کنید"
-          register={register("lastName", {
+          name="توضیح کوتاه"
+          textholder=" توضیح کوتاهی را وارد کنید"
+          register={register("subtitle", {
             required: {
               value: true,
-              message: "Please complete the lastname",
+              message: "Please complete the subtitle",
             },
           })}
         />
         <InputForm
           key="3"
-          title="شماره موبایل"
-          type="number"
+          title="دسته بندی"
+          type="text"
           // defaulted={userPhone}
           name=""
-          textholder="شماره موبایل خود را وارد کنید"
-          register={register("phone", {
+          textholder="دسته بندی را وارد کنید"
+          register={register("type", {
             required: {
               value: true,
-              message: "Please complete the phone",
+              message: "Please complete the type",
             },
           })}
         />
         <InputForm
-          key="4"
-          title="ایمیل"
-          type="email"
+          key="3"
+          title="زمان مطالعه"
+          type="text"
+          // defaulted={userPhone}
           name=""
-          // value={userEmail}
-          textholder="ایمیل خود را وارد کنید"
-        />
-        <InputForm
-          key="5"
-          title="رمز عبور جدید"
-          type="number"
-          name=""
-          textholder="رمز عبور را وارد کنید"
-          register={register("password", {
+          textholder="زمان مطالعه را وارد کنید"
+          register={register("time", {
             required: {
               value: true,
-              message: "Please complete the password",
+              message: "Please complete the time",
             },
           })}
         />
         <InputForm
           key="6"
-          title="عکس پروفایل خود را بارگذاری کنید"
+          title="عکس خبر را وارد کنید"
           type="file"
           name=""
           className=""
-          textholder="عکس پروفایل خود را بارگذاری کنید"
-          register={register("avatar", {
+          textholder="عکس خبر را وارد کنید"
+          register={register("img", {
             required: {
               value: false,
               // message: "Please complete the p",

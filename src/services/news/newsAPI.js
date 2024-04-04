@@ -15,12 +15,13 @@ export default async function lastNewsAPI() {
 }
 
 
-export async function insertNewsAPI() {
+export async function insertNewsAPI({ title, img, type, subtitle, today, time }) {
+
 
     const { data, error } = await supabase
         .from('news')
         .insert(
-            { type: "salam", subtitle: "sa", created_at: "dasd", img: "dsad", title: "dsad" },
+            { type: type, subtitle: subtitle, created_at: today, img: img, title: title, time: time },
         )
         .select()
 
