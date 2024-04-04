@@ -8,6 +8,7 @@ function Navbar() {
   const userRole = useSelector((state) => state.auth.userRole);
   const userUserName = useSelector((state) => state.auth.userData)
     ?.user_metadata?.firstname;
+  const userD = useSelector((state) => state.auth.userData);
 
   return (
     <>
@@ -29,9 +30,9 @@ function Navbar() {
             {userRole === "authenticated" ? (
               <Link
                 to={
-                  userUserName?.user_metadata?.newRole == ""
-                    ? "/customer-panel"
-                    : "/customer-panel-admin"
+                  userD?.user_metadata?.newRole === "admin"
+                    ? "/customer-panel-admin"
+                    : "/customer-panel"
                 }
                 type="button"
                 className="mx-1 hidden rounded-lg border border-green-400 px-2 py-2 text-center text-sm  text-gray-800 hover:bg-green-500 focus:ring-red-400  sm:flex "

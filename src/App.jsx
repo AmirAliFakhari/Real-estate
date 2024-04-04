@@ -45,7 +45,7 @@ function App() {
 
   const userR = useSelector((state) => state.auth.userRole);
   const userD = useSelector((state) => state.auth.userData);
-
+  console.log(userD?.user_metadata?.newRole);
   if (introLoading || newsLoading || lastRegLoading) {
     return (
       <div className="flex h-screen w-screen flex-col items-center justify-center gap-2">
@@ -61,12 +61,17 @@ function App() {
         <Route element={<Layout />} path="/" />
         <Route element={<Houses />} path="houses" />
         <Route element={<ShowHouse />} path="houses/:image_id" />
-        {userR && userD.user_metadata.newRole != "" && (
+        {userR && userD?.user_metadata?.newRole !== "admin" ? (
           <>
             <Route element={<Customer_panel />} path="customer-panel" />
             <Route path="user/:userID" element={<UserRealtor />} />
             <Route path="new" element={<News />} />
           </>
+        ) : (
+          <Route
+            element={<Customer_panelAdmin />}
+            path="customer-panel-admin"
+          />
         )}
 
         <Route element={<AboutUs />} path="about" />
