@@ -9,7 +9,11 @@ function UserRealtor() {
     <div className="relative left-0 top-[80px]">
       <div className="relative ">
         <div>
-          <img className="w-full" src="src\assets\imgs\Banner.png" alt="" />
+          <img
+            className="h-72 w-full object-cover"
+            src="src\assets\imgs\Banner.png"
+            alt=""
+          />
           <img
             className="absolute bottom-[-10px] right-10 h-32 w-32 rounded-full object-cover sm:h-44 sm:w-44"
             src={state.realtorImgData[0]?.avatar}
