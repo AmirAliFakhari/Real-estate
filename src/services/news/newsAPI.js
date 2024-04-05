@@ -49,7 +49,6 @@ export async function newsAPI() {
         console.error(error);
         throw new Error("Cabins could not be loaded");
     }
-    console.log(news)
 
     return news;
 }

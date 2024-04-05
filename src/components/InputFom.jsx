@@ -16,7 +16,7 @@ function InputForm({
 
   return (
     <div
-      className={`mb-2 flex ${type == "checkbox" ? "w-20" : ""}  flex-col gap-1`}
+      className={`mb-2 flex ${type == "checkbox" ? "w-12" : ""}  flex-col gap-1`}
     >
       <label className="mb-1 block text-sm font-medium text-gray-900 dark:text-white">
         {title}
