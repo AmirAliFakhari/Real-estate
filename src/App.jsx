@@ -24,6 +24,7 @@ import AboutUs from "./pages/aboutUs/AboutUs";
 import News from "./pages/news/News";
 import Customer_panelAdmin from "./pages/panel/Customer_panelAdmin";
 import New from "./partials/news/New";
+import EachNew from "./pages/news/EachNew";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();
@@ -83,7 +84,7 @@ function App() {
 
         <Route path="user/:userID" element={<UserRealtor />} />
         <Route path="new" element={<News />} />
-        <Route path="new/:idNews" element={<New />} />
+        <Route path="new/:idNews" element={<EachNew />} />
         <Route element={<AboutUs />} path="about" />
         <Route element={<RealStates />} path="realStates" />
         <Route path="*" element={<NotFound />} />
