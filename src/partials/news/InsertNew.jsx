@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import InputForm from "../../components/InputFom";
 import useInsertNews from "../../pages/news/useInsertNews";
+import { v4 as uuidv4 } from "uuid";
+import { uploadNewsImg } from "../../services/news/newsAPI";
 
 const InsertNew = () => {
   const { insertNew } = useInsertNews();
@@ -9,6 +11,9 @@ const InsertNew = () => {
   const resetForm = () => {
     reset();
   };
+
+  const myuuid = uuidv4();
+
   const onSubmit = (data) => {
     console.log(data);
     insertNew({
@@ -18,7 +23,11 @@ const InsertNew = () => {
       img: data.img,
       time: data.time,
       today: today,
+      type: data.type,
+      isTopNews: data.isTopNews,
+      myuuid: myuuid,
     });
+    uploadNewsImg({ myuuid: myuuid, img: data.img[0] });
   };
 
   return (
@@ -54,6 +63,20 @@ const InsertNew = () => {
         />
         <InputForm
           key="3"
+          title="توضیح"
+          // defaulted={userLastname}
+          type="text"
+          name="توضیح"
+          textholder=" توضیحی را وارد کنید"
+          register={register("text", {
+            required: {
+              value: true,
+              message: "Please complete the text",
+            },
+          })}
+        />
+        <InputForm
+          key="4"
           title="دسته بندی"
           type="text"
           // defaulted={userPhone}
@@ -67,7 +90,7 @@ const InsertNew = () => {
           })}
         />
         <InputForm
-          key="3"
+          key="5"
           title="زمان مطالعه"
           type="text"
           // defaulted={userPhone}
@@ -80,6 +103,7 @@ const InsertNew = () => {
             },
           })}
         />
+
         <InputForm
           key="6"
           title="عکس خبر را وارد کنید"
@@ -91,6 +115,20 @@ const InsertNew = () => {
             required: {
               value: false,
               // message: "Please complete the p",
+            },
+          })}
+        />
+        <InputForm
+          key="7"
+          title="خبر مهم"
+          type="checkbox"
+          // defaulted={userPhone}
+          name="topNews"
+          // textholder="زما"
+          register={register("isTopNews", {
+            required: {
+              value: true,
+              message: "Please complete the topNews Boolean",
             },
           })}
         />

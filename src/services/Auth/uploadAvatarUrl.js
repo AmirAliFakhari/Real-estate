@@ -26,7 +26,7 @@ export async function uploadAvatarUrl({ avatar, myuuid, image_id3 }) {
     const avatarURL = `${supaURL}${myuuid}-${avatarName}`;
 
     const { data, error } = await supabase
-        .from('userAvatar')
+        .from('news')
         .upsert({ userID: userID, avatar: avatarURL, uniqueId: image_id3 })
 
     console.log(data)

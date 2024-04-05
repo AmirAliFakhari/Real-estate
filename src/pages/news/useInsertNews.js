@@ -9,7 +9,7 @@ export default function useInsertNews() {
         data,
         isPending
     } = useMutation({
-        mutationFn: (title, img, type, subtitle, today, time) => insertNewsAPI(title, img, type, subtitle, today, time),
+        mutationFn: (title, img, type, subtitle, today, time, isTopNews, text, myuuid) => insertNewsAPI(title, img, type, text, subtitle, today, time, isTopNews, myuuid),
 
         onSuccess: async () => {
 
