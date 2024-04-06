@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import InputForm from "../../components/InputFom";
 import useInsertNews from "../../pages/news/useInsertNews";
 import { v4 as uuidv4 } from "uuid";
-import { uploadNewsImg } from "../../services/news/newsAPI";
+import { uploadNewsImg, uploadNewsPic } from "../../services/news/newsAPI";
 
 const InsertNew = () => {
   const { insertNew } = useInsertNews();
@@ -12,7 +12,8 @@ const InsertNew = () => {
     reset();
   };
 
-  const myuuid = uuidv4();
+  const myuuidImg = uuidv4();
+  const myuuidPic = uuidv4();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -25,9 +26,18 @@ const InsertNew = () => {
       today: today,
       type: data.type,
       isTopNews: data.isTopNews,
-      myuuid: myuuid,
+      myuuidImg: myuuidImg,
+      myuuidPic: myuuidPic,
+      picture: data.picture,
     });
-    uploadNewsImg({ myuuid: myuuid, img: data.img[0] });
+    uploadNewsImg({
+      myuuidImg: myuuidImg,
+      img: data.img[0],
+    });
+    uploadNewsPic({
+      myuuidPic: myuuidPic,
+      picture: data.picture[0],
+    });
   };
 
   return (
@@ -106,11 +116,11 @@ const InsertNew = () => {
 
         <InputForm
           key="6"
-          title="عکس خبر را وارد کنید"
+          title="عکس اصلی خبر "
           type="file"
           name=""
           className=""
-          textholder="عکس خبر را وارد کنید"
+          textholder="عکس خبر رو وارد کن"
           register={register("img", {
             required: {
               value: false,
@@ -120,6 +130,20 @@ const InsertNew = () => {
         />
         <InputForm
           key="7"
+          title="تصویر داخل خبر"
+          type="file"
+          name=""
+          className=""
+          textholder="تصویر داخل خبر رو وارد کن "
+          register={register("picture", {
+            required: {
+              value: false,
+              // message: "Please complete the p",
+            },
+          })}
+        />
+        <InputForm
+          key="8"
           title="خبر مهم"
           type="checkbox"
           // defaulted={userPhone}

@@ -17,18 +17,22 @@ export default async function lastNewsAPI() {
 }
 
 
-export async function insertNewsAPI({ title, img, type, subtitle, today, time, isTopNews, text, myuuid }) {
+export async function insertNewsAPI({ title, img, type, subtitle, today, time, isTopNews, text, myuuidImg, picture, myuuidPic }) {
     const supaURL =
         "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/news/";
 
     const imgName = img[0]?.name;
-    const imgURL = `${supaURL}${myuuid}-${imgName}`;
+    const pictureName = picture[0]?.name;
+    const imgURL = `${supaURL}${myuuidImg}-${imgName}`;
+    const pictureURL = `${supaURL}${myuuidPic}-${pictureName}`;
+    console.log(`img : ${myuuidImg} `, `pic ${myuuidPic} `)
+
 
 
     const { data, error } = await supabase
         .from('news')
         .insert(
-            { type: type, subtitle: subtitle, created_at: today, img: imgURL, title: title, time: time, isTopNews: isTopNews, text: text },
+            { type: type, subtitle: subtitle, created_at: today, img: imgURL, title: title, time: time, isTopNews: isTopNews, text: text, picture: pictureURL },
         )
         .select()
 
@@ -53,18 +57,58 @@ export async function newsAPI() {
     return news;
 }
 
+export async function uploadNewsImg({ img, myuuidImg }) {
+    console.log(myuuidImg)
 
-export async function uploadNewsImg({ img, myuuid }) {
-    const { error, data } = await supabase
+    const { error: imgError, data: imgData } = await supabase
         .storage
         .from('news')
-        .upload(`${myuuid}-${img?.name}`, img);
-    if (error) {
-        throw new Error(error.message);
+        .upload(`${myuuidImg}-${img?.name}`, img);
+
+    if (imgError) {
+        throw new Error(imgError.message);
     }
-    return data;
+
+
+    // console.log(imgData)
+
+    return imgData;
+}
+
+
+export async function uploadNewsPic({ picture, myuuidPic }) {
+    console.log(myuuidPic)
+
+    const { error: picError, data: picData } = await supabase
+        .storage
+        .from('news')
+        .upload(`${myuuidPic}-${picture?.name}`, picture);
+
+    if (picError) {
+        throw new Error(picError.message);
+    }
+
+
+    // console.log(picData)
+
+    return picData;
 }
 
 
 
 
+export async function eachNewsAPI({ idNews }) {
+    const StoategURL = "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/news/"
+    const imgURL = StoategURL + idNews
+    let { data: news, error } = await supabase
+        .from('news')
+        .select('*').eq("img", imgURL)
+
+    if (error) {
+        console.error(error);
+        throw new Error("Cabins could not be loaded");
+    }
+    console.log(news)
+
+    return news;
+}

@@ -1,4 +1,12 @@
+import { useParams } from "react-router-dom";
+import useEachNews from "./useEachNew";
+
 function EachNew() {
+  const { idNews } = useParams();
+  const { isLoading, data } = useEachNews({ idNews });
+
+  console.log(idNews);
+
   return (
     <div className="relative left-0 top-[80px]">
       <div className="flex  flex-col items-center  ">
@@ -67,7 +75,7 @@ function EachNew() {
               </p>
               <img
                 className="mt-5"
-                src="src\assets\imgs\news-photo5.svg"
+                src={!isLoading && `${data[0].picture}`}
                 alt=""
               />
             </div>
