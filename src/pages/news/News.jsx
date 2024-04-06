@@ -1,5 +1,5 @@
 import Spinner from "../../features/Spinner";
-import NewSection from "../../partials/news/NewSection";
+import MaskanSection from "../../partials/news/MaskanSection";
 import TopNews from "../../partials/news/TopNews";
 import useSelectNews from "./useSelectNews";
 
@@ -28,7 +28,7 @@ function News() {
           </div>
         )}
 
-        <NewSection />
+        <MaskanSection />
       </div>
     </div>
   );

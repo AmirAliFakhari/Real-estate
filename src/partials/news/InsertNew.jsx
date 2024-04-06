@@ -151,7 +151,7 @@ const InsertNew = () => {
           // textholder="زما"
           register={register("isTopNews", {
             required: {
-              value: true,
+              // value: true,
               message: "Please complete the topNews Boolean",
             },
           })}

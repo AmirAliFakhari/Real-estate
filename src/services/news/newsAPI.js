@@ -70,14 +70,12 @@ export async function uploadNewsImg({ img, myuuidImg }) {
     }
 
 
-    // console.log(imgData)
 
     return imgData;
 }
 
 
 export async function uploadNewsPic({ picture, myuuidPic }) {
-    console.log(myuuidPic)
 
     const { error: picError, data: picData } = await supabase
         .storage
@@ -89,7 +87,6 @@ export async function uploadNewsPic({ picture, myuuidPic }) {
     }
 
 
-    // console.log(picData)
 
     return picData;
 }
@@ -108,7 +105,21 @@ export async function eachNewsAPI({ idNews }) {
         console.error(error);
         throw new Error("Cabins could not be loaded");
     }
-    console.log(news)
 
     return news;
 }
+
+export async function selectTypeNews() {
+
+    let { data: news, error } = await supabase
+        .from('news')
+        .select('*')
+
+    if (error) {
+        console.error(error);
+        throw new Error("Cabins could not be loaded");
+    }
+
+    return news;
+}
+

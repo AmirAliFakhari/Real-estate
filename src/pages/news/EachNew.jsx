@@ -4,15 +4,14 @@ import useEachNews from "./useEachNew";
 function EachNew() {
   const { idNews } = useParams();
   const { isLoading, data } = useEachNews({ idNews });
-
-  console.log(idNews);
-
   return (
     <div className="relative left-0 top-[80px]">
       <div className="flex  flex-col items-center  ">
         <div className="mb-5 flex w-[85%] flex-col gap-2">
           <div className="flex flex-col">
-            <span className="text-xl font-bold">رکود بازار مسکن</span>
+            <span className="text-xl font-bold">
+              {!isLoading && data[0]?.title}
+            </span>
             <span className="text-base font-semibold">
               فروشندگان در انتظار خریداران و خریداران در انتظار شکست نرخ
               فروشندگان
