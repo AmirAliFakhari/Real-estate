@@ -17,6 +17,7 @@ function MaskanSection() {
               (data) =>
                 data.type == "maskanBig" && (
                   <MaskanBigNews
+                    img={data.img}
                     key={data.title}
                     subtitle={data.subtitle}
                     time={data.time}
@@ -33,6 +34,7 @@ function MaskanSection() {
                       key={data.title}
                       time={data.time}
                       img={data.img}
+                      subtitle={data.subtitle}
                     />
                   ),
               )}

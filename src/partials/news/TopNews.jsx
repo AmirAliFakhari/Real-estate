@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
+import split from "../../utils/splitImgURL";
 
 function TopNews({ time, title, subtitle, text, calender, type, img }) {
-  const parts = img.split("/");
-  const idNews = parts[parts.length - 1];
+  const idNews = split(img);
 
   return (
     <div className="flex w-full justify-center">

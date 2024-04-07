@@ -1,6 +1,4 @@
-import { combineSlices } from "@reduxjs/toolkit";
 import supabase from "../supabase";
-import { data } from "autoprefixer";
 
 export default async function lastNewsAPI() {
 
@@ -43,19 +41,6 @@ export async function insertNewsAPI({ title, img, type, subtitle, today, time, i
     return data;
 }
 
-export async function newsAPI() {
-
-    let { data: news, error } = await supabase
-        .from('news')
-        .select('*').eq("isTopNews", true).order("id", { ascending: false }).limit(1)
-
-    if (error) {
-        console.error(error);
-        throw new Error("Cabins could not be loaded");
-    }
-
-    return news;
-}
 
 export async function uploadNewsImg({ img, myuuidImg }) {
     console.log(myuuidImg)
@@ -113,7 +98,11 @@ export async function selectTypeNews() {
 
     let { data: news, error } = await supabase
         .from('news')
-        .select('*')
+        .select('*').order(
+            "id", {
+            ascending: false
+        }
+        )
 
     if (error) {
         console.error(error);

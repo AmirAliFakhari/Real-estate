@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import split from "../../utils/splitImgURL";
 
-function MaskanSmallNew({ time, title, img }) {
-  const parts = img?.split("/");
-  const idNews = parts[parts.length - 1];
+function MaskanSmallNew({ time, subtitle, img }) {
+  const idNews = split(img);
+
   return (
     <Link to={`/new/${idNews}`}>
       <div className="flex flex-col justify-between rounded-lg border  border-gray-200">
@@ -15,7 +16,7 @@ function MaskanSmallNew({ time, title, img }) {
           {time}
         </span>
         <span className="px-2 text-justify  text-xs  sm:text-base">
-          {title}
+          {subtitle}
         </span>
       </div>
     </Link>

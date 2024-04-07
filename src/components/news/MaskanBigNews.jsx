@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import split from "../../utils/splitImgURL";
 
-function MaskanBigNews({ time, title, subtitle }) {
-  ////// باید اید دی درست بهش بدی!
+function MaskanBigNews({ time, title, subtitle, img }) {
+  const idNews = split(img);
   return (
-    <Link to="/new/324">
+    <Link to={`/new/${idNews}`}>
       <div className=" flex h-fit flex-col gap-5 rounded-lg border border-gray-200">
         <img
           className="h-[30rem] rounded-lg object-cover "
