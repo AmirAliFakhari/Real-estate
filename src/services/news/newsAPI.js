@@ -15,7 +15,7 @@ export default async function lastNewsAPI() {
 }
 
 
-export async function insertNewsAPI({ title, img, type, subtitle, today, time, isTopNews, text, myuuidImg, picture, myuuidPic }) {
+export async function insertNewsAPI({ title, img, type, subtitle, today, time, isTopNews, text, myuuidImg, picture, myuuidPic, typeOrder }) {
     const supaURL =
         "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/news/";
 
@@ -30,7 +30,7 @@ export async function insertNewsAPI({ title, img, type, subtitle, today, time, i
     const { data, error } = await supabase
         .from('news')
         .insert(
-            { type: type, subtitle: subtitle, created_at: today, img: imgURL, title: title, time: time, isTopNews: isTopNews, text: text, picture: pictureURL },
+            { type: type, subtitle: subtitle, created_at: today, img: imgURL, title: title, time: time, isTopNews: isTopNews, text: text, picture: pictureURL, typeOrder },
         )
         .select()
 

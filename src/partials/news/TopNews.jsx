@@ -16,7 +16,7 @@ function TopNews({ time, title, subtitle, text, calender, type, img }) {
             <span className="text-justify text-base font-bold">{subtitle}</span>
           </div>
           <div className=" text-justify">
-            <p className="break-all">{text}</p>
+            <p className="overflow-hidden text-ellipsis">{text}</p>
           </div>
           <div className="mb-5 flex justify-between">
             <div className="flex w-fit flex-wrap items-center justify-center rounded-sm bg-gray-100 p-1">

@@ -1,5 +1,6 @@
 import Spinner from "../../features/Spinner";
-import MaskanSection from "../../partials/news/MaskanSection";
+import SaghfinoAdd from "../../partials/addvertisment/SaghfinoAdd";
+import Sections from "../../partials/news/MaskanSection";
 import TopNews from "../../partials/news/TopNews";
 import useTypeNews from "../../partials/news/useTypeNews";
 
@@ -27,7 +28,10 @@ function News() {
           </div>
         )}
 
-        <MaskanSection />
+        <Sections titleSection="مسکن" type="maskan" />
+        <Sections titleSection="ساخت و ساز" type="sakht" />
+        <SaghfinoAdd />
+        <Sections titleSection="اجاره" type="rent" />
       </div>
     </div>
   );

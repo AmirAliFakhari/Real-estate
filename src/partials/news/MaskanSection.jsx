@@ -2,12 +2,12 @@ import MaskanBigNews from "../../components/news/MaskanBigNews";
 import MaskanSmallNew from "../../components/news/MaskanSmallNew";
 import useTypeNews from "./useTypeNews";
 
-function MaskanSection() {
+function Sections({ titleSection, type }) {
   const { data, isLoading } = useTypeNews();
   return (
     <div className="flex w-full flex-col justify-center gap-2 ">
       <div className="flex justify-between px-16 ">
-        <span className="text-xl font-bold">مسکن</span>
+        <span className="text-xl font-bold">{titleSection}</span>
         <span className="text-lg ">مشاهده همه</span>
       </div>
       <div className="flex justify-center ">
@@ -15,7 +15,8 @@ function MaskanSection() {
           {!isLoading &&
             data?.map(
               (data) =>
-                data.type == "maskanBig" && (
+                data.type == type &&
+                data.typeOrder === "Big" && (
                   <MaskanBigNews
                     img={data.img}
                     key={data.title}
@@ -29,7 +30,8 @@ function MaskanSection() {
             {!isLoading &&
               data?.map(
                 (data) =>
-                  data.type == "maskanSmall" && (
+                  data.type == type &&
+                  data.typeOrder == "Small" && (
                     <MaskanSmallNew
                       key={data.title}
                       time={data.time}
@@ -45,4 +47,4 @@ function MaskanSection() {
   );
 }
 
-export default MaskanSection;
+export default Sections;
