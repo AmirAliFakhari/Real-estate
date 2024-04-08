@@ -13,7 +13,6 @@ import SignIn from "./pages/Auth/signIn/SignIn";
 import RegisterHouse from "./pages/RegisterHouse/RegisterHouse";
 import getUser from "./services/Auth/getUser";
 import RealStates from "./pages/realState/RealStates";
-// import SuccessfulReg from "./pages/RegisterHouse/SuccessfulReg";
 import Houses from "./pages/houses/Houses";
 import useRegisterHouse from "./pages/RegisterHouse/useRegisterHouse";
 import ShowHouse from "./pages/showHouse/ShowHouse";
@@ -90,7 +89,6 @@ function App() {
       {userR ? <Route element={<RegisterHouse />} path="register-house" /> : ""}
       <Route element={<SignOn />} path="signon" />
       <Route element={<SignIn />} path="signIn" />
-      {/* <Route element={<SuccessfulReg />} path="successful-reg" /> */}
     </Routes>
   );
 }
