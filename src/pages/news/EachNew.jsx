@@ -4,6 +4,7 @@ import RelatedNews from "../../components/news/RelatedNews";
 import HeaderNews from "../../components/news/HeaderNews";
 import SectionsNews from "../../components/news/SectionsNews";
 import useRelatedSNews from "./useRelatedNews";
+import Spinner from "../../features/Spinner";
 
 function EachNew() {
   const { idNews } = useParams();
@@ -24,7 +25,15 @@ function EachNew() {
     thirdSectionText,
   } = !isLoading && data[0];
 
-  if (!isLoading && data) {
+  if (isLoading)
+    return (
+      <div className="relative left-0 top-[80px]">
+        <div className="flex justify-center">
+          <Spinner />
+        </div>
+      </div>
+    );
+  else {
     return (
       <div className="relative left-0 top-[80px]">
         <HeaderNews

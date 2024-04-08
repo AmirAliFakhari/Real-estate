@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 import split from "../../utils/splitImgURL";
 
 function MaskanSmallNew({ time, subtitle, img }) {

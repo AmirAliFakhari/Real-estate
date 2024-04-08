@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData, userRole } from "./pages/Auth/authSlice";
@@ -41,6 +41,18 @@ function App() {
     }
     someFunction();
   }, [dispatch]);
+
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
+
+  ScrollToTop();
 
   const userR = useSelector((state) => state.auth.userRole);
   const userD = useSelector((state) => state.auth.userData);
