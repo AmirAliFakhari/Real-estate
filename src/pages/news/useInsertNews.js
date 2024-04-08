@@ -9,15 +9,16 @@ export default function useInsertNews() {
         data,
         isPending
     } = useMutation({
-        mutationFn: (title, img, type, subtitle, today, time, isTopNews, text, myuuidImg, picture, myuuidPic, typeOrder) => insertNewsAPI(title, img, type, text, subtitle, today, time, isTopNews, myuuidImg, picture, myuuidPic, typeOrder),
+        mutationFn: (data, myuuidImg, myuuidPic) => insertNewsAPI(data, myuuidImg, myuuidPic),
 
         onSuccess: async () => {
 
             toast.success("درست زدي سيد")
         }
         ,
-        onError: () => {
+        onError: (err) => {
             toast.error("اشتب زدی سید")
+            console.log(err)
         }
     });
 

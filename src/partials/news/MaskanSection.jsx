@@ -18,7 +18,7 @@ function Sections({ titleSection, type }) {
           {BigNewsItem && (
             <MaskanBigNews
               img={BigNewsItem.img}
-              key={BigNewsItem.title}
+              key={BigNewsItem.img}
               subtitle={BigNewsItem.subtitle}
               time={BigNewsItem.time}
               title={BigNewsItem.title}
@@ -34,7 +34,7 @@ function Sections({ titleSection, type }) {
                 .slice(0, 2)
                 .map((filteredData) => (
                   <MaskanSmallNew
-                    key={filteredData.title}
+                    key={filteredData.img}
                     time={filteredData.time}
                     img={filteredData.img}
                     subtitle={filteredData.subtitle}

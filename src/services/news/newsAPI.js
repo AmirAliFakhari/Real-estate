@@ -1,7 +1,9 @@
 import supabase from "../supabase";
 
 
-export async function insertNewsAPI({ title, img, type, subtitle, today, time, isTopNews, text, myuuidImg, picture, myuuidPic, typeOrder }) {
+export async function insertNewsAPI({ myuuidImg, myuuidPic, ...d }) {
+    let today = new Date().toLocaleDateString("fa-IR");
+    const { img = d.img, picture = d.picture } = d
     const supaURL =
         "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/news/";
 
@@ -9,14 +11,13 @@ export async function insertNewsAPI({ title, img, type, subtitle, today, time, i
     const pictureName = picture[0]?.name;
     const imgURL = `${supaURL}${myuuidImg}-${imgName}`;
     const pictureURL = `${supaURL}${myuuidPic}-${pictureName}`;
-    console.log(`img : ${myuuidImg} `, `pic ${myuuidPic} `)
 
 
 
     const { data, error } = await supabase
         .from('news')
         .insert(
-            { type: type, subtitle: subtitle, created_at: today, img: imgURL, title: title, time: time, isTopNews: isTopNews, text: text, picture: pictureURL, typeOrder },
+            { ...d, picture: pictureURL, img: imgURL, created_at: today },
         )
         .select()
 
@@ -29,7 +30,6 @@ export async function insertNewsAPI({ title, img, type, subtitle, today, time, i
 
 
 export async function uploadNewsImg({ img, myuuidImg }) {
-    console.log(myuuidImg)
 
     const { error: imgError, data: imgData } = await supabase
         .storage
@@ -96,5 +96,31 @@ export async function selectTypeNews() {
     }
 
     return news;
+}
+
+
+
+
+export async function getRelatedNewsAPI(type) {
+    console.log(type)
+    let query = supabase.from('news').select();
+
+
+    const filters = [
+        { key: 'type', value: type },
+    ];
+
+    filters.forEach(({ key, value, operator }) => {
+        if (value) {
+            query = query.filter(key, operator || 'eq', value);
+        }
+    });
+    const { data, error } = await query.limit(4);
+
+    if (error) {
+        console.error(error);
+        throw new Error("Could not get data from Supabase.");
+    }
+    return data;
 }
 

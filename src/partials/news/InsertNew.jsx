@@ -8,7 +8,6 @@ import inputFields from "../../services/data/formInsertNews";
 const InsertNew = () => {
   const { insertNew } = useInsertNews();
   const { register, handleSubmit, reset } = useForm();
-  let today = new Date().toLocaleDateString("fa-IR");
   const resetForm = () => {
     reset();
   };
@@ -17,20 +16,10 @@ const InsertNew = () => {
   const myuuidPic = uuidv4();
 
   const onSubmit = (data) => {
-    console.log(data);
     insertNew({
-      title: data.title,
-      subtitle: data.subtitle,
-      text: data.text,
-      img: data.img,
-      time: data.time,
-      today: today,
-      type: data.type1,
-      typeOrder: data.type2,
-      isTopNews: data.isTopNews,
+      ...data,
       myuuidImg: myuuidImg,
       myuuidPic: myuuidPic,
-      picture: data.picture,
     });
     uploadNewsImg({
       myuuidImg: myuuidImg,
