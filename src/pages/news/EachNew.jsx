@@ -10,7 +10,6 @@ function EachNew() {
   const { isLoading, data } = useEachNews({ idNews });
   const { data: relatedNewsData, isLoading: isLoadingRelatedNews } =
     useRelatedSNews(!isLoading && data[0].type);
-  console.log(!isLoadingRelatedNews && relatedNewsData);
   const {
     created_at,
     time,
@@ -49,7 +48,12 @@ function EachNew() {
               <span className="ms-2 mt-5 flex font-bold">اخبار مرتبط</span>
               {!isLoadingRelatedNews &&
                 relatedNewsData.map((item) => (
-                  <RelatedNews time={time} key={item.img} title={title} />
+                  <RelatedNews
+                    time={item.time}
+                    key={item.img}
+                    title={item.title}
+                    img={item.img}
+                  />
                 ))}
             </div>
           </div>

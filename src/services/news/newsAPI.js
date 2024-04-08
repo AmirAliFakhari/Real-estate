@@ -102,7 +102,6 @@ export async function selectTypeNews() {
 
 
 export async function getRelatedNewsAPI(type) {
-    console.log(type)
     let query = supabase.from('news').select();
 
 
