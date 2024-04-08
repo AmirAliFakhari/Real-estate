@@ -1,19 +1,5 @@
 import supabase from "../supabase";
 
-export default async function lastNewsAPI() {
-
-    let { data: news, error } = await supabase
-        .from('news')
-        .select('*').order("id", { ascending: false }).limit(4)
-
-    if (error) {
-        console.error(error);
-        throw new Error("Cabins could not be loaded");
-    }
-
-    return news;
-}
-
 
 export async function insertNewsAPI({ title, img, type, subtitle, today, time, isTopNews, text, myuuidImg, picture, myuuidPic, typeOrder }) {
     const supaURL =

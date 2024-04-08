@@ -46,6 +46,7 @@ const inputFields = [
         options: [
             { label: "مسکن", value: "maskan" },
             { label: "ساخت و ساز", value: "sakht" },
+            { label: "اجاره", value: "rent" },
         ],
         textholder: "دسته بندی را وارد کنید",
         validation: {
