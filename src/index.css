@@ -116,23 +116,3 @@ Styling scroll
 } */
 
 /* swiper*/
-
-.swiper-container {
-  width: 800px;
-  height: 200px;
-  line-height: 200px;
-  text-align: center;
-}
-
-.swiper-slide {
-  background-color: rgb(4 47 46);
-  color: #fff;
-  /* display: flex !important; */
-  /* justify-content: center !important; */
-  font-size: 25px;
-}
-
-.swiper-slide-active {
-  display: flex;
-  justify-content: center;
-}

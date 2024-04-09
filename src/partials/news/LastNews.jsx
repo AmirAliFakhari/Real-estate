@@ -37,6 +37,7 @@ function LastNews() {
               spaceBetween: 50,
             },
           })}
+          className="salam"
         >
           {!isLoading &&
             data.slice(0, 6).map((data) => (

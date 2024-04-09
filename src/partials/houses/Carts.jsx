@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import HomeCart from "./HouseCart";
 import "swiper/css/navigation";
 import "swiper/css";
+import "../../index.css";
+
 import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
 
 function Carts() {

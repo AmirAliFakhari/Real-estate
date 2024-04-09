@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App";
-import { Provider } from "react-redux";
+import "./index.css";
 import store from "./services/store";
+import { Provider } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import "../node_modules/leaflet/dist/leaflet.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { register } from "swiper/element/bundle";

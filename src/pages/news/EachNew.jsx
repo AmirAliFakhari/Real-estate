@@ -53,7 +53,7 @@ function EachNew() {
               secondSectionTitle={secondSectionTitle}
               thirdSectionTitle={thirdSectionTitle}
             />
-            <div className="lg:col-grid-1 col-span-full grid h-[20rem]  rounded-lg    bg-slate-50 lg:col-span-1  ">
+            <div className="lg:col-grid-1 col-span-full grid h-[20rem] rounded-lg  bg-slate-50    lg:col-span-1 lg:h-[40rem]  ">
               <span className="ms-2 mt-5 font-bold">اخبار مرتبط</span>
               <div className="overflow-y-scroll">
                 {!isLoadingRelatedNews &&
