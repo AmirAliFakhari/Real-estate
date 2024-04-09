@@ -1,11 +1,9 @@
+import unsplash from "../../../assets/imgs/unsplash_hCU4fimRW-c.svg";
+
 function HeaderSlide() {
   return (
     <div className="relative">
-      <img
-        src="assets/imgs/unsplash_hCU4fimRW-c.svg"
-        alt="Background"
-        className="h-auto w-full "
-      />
+      <img src={unsplash} alt="Background" className="h-auto w-full " />
       <div className="absolute left-[51%] top-24 sm:top-[17%]  ">
         <div className="-translate-y-1/12 flex w-screen -translate-x-1/2 flex-col items-center justify-start gap-2 ">
           <span className="text-3xl font-bold text-white">
