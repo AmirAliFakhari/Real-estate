@@ -1,3 +1,6 @@
+import calender from "../../assets/icons/calendar.svg";
+import news_photo from "../../assets/imgs/Photo-news.svg";
+
 function HeaderNews({ title, subtitle, time, created_at }) {
   return (
     <div className="flex  flex-col items-center  ">
@@ -12,12 +15,12 @@ function HeaderNews({ title, subtitle, time, created_at }) {
           </span>
           <div className="flex w-fit flex-wrap items-center justify-center rounded-md bg-gray-100 p-1">
             <span className="text-sm">{created_at}</span>
-            <img src="src\assets\icons\calendar.svg" alt="" />
+            <img src={calender} alt="" />
           </div>
         </div>
       </div>
       <div className="flex  justify-center">
-        <img className="w-[85%]" src="src\assets\imgs\new-photo3.svg" alt="" />
+        <img className="w-[85%]" src={news_photo} alt="" />
       </div>
     </div>
   );

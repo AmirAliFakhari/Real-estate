@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import eye from "../../src/assets/icons/eye.svg";
 function InputForm({
   title,
   type,
@@ -52,7 +52,7 @@ function InputForm({
             className="absolute left-2 top-3 cursor-pointer"
             onClick={() => setEyePass(!eyePass)}
           >
-            <img src="src/assets/icons/eye.svg" alt="Toggle visibility" />
+            <img src={eye} alt="Toggle visibility" />
           </span>
         )}
       </div>

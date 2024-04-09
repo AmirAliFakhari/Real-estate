@@ -1,3 +1,5 @@
+import banner from "../../assets/imgs/Banner.png";
+
 function AboutUs() {
   return (
     <div className="relative left-0 top-[80px]">
@@ -36,11 +38,7 @@ function AboutUs() {
             املاک و یا یک مشاور مستقل هستید، ما همیشه کنار شماییم.
           </p>
           <div className="">
-            <img
-              className="h-full object-cover"
-              src="src\assets\imgs\Banner.png"
-              alt=""
-            />
+            <img className="h-full object-cover" src={banner} alt="" />
           </div>
         </div>
       </div>

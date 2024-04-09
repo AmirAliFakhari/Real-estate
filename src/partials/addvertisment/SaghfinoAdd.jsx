@@ -1,3 +1,5 @@
+import add from "../../assets/imgs/add.svg";
+
 function SaghfinoAdd() {
   return (
     <div className=" flex justify-center">
@@ -11,7 +13,7 @@ function SaghfinoAdd() {
             یا یک مشاور مستقل هستید، ما همیشه کنار شما هستیم.
           </span>
         </div>
-        <img src="src\assets\imgs\add.svg" alt="" />
+        <img src={add} alt="" />
       </div>
     </div>
   );

@@ -7,6 +7,9 @@ import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import icon2 from "../../assets/icons/icon2.svg";
+import tick from "../../assets/icons/tick.svg";
+
 export default function Stepper({
   currentStep,
   numberOfSteps,
@@ -35,7 +38,7 @@ export default function Stepper({
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       <Link to={"/"} className="flex items-center justify-center">
-        <img className="flex w-52 " src="src\assets\icons\icon2.svg" alt="" />
+        <img className="flex w-52 " src={icon2} alt="" />
       </Link>
       <div className="flex items-center">
         {Array.from({ length: numberOfSteps }).map((_, index) => (
@@ -43,7 +46,7 @@ export default function Stepper({
             <div
               className={`flex h-6 w-6 justify-center rounded-full ${activeColor(index)}`}
             >
-              <img className="w-1/2 " src="src\assets\icons\tick.svg" />
+              <img className="w-1/2 " src={tick} />
             </div>
             {isFinalStep(index) ? null : (
               <div

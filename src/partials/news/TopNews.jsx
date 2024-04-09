@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import split from "../../utils/splitImgURL";
 
+import calender_icon from "../../assets/icons/calendar.svg";
+
 function TopNews({ time, title, subtitle, text, calender, type, img }) {
   const idNews = split(img);
 
@@ -21,7 +23,7 @@ function TopNews({ time, title, subtitle, text, calender, type, img }) {
           <div className="mb-5 flex justify-between">
             <div className="flex w-fit flex-wrap items-center justify-center rounded-sm bg-gray-100 p-1">
               <span className="text-sm">{calender}</span>
-              <img src="src\assets\icons\calendar.svg" alt="" />
+              <img src={calender_icon} alt="" />
             </div>
             <Link
               to={`/new/${idNews}`}
