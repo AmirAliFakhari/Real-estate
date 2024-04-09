@@ -2,7 +2,7 @@ function HeaderSlide() {
   return (
     <div className="relative">
       <img
-        src="src\assets\imgs\unsplash_hCU4fimRW-c.svg"
+        src="assets/imgs/unsplash_hCU4fimRW-c.svg"
         alt="Background"
         className="h-auto w-full "
       />

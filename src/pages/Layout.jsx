@@ -7,7 +7,7 @@ import Carts from "../partials/houses/Carts";
 export default function Layout() {
   return (
     <div className="relative top-[69.6px] ">
-      <HeaderSlide src="slide-image.png" />
+      <HeaderSlide  />
       <Carts />
       <Introduction />
       <LastNews />
