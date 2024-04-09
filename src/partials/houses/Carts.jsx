@@ -21,8 +21,8 @@ function Carts() {
 
       <swiper-container
         space-between="20"
-        scrollbar-clickable="true"
-        mousewheel-invert="true"
+        pagination-clickable="true"
+        swiper-pagination-bullet-active="true"
         navigation="true"
         breakpoints={JSON.stringify({
           320: {

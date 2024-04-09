@@ -72,19 +72,21 @@ function ShowHouses() {
                         realtorData[0].userData.user_metadata.lastname
                       : "صبر کن"}
                   </span>
-                  <Link
-                    state={
-                      !isLoadingAdds &&
-                      !isLoadingRealtorImg && {
-                        realtorAdds,
-                        realtorImgData,
+                  {!isLoadingRealtor && (
+                    <Link
+                      state={
+                        !isLoadingAdds &&
+                        !isLoadingRealtorImg && {
+                          realtorAdds,
+                          realtorImgData,
+                        }
                       }
-                    }
-                    to={`/user/${id}`}
-                    className="rounded-lg bg-red-500 px-5 text-white"
-                  >
-                    مشاهده
-                  </Link>
+                      to={`/user/${id}`}
+                      className="rounded-lg bg-red-500 px-5 text-white"
+                    >
+                      مشاهده
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
