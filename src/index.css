@@ -116,3 +116,8 @@ Styling scroll
 } */
 
 /* swiper*/
+
+.swiper-slide-active {
+  display: flex;
+  justify-content: center;
+}
