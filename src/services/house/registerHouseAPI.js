@@ -2,7 +2,6 @@ import getUser from "../Auth/getUser";
 import supabase from "../supabase";
 
 export default async function registerHouseAPI({ userData, image_id2, data }) {
-    console.log(userData)
     const user = await getUser()
     const userID = user.id
     const { d, error } = await supabase

@@ -9,6 +9,8 @@ import { Toaster } from "react-hot-toast";
 import "../node_modules/leaflet/dist/leaflet.css";
 import { BrowserRouter } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { register } from "swiper/element/bundle";
+register();
 
 const queryClient = new QueryClient();
 

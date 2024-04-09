@@ -90,7 +90,6 @@ function App() {
             )}
           </>
         )}
-
         <Route path="user/:userID" element={<UserRealtor />} />
         <Route path="new" element={<News />} />
         <Route path="new/:idNews" element={<EachNew />} />

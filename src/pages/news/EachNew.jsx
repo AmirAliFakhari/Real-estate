@@ -53,17 +53,19 @@ function EachNew() {
               secondSectionTitle={secondSectionTitle}
               thirdSectionTitle={thirdSectionTitle}
             />
-            <div className="lg:col-grid-1 col-span-full grid rounded-lg  bg-slate-50    lg:col-span-1 lg:h-[20rem] lg:overflow-y-scroll  ">
-              <span className="ms-2 mt-5 flex font-bold">اخبار مرتبط</span>
-              {!isLoadingRelatedNews &&
-                relatedNewsData.map((item) => (
-                  <RelatedNews
-                    time={item.time}
-                    key={item.img}
-                    title={item.title}
-                    img={item.img}
-                  />
-                ))}
+            <div className="lg:col-grid-1 col-span-full grid h-[20rem]  rounded-lg    bg-slate-50 lg:col-span-1  ">
+              <span className="ms-2 mt-5 font-bold">اخبار مرتبط</span>
+              <div className="overflow-y-scroll">
+                {!isLoadingRelatedNews &&
+                  relatedNewsData.map((item) => (
+                    <RelatedNews
+                      time={item.time}
+                      key={item.img}
+                      title={item.title}
+                      img={item.img}
+                    />
+                  ))}
+              </div>
             </div>
           </div>
         </div>

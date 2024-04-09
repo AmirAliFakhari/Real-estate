@@ -17,7 +17,6 @@ export default async function getAvatarURL() {
 }
 
 export async function uploadAvatarUrl({ avatar, myuuid, image_id3 }) {
-    console.log(image_id3)
     const userID = localStorage.getItem("userID");
     const supaURL =
         "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/avatars/";
@@ -29,7 +28,6 @@ export async function uploadAvatarUrl({ avatar, myuuid, image_id3 }) {
         .from('news')
         .upsert({ userID: userID, avatar: avatarURL, uniqueId: image_id3 })
 
-    console.log(data)
 
     if (error) {
         console.error('Upsert error:', error.message);

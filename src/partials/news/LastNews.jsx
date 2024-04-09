@@ -1,6 +1,7 @@
 import New from "./New";
-import { Swiper, SwiperSlide } from "swiper/react";
 import useTypeNews from "./useTypeNews";
+
+import "swiper/css/bundle";
 
 function LastNews() {
   const { data, isLoading } = useTypeNews();
@@ -14,34 +15,37 @@ function LastNews() {
           </p>
         </div>
       </div>
-      <Swiper
-        navigation={true}
-        className="flex w-[85%]  text-center md:text-justify"
-        spaceBetween={50}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          520: {
-            slidesPerView: 2,
-          },
-          800: {
-            slidesPerView: 3,
-          },
-          1200: {
-            slidesPerView: 4,
-          },
-        }}
-      >
-        <div className="flex  flex-wrap items-center justify-center gap-5  ">
+
+      <main>
+        <swiper-container
+          space-between="20"
+          scrollbar-clickable="true"
+          mousewheel-invert="true"
+          navigation="true"
+          breakpoints={JSON.stringify({
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          })}
+        >
           {!isLoading &&
             data.slice(0, 6).map((data) => (
-              <SwiperSlide key={data.id}>
+              <swiper-slide key={data.id}>
                 <New key={data.id} title={data.title} img={data.img} />
-              </SwiperSlide>
+              </swiper-slide>
             ))}
-        </div>
-      </Swiper>
+        </swiper-container>
+      </main>
     </>
   );
 }
