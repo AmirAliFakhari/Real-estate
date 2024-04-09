@@ -1,5 +1,4 @@
-import unsplash from "../../../assets/imgs/unsplash_hCU4fimRW-c.svg";
-
+import unsplash from "../../assets/imgs/unsplash_hCU4fimRW-c.svg";
 function HeaderSlide() {
   return (
     <div className="relative">
