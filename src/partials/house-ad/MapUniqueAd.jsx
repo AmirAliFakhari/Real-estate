@@ -24,7 +24,6 @@ function MapUniqueAd({ long, lat, state }) {
             <span> قیمت رهن : {state.mortgage}</span>
             <img
               src="https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/apartments/1057726-registerHouse.png"
-              alt=""
               className="w-full"
             />
           </div>

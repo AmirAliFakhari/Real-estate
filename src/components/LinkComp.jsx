@@ -9,7 +9,7 @@ function LinkComp({ src, title, to }) {
       {src ? (
         <img
           className="w-fit md:hidden"
-          src={`src/assets/icons/${src}.svg`}
+          // src={`src/assets/icons/${src}.svg`}
           alt={title}
         />
       ) : (
