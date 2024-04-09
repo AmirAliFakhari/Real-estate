@@ -5,7 +5,6 @@ import { userData, userRole } from "./pages/Auth/authSlice";
 
 import Layout from "./pages/Layout";
 import AppLayout from "./pages/AppLayout";
-import useIntroduction from "./partials/Introduction/useIntroduction";
 import Spinner from "./features/Spinner";
 import SignOn from "./pages/Auth/signon/signOn";
 import Customer_panel from "./pages/panel/Customer_panel";
@@ -26,7 +25,6 @@ import EachNew from "./pages/news/EachNew";
 
 function App() {
   const { lastRegLoading } = useRegisterHouse();
-  const { isLoading: introLoading } = useIntroduction();
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -56,7 +54,7 @@ function App() {
 
   const userR = useSelector((state) => state.auth.userRole);
   const userD = useSelector((state) => state.auth.userData);
-  if (introLoading || lastRegLoading) {
+  if (lastRegLoading) {
     return (
       <div className="flex h-screen w-screen flex-col items-center justify-center gap-2">
         <Spinner />

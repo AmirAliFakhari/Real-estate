@@ -82,23 +82,13 @@ function Navbar() {
           >
             <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-6 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
               <li onClick={() => setHidden(true)}>
-                <LinkComp
-                  title="اجاره"
-                  src="key"
-                  onClick={() => setHidden(true)}
-                />
-              </li>
-              <li onClick={() => setHidden(true)}>
-                <LinkComp title="خرید" src="key" />
-              </li>
-              <li onClick={() => setHidden(true)}>
                 <LinkComp title="املاک و مستغلات" src="house-2" to="houses" />
               </li>
               <li onClick={() => setHidden(true)}>
                 <LinkComp to="about" title="درباره ما" src="people" />
               </li>
               <li onClick={() => setHidden(true)}>
-                <LinkComp title="اخبار روز" to="new" />
+                <LinkComp title="اخبار روز" to="new" src="news" />
               </li>
             </ul>
           </div>

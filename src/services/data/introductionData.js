@@ -8,21 +8,26 @@ const introductionData =
             "buttonText": "اجاره خانه",
             "title": "به آسانی یک خانه اجاره کنید",
             "img": "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/aboutIcons/Illustration.svg",
-            "link": "register-house"
+            "link": "register-house",
+            "to": "new"
         },
         {
             "id": 2,
             "text": "بالای ۱ میلیون آگهی فروش در وب‌سایت سقفینو وجود دارد.\nما علاوه بر آگهی‌های فراوان با به‌کارگیری املاک و مشاورین متخصص در هر شهر، تلاش می‌کنیم در تجربه لذت یک خرید آسان با شما سهیم باشد.",
             "buttonText": "خرید خانه",
             "title": "خانه مورد علاقه‌تان را بخرید",
-            "img": "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/aboutIcons/Illustration2.svg"
+            "img": "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/aboutIcons/Illustration2.svg",
+            "to": "about"
+
         },
         {
             "id": 3,
             "text": "آیا می‌دانید میانگین بازدید از وب‌سایت به‌طور متوسط روزانه بالای هزاران نفر است؟\nپس به‌سادگی و با چند کلیک ساده، ملک‌تان را به‌صورت رایگان در سقفینو آگهی و در سریع‌ترین زمان ممکن معامله کنید.",
             "buttonText": "ثبت آگهی",
             "title": "مالک هستید؟",
-            "img": "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/aboutIcons/pana.svg"
+            "img": "https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/aboutIcons/pana.svg",
+            "to": "register-house"
+
         }
     ]
 

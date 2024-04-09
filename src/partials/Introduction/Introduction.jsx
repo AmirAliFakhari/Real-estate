@@ -10,6 +10,7 @@ function Introduction() {
       <div className="flex flex-col flex-wrap items-center justify-center  gap-5 sm:flex-row sm:justify-evenly">
         {introductionData.map((res) => (
           <IntroCart
+            to={res.to}
             buttonText={res.buttonText}
             img={res.img}
             text={res.text}
