@@ -1,7 +1,7 @@
-function FeaturesRow({ state, title, src, icon }) {
+function FeaturesRow({ state, title, src }) {
   return (
     <div className="flex gap-4 ">
-      {icon}
+      {src}
       <span>
         {title}: {state}
       </span>

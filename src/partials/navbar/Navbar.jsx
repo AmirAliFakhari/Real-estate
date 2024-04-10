@@ -3,6 +3,10 @@ import LinkComp from "../../components/LinkComp";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
+import house_2 from "../../assets/icons/house-2.svg";
+import people from "../../assets/icons/people.svg";
+import news from "../../assets/icons/news.svg";
+
 function Navbar() {
   const [hidden, setHidden] = useState(true);
   const userRole = useSelector((state) => state.auth.userRole);
@@ -82,13 +86,25 @@ function Navbar() {
           >
             <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-6 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
               <li onClick={() => setHidden(true)}>
-                <LinkComp title="املاک و مستغلات" src="house-2" to="houses" />
+                <LinkComp
+                  title="املاک و مستغلات"
+                  src={<img className="w-fit" src={house_2} />}
+                  to="houses"
+                />
               </li>
               <li onClick={() => setHidden(true)}>
-                <LinkComp to="about" title="درباره ما" src="people" />
+                <LinkComp
+                  to="about"
+                  src={<img className="w-fit" src={people} />}
+                  title="درباره ما"
+                />
               </li>
               <li onClick={() => setHidden(true)}>
-                <LinkComp title="اخبار روز" to="new" src="news" />
+                <LinkComp
+                  title="اخبار روز"
+                  to="new"
+                  src={<img className="w-fit" src={news} />}
+                />
               </li>
             </ul>
           </div>
