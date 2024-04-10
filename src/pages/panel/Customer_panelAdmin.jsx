@@ -62,7 +62,7 @@ function Customer_panelAdmin() {
           </div>
         </div>
         <div className="col-span-full h-fit  p-1 sm:col-span-2 sm:h-full">
-          <div className="h-full rounded-lg border border-gray-400 p-1">
+          <div className="h-[35rem] overflow-y-scroll rounded-lg border border-gray-400 p-1">
             {selectedMenuItem === "insert" && <InsertNew />}
             {selectedMenuItem === "edit" && <EditeUser />}
             {!selectedMenuItem && <InsertNew />}
