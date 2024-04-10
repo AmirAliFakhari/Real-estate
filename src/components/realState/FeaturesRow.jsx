@@ -1,7 +1,7 @@
-function FeaturesRow({ state, title, src }) {
+function FeaturesRow({ state, title, src, icon }) {
   return (
     <div className="flex gap-4 ">
-      <img className="w-fit" src={`src/assets/icons/${src}.svg`} alt="" />
+      {icon}
       <span>
         {title}: {state}
       </span>

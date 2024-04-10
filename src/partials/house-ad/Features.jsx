@@ -6,7 +6,11 @@ function Features({ title, state }) {
       <span className="font-bold">{title}</span>
       <div className="flex w-full flex-wrap justify-between sm:w-[31rem]">
         <div className="mt-4 flex flex-col gap-2">
-          <FeaturesRow state={state.parking} title="پارکینگ" src="car" />
+          <FeaturesRow
+            state={state.parking}
+            title="پارکینگ"
+            src={<img className="w-fit" src={`src/assets/icons/car.svg`} />}
+          />
           <FeaturesRow state={state.basement} title="انباری" src="house-2" />
           <FeaturesRow state={state.elevator} title="آسانسور" src="slider" />
           <FeaturesRow

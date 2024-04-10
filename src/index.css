@@ -121,3 +121,6 @@ Styling scroll
   display: flex;
   justify-content: center;
 }
+.swiper-button-prev {
+  color: red !important;
+}

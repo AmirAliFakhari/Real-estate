@@ -5,9 +5,27 @@ import "swiper/css";
 import "../../index.css";
 
 import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
+import { useEffect, useRef } from "react";
 
 function Carts() {
   const { getLastRegData } = useRegisterHouse();
+  const swiperElRef = useRef(null);
+
+  useEffect(() => {
+    const params = {
+      injectStyles: [
+        `
+        .swiper-button-prev,
+        .swiper-button-next {
+          color: red !important;
+        }
+        `,
+      ],
+    };
+
+    Object.assign(swiperElRef.current, params);
+    swiperElRef.current.initialize();
+  }, []);
 
   return (
     <>
@@ -22,6 +40,8 @@ function Carts() {
       </div>
 
       <swiper-container
+        init="false"
+        ref={swiperElRef}
         space-between="20"
         pagination-clickable="true"
         swiper-pagination-bullet-active="true"
