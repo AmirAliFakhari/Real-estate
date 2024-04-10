@@ -26,7 +26,7 @@ function TopNews({ time, title, subtitle, text, calender, type, img }) {
               <img src={calender_icon} alt="" />
             </div>
             <Link
-              to={`/new/${idNews}`}
+              to={`/eachNew/${idNews}`}
               className="rounded-md bg-red-500 p-1 text-white"
             >
               ادامه مطالب

@@ -9,13 +9,13 @@ import Spinner from "../../features/Spinner";
 function EachNew() {
   const { idNews } = useParams();
   const { isLoading, data } = useEachNews({ idNews });
+  // if (!isLoading) console.log(data);
   const { data: relatedNewsData, isLoading: isLoadingRelatedNews } =
     useRelatedSNews(!isLoading && data[0].type);
   const {
     created_at,
     time,
     subtitle,
-    title,
     picture,
     firstSectionTitle,
     firstSectionText,

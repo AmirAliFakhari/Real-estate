@@ -1,6 +1,7 @@
 const split = (URL) => {
     const parts = URL?.split("/");
-    const idNews = parts[parts?.length - 1];
+    const length = parts?.length
+    const idNews = parts[length - 1];
 
     return idNews
 }

@@ -1,5 +1,4 @@
 import calender from "../../assets/icons/calendar.svg";
-import news_photo from "../../assets/imgs/Photo-news.svg";
 
 function HeaderNews({ title, subtitle, time, created_at, img }) {
   return (

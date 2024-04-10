@@ -73,8 +73,6 @@ function App() {
           <>
             <Route element={<Customer_panel />} path="customer-panel" />
             <Route path="user/:userID" element={<UserRealtor />} />
-            <Route path="new" element={<News />} />
-            <Route path="new/:idNews" element={<New />} />
           </>
         ) : (
           <>
@@ -88,9 +86,10 @@ function App() {
             )}
           </>
         )}
+        <Route path="new/:idNews" element={<New />} />
         <Route path="user/:userID" element={<UserRealtor />} />
         <Route path="new" element={<News />} />
-        <Route path="new/:idNews" element={<EachNew />} />
+        <Route path="eachNew/:idNews" element={<EachNew />} />
         <Route element={<AboutUs />} path="about" />
         <Route element={<RealStates />} path="realStates" />
         <Route path="*" element={<NotFound />} />
