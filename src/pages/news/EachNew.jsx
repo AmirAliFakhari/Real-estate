@@ -23,6 +23,7 @@ function EachNew() {
     secondSectionText,
     thirdSectionTitle,
     thirdSectionText,
+    img,
   } = !isLoading && data[0];
 
   if (isLoading)
@@ -37,6 +38,7 @@ function EachNew() {
     return (
       <div className="relative left-0 top-[80px]">
         <HeaderNews
+          img={img}
           created_at={created_at}
           subtitle={subtitle}
           time={time}

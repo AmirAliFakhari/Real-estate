@@ -1,7 +1,7 @@
 import calender from "../../assets/icons/calendar.svg";
 import news_photo from "../../assets/imgs/Photo-news.svg";
 
-function HeaderNews({ title, subtitle, time, created_at }) {
+function HeaderNews({ title, subtitle, time, created_at, img }) {
   return (
     <div className="flex  flex-col items-center  ">
       <div className="mb-5 flex w-[85%] flex-col gap-2">
@@ -20,7 +20,7 @@ function HeaderNews({ title, subtitle, time, created_at }) {
         </div>
       </div>
       <div className="flex  justify-center">
-        <img className="w-[85%]" src={news_photo} alt="" />
+        <img className="w-[85%]" src={img} alt="" />
       </div>
     </div>
   );
