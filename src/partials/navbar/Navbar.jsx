@@ -39,7 +39,7 @@ function Navbar() {
                     : "/customer-panel"
                 }
                 type="button"
-                className="mx-1 hidden rounded-lg border border-green-400 px-2 py-2 text-center text-sm  text-gray-800 hover:bg-green-500 focus:ring-red-400  sm:flex "
+                className="mx-1  flex rounded-lg border border-green-400 px-2 py-2 text-center  text-sm text-gray-800 hover:bg-green-500  focus:ring-red-400 "
               >
                 <span>
                   داشبورد
@@ -59,7 +59,7 @@ function Navbar() {
             <Link
               to={userRole ? "/register-house" : "signIn"}
               type="button"
-              className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border  border-red-500 px-3 py-2 text-center text-sm font-medium
+              className="focus:ring-red-30 hidden  w-[5.2rem] rounded-lg border  border-red-500 px-3 py-2 text-center text-sm font-medium
              text-red-500 hover:bg-red-500 hover:text-white sm:flex "
             >
               ثبت آگهی
@@ -105,6 +105,40 @@ function Navbar() {
                   to="new"
                   src={<img className="w-fit" src={news} />}
                 />
+              </li>
+              <li
+                onClick={() => setHidden(true)}
+                className="md: hidden"
+                onClick={() => setHidden(true)}
+              >
+                <LinkComp
+                  title="ثبت آگهی"
+                  to="new"
+                  src={<img className="w-fit" src={news} />}
+                />
+              </li>
+              <li onClick={() => setHidden(true)}>
+                <Link
+                  to={userRole ? "/register-house" : "signIn"}
+                  type="button"
+                  className="focus:ring-red-30   flex w-[5.2rem] rounded-lg px-3 py-2 text-center text-sm
+                font-medium text-red-500 hover:bg-red-500 hover:text-white "
+                >
+                  ثبت آگهی
+                </Link>
+              </li>
+              <li>
+                {userRole !== "authenticated" ? (
+                  <Link
+                    to="/signIn"
+                    type="button"
+                    className="focus:ring-red-30  flex rounded-lg   px-3 py-2 text-center text-sm font-medium  text-gray-800 "
+                  >
+                    ورود
+                  </Link>
+                ) : (
+                  ""
+                )}
               </li>
             </ul>
           </div>
