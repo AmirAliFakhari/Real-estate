@@ -106,11 +106,7 @@ function Navbar() {
                   src={<img className="w-fit" src={news} />}
                 />
               </li>
-              <li
-                onClick={() => setHidden(true)}
-                className="md: hidden"
-                onClick={() => setHidden(true)}
-              >
+              <li onClick={() => setHidden(true)} className="md: hidden">
                 <LinkComp
                   title="ثبت آگهی"
                   to="new"
