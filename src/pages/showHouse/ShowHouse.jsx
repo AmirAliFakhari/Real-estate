@@ -44,7 +44,7 @@ function ShowHouses() {
       <div className="relative left-0 top-[80px]">
         <div className="flex items-center justify-center ">
           <img
-            className="h-[20rem] w-fit  rounded-lg object-contain sm:h-[34rem] sm:w-[37rem]  sm:object-none"
+            className="h-[20rem] w-fit  w-full rounded-lg object-contain sm:h-[34rem]   sm:object-cover"
             src={`https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/apartments/${image_id}-registerHouse.png`}
             alt=""
           />

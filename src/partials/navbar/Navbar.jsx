@@ -84,7 +84,7 @@ function Navbar() {
           <div
             className={`${hidden ? "hidden" : ""}  w-full items-center justify-between md:order-1 md:flex md:w-auto`}
           >
-            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-6 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
+            <ul className="bord er-gray-100 mt-4 flex flex-col items-center rounded-lg border bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-6 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
               <li onClick={() => setHidden(true)}>
                 <LinkComp
                   title="املاک و مستغلات"
