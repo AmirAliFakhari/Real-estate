@@ -4,6 +4,13 @@ function AboutUs() {
   return (
     <div className="relative left-0 top-[80px]">
       <div className="flex flex-col gap-5 rounded-md border border-gray-300 p-10">
+        <div className="mb-5 flex justify-center">
+          <img
+            className=" w-full object-cover sm:w-[90%]"
+            src={banner}
+            alt="Banner"
+          />
+        </div>
         <span className="font-bold">داستان سقفیتو</span>
         <div className="mb-5 flex flex-col items-center justify-center gap-2 text-center">
           <span className="font-bold text-red-500">
@@ -13,7 +20,7 @@ function AboutUs() {
             تا پیدا کردن سقف دلخواه کنار شماییم
           </span>
         </div>
-        <div className="grid gap-4 md:grid-cols-3 ">
+        <div className=" gap-4 text-justify  ">
           <p>
             توسعه اینترنت، روش‌های معاملات و خرید ما را به کلی دگرگون کرده است.
             منافع موجود در این شکل معاملات؛ آسانی و سرعت بیشتر، سبب شده تا مردم
@@ -37,9 +44,6 @@ function AboutUs() {
             شماست چه به‌دنبال پیدا کردن یک خانه دلنشین هستید، یا مدیر آژانس
             املاک و یا یک مشاور مستقل هستید، ما همیشه کنار شماییم.
           </p>
-          <div className="">
-            <img className="h-full object-cover" src={banner} alt="" />
-          </div>
         </div>
       </div>
     </div>
