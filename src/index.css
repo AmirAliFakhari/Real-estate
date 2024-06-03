@@ -4,27 +4,37 @@
 
 @font-face {
   font-family: "Vazir";
-  src: url("/src/assets/fonts/Vazir.ttf") format("ttf");
+  src:
+    local("Vazir"),
+    url("/src/assets/fonts/Vazir.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "Vazir-Bold";
-  src: url("/src/assets/fonts/Vazir-Bold.ttf") format("ttf");
+  src:
+    local("Vazir"),
+    url("/src/assets/fonts/Vazir-Bold.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "Vazir-Meduim";
-  src: url("/src/assets/fonts/Vazir-Medium.ttf") format("ttf");
+  src:
+    local("Vazir"),
+    url("/src/assets/fonts/Vazir-Medium.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "Vazir-Thin";
-  src: url("/src/assets/fonts/Vazir-Thin.ttf") format("ttf");
+  src:
+    local("Vazir"),
+    url("/src/assets/fonts/Vazir-Thin.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "Vazir-Light";
-  src: url("/src/assets/fonts/Vazir-Light.ttf") format("ttf");
+  src:
+    local("Vazir"),
+    url("/src/assets/fonts/Vazir-Light.ttf") format("ttf");
 }
 
 body {
