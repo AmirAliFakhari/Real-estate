@@ -18,8 +18,8 @@ function HeaderNews({ title, subtitle, time, created_at, img }) {
           </div>
         </div>
       </div>
-      <div className="flex  justify-center">
-        <img className="w-[85%]" src={img} alt="" />
+      <div className="flex w-full  justify-center">
+        <img className="w-[85%] object-cover" src={img} alt="" />
       </div>
     </div>
   );

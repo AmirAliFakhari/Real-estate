@@ -33,7 +33,7 @@ function TopNews({ time, title, subtitle, text, calender, type, img }) {
             </Link>
           </div>
         </div>
-        <img className="w-auto object-cover" src={img} alt="" />
+        <img className="w-auto w-full object-cover" src={img} alt="" />
       </div>
     </div>
   );
