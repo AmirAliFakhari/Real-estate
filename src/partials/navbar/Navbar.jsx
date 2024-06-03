@@ -45,6 +45,20 @@ function Navbar() {
             </span>
           </a>
           <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+            <Link
+              to={userRole ? "/register-house" : "/signIn"}
+              type="button"
+              className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border border-red-500 px-3 py-2 text-center text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white sm:flex"
+            >
+              ثبت آگهی
+            </Link>
+            <Link
+              to="/signIn"
+              type="button"
+              className="focus:ring-red-30 hidden rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex"
+            >
+              ورود
+            </Link>
             {userRole === "authenticated" ? (
               <Link
                 to={
@@ -69,14 +83,6 @@ function Navbar() {
                 ورود
               </Link>
             )}
-
-            <Link
-              to={userRole ? "/register-house" : "signIn"}
-              type="button"
-              className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border border-red-500 px-3 py-2 text-center text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white sm:flex"
-            >
-              ثبت آگهی
-            </Link>
             <button
               onClick={() => setHidden((c) => !c)}
               type="button"
@@ -121,11 +127,26 @@ function Navbar() {
                 />
               </li>
               <li onClick={() => setHidden(true)} className="md:hidden">
-                <LinkComp
-                  title="ثبت آگهی"
-                  to="new"
-                  src={<img className="w-fit" src={news} />}
-                />
+                <Link
+                  to={userRole ? "/register-house" : "signIn"}
+                  type="button"
+                  className="focus:ring-red-30 flex w-[5.2rem] rounded-lg px-3 py-2 text-center text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white"
+                >
+                  ثبت آگهی
+                </Link>
+              </li>
+              <li onClick={() => setHidden(true)} className="md:hidden">
+                {userRole !== "authenticated" ? (
+                  <Link
+                    to="/signIn"
+                    type="button"
+                    className="focus:ring-red-30 flex rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-800"
+                  >
+                    ورود
+                  </Link>
+                ) : (
+                  ""
+                )}
               </li>
             </ul>
           </div>
