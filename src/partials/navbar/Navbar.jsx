@@ -44,7 +44,7 @@ function Navbar() {
               مشاور املاک
             </span>
           </a>
-          <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+          <div className="flex gap-2 space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
             <Link
               to={userRole ? "/register-house" : "/signIn"}
               type="button"
