@@ -1,14 +1,17 @@
-import {
-  ImageOverlay,
-  MapContainer,
-  Marker,
-  Popup,
-  TileLayer,
-  Tooltip,
-} from "react-leaflet";
-// import { iconPerson } from "./salam";
+import { MapContainer, Marker, TileLayer, Tooltip } from "react-leaflet";
+import L from "leaflet";
 import useRegisterHouse from "../../pages/RegisterHouse/useRegisterHouse";
-import { Link } from "react-router-dom";
+import mark from "../../../node_modules/leaflet/dist/images/marker-icon-2x.png";
+
+const customIcon = L.icon({
+  iconUrl: mark,
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34], // point from which the popup should open relative to the iconAnchor
+  tooltipAnchor: [16, -28],
+  shadowUrl: mark,
+  shadowSize: [41, 41],
+});
 
 function MapAd() {
   const { getRegData } = useRegisterHouse();
@@ -28,8 +31,8 @@ function MapAd() {
         <Marker
           key={index}
           title="salam"
-          // icon={iconPerson}
           position={[data?.lat, data?.long]}
+          icon={customIcon}
         >
           <Tooltip direction="center" offset={[100, 0]}>
             <div className="flex flex-col items-center justify-center font-bold">

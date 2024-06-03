@@ -35,8 +35,6 @@ function ShowHouses() {
     !isLoadingRealtor ? { userID: realtorData[0].userID } : "",
   );
 
-  // if (!isLoadingRealtorImg) console.log(realtorImgData);
-
   const id =
     !isLoadingRealtor && realtorData[0]?.userData.id.split("-").slice(0, 3);
   return (
