@@ -52,13 +52,13 @@ function Navbar() {
             >
               ثبت آگهی
             </Link>
-            <Link
+            {/* <Link
               to="/signIn"
               type="button"
               className="focus:ring-red-30 hidden rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex"
             >
               ورود
-            </Link>
+            </Link> */}
             {userRole === "authenticated" ? (
               <Link
                 to={
@@ -78,7 +78,7 @@ function Navbar() {
               <Link
                 to="/signIn"
                 type="button"
-                className="focus:ring-red-30 hidden rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex"
+                className="focus:ring-red-30 hidden rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex "
               >
                 ورود
               </Link>
