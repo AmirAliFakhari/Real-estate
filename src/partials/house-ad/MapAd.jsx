@@ -19,7 +19,7 @@ function MapAd() {
     <MapContainer
       center={[32.4279, 53.688]}
       zoom={6}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       style={{ height: "100vh", width: "100%", borderRadius: "20px" }}
     >
       <TileLayer

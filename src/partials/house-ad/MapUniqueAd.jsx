@@ -16,7 +16,7 @@ function MapUniqueAd({ long, lat, state }) {
     <MapContainer
       center={[32.4279, 53.688]}
       zoom={6}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       // className="mapUnique"
       style={{
         height: "80vh",
