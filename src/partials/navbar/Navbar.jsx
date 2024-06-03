@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LinkComp from "../../components/LinkComp";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import house_2 from "../../assets/icons/house-2.svg";
 import people from "../../assets/icons/people.svg";
@@ -13,10 +13,24 @@ function Navbar() {
   const userUserName = useSelector((state) => state.auth.userData)
     ?.user_metadata?.firstname;
   const userD = useSelector((state) => state.auth.userData);
+  const menuRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setHidden(true);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
-      <nav className=" fixed z-30 w-[100%] border border-b-stone-300  bg-white ">
+      <nav className="fixed z-30 w-[100%] border border-b-stone-300 bg-white">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-5 p-4 text-sm">
           <a className="flex items-center space-x-3 rtl:space-x-reverse">
             <Link to="/">
@@ -26,7 +40,7 @@ function Navbar() {
                 alt="Flowbite Logo"
               />
             </Link>
-            <span className="hidden self-center whitespace-nowrap text-xl font-semibold dark:text-white  lg:flex">
+            <span className="hidden self-center whitespace-nowrap text-xl font-semibold dark:text-white lg:flex">
               مشاور املاک
             </span>
           </a>
@@ -39,18 +53,18 @@ function Navbar() {
                     : "/customer-panel"
                 }
                 type="button"
-                className="mx-1  flex rounded-lg border border-green-400 px-2 py-2 text-center  text-sm text-gray-800 hover:bg-green-500  focus:ring-red-400 "
+                className="mx-1 flex rounded-lg border border-green-400 px-2 py-2 text-center text-sm text-gray-800 hover:bg-green-500 focus:ring-red-400"
               >
                 <span>
                   داشبورد
-                  <span>{userUserName} </span>
+                  <span>{userUserName}</span>
                 </span>
               </Link>
             ) : (
               <Link
                 to="/signIn"
                 type="button"
-                className="focus:ring-red-30 hidden rounded-lg px-3   py-2 text-center text-sm font-medium text-gray-800  sm:flex "
+                className="focus:ring-red-30 hidden rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-800 sm:flex"
               >
                 ورود
               </Link>
@@ -59,15 +73,14 @@ function Navbar() {
             <Link
               to={userRole ? "/register-house" : "signIn"}
               type="button"
-              className="focus:ring-red-30 hidden  w-[5.2rem] rounded-lg border  border-red-500 px-3 py-2 text-center text-sm font-medium
-             text-red-500 hover:bg-red-500 hover:text-white sm:flex "
+              className="focus:ring-red-30 hidden w-[5.2rem] rounded-lg border border-red-500 px-3 py-2 text-center text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white sm:flex"
             >
               ثبت آگهی
             </Link>
             <button
               onClick={() => setHidden((c) => !c)}
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  md:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
             >
               <span className="sr-only">منو</span>
               <svg
@@ -82,9 +95,10 @@ function Navbar() {
             </button>
           </div>
           <div
-            className={`${hidden ? "hidden" : ""}  w-full items-center justify-between md:order-1 md:flex md:w-auto`}
+            ref={menuRef}
+            className={`${hidden ? "hidden" : ""} w-full items-center justify-between md:order-1 md:flex md:w-auto`}
           >
-            <ul className="bord er-gray-100 mt-4 flex flex-col items-start rounded-lg border bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 sm:items-center md:mt-0 md:flex-row md:space-x-6 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
+            <ul className="mt-4 flex flex-col items-start rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 sm:items-center md:mt-0 md:flex-row md:space-x-6 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
               <li onClick={() => setHidden(true)}>
                 <LinkComp
                   title="املاک و مستغلات"
@@ -106,7 +120,7 @@ function Navbar() {
                   src={<img className="w-fit" src={news} />}
                 />
               </li>
-              <li onClick={() => setHidden(true)} className="md: hidden">
+              <li onClick={() => setHidden(true)} className="md:hidden">
                 <LinkComp
                   title="ثبت آگهی"
                   to="new"
@@ -117,8 +131,7 @@ function Navbar() {
                 <Link
                   to={userRole ? "/register-house" : "signIn"}
                   type="button"
-                  className="focus:ring-red-30   flex w-[5.2rem] rounded-lg px-3 py-2 text-center text-sm
-                font-medium text-red-500 hover:bg-red-500 hover:text-white "
+                  className="focus:ring-red-30 flex w-[5.2rem] rounded-lg px-3 py-2 text-center text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white"
                 >
                   ثبت آگهی
                 </Link>
@@ -128,7 +141,7 @@ function Navbar() {
                   <Link
                     to="/signIn"
                     type="button"
-                    className="focus:ring-red-30  flex rounded-lg   px-3 py-2 text-center text-sm font-medium  text-gray-800 "
+                    className="focus:ring-red-30 flex rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-800"
                   >
                     ورود
                   </Link>
