@@ -9,7 +9,6 @@ const customIcon = L.icon({
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34], // point from which the popup should open relative to the iconAnchor
   tooltipAnchor: [16, -28],
-  shadowUrl: mark,
   shadowSize: [41, 41],
 });
 
