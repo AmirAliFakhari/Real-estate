@@ -44,14 +44,14 @@ function ShowHouses() {
       <div className="relative left-0 top-[80px]">
         <div className="flex items-center justify-center ">
           <img
-            className="h-[20rem] w-fit  w-full rounded-lg object-contain sm:h-[34rem]   sm:object-cover"
+            className="w h-[20rem]  w-full rounded-lg object-contain sm:h-[34rem]   sm:object-cover"
             src={`https://ecaeztmdfrcwezajiapg.supabase.co/storage/v1/object/public/apartments/${image_id}-registerHouse.png`}
             alt=""
           />
         </div>
         <div className="grid w-full grid-flow-row items-center justify-center xl:grid-cols-2">
           <div>
-            <div className="flex w-full justify-between px-5">
+            <div className="flex w-full justify-between px-5 lg:justify-normal lg:gap-7">
               <p className="mt-5 flex items-center justify-start  text-gray-500">
                 رهن و اجاره آپارتمان در{state.city}
               </p>

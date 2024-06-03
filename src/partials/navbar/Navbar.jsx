@@ -127,28 +127,6 @@ function Navbar() {
                   src={<img className="w-fit" src={news} />}
                 />
               </li>
-              {/* <li onClick={() => setHidden(true)}>
-                <Link
-                  to={userRole ? "/register-house" : "signIn"}
-                  type="button"
-                  className="focus:ring-red-30 flex w-[5.2rem] rounded-lg px-3 py-2 text-center text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white"
-                >
-                  ثبت آگهی
-                </Link>
-              </li>
-              <li>
-                {userRole !== "authenticated" ? (
-                  <Link
-                    to="/signIn"
-                    type="button"
-                    className="focus:ring-red-30 flex rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-800"
-                  >
-                    ورود
-                  </Link>
-                ) : (
-                  ""
-                )}
-              </li> */}
             </ul>
           </div>
         </div>
