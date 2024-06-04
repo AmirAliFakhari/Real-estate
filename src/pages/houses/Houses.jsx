@@ -15,7 +15,7 @@ function Houses() {
     <>
       <div className="relative left-0 top-[80px]">
         <div className="flex  flex-col gap-5">
-          <form className="flex justify-center px-5">
+          {/* <form className="flex justify-center px-5">
             <label className="sr-only mb-2 text-sm font-medium text-gray-900 ">
               کجا
             </label>
@@ -50,7 +50,7 @@ function Houses() {
                 جست و جو
               </button>
             </div>
-          </form>
+          </form> */}
           <div className="  flex flex-wrap justify-between gap-2 px-5 ">
             <div className="hidden justify-start gap-2 sm:flex sm:flex-grow">
               {dropDownData.dropdowns.map((dropdown, index) => (
